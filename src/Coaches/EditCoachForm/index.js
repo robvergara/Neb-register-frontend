@@ -7,17 +7,29 @@ import { StateContext } from "../../contexts/statesContext";
 // const initialTrainerState = { nombre:'robert', apellido:'vergara', cedula:'123456789', status:0 };
 
 export function EditCoachForm(){
-  const {entrenadores, handleChangeModified, onUpdate, modifiedCoach, setModifiedCoach } = React.useContext(CoachContext)
-  // console.log(entrenadores)
-  const {state} = React.useContext(StateContext)
-  const{onCancelModal, coachId} = React.useContext(ModalContext)
+  const {
+    handleChangeModified,
+    onUpdate, 
+    modifiedCoach, 
+  } = React.useContext(CoachContext);
 
-  const update=()=>{
-    // setModifiedCoach(entrenadores.find(entrenador=> entrenador._id === coachId));
+  const {state} = React.useContext(StateContext);
+
+  const{
+    onCancelModal, 
+    coachId
+  } = React.useContext(ModalContext);
+
+  const update=(e)=>{
+    e.preventDefault()
     onUpdate(coachId,modifiedCoach);
+    // console.log(coachId,modifiedCoach);
+    setTimeout(() => {
+      onCancelModal();
+      window.location.reload(true);
+    }, 2000);
   }
   
-
   return(
     <>
       {(state.error) && (
@@ -63,29 +75,7 @@ export function EditCoachForm(){
         </div>
 
         <div className="input-group mb-3">
-        <select 
-            className="form-select"
-            name="status"
-            onChange={handleChangeModified}
-          >
-            <option 
-              defaultValue 
-              key={3}>
-                status
-            </option>
-              <option 
-                key={1}
-                value={1}>
-                  Admin
-              </option>
-              <option 
-                key={0}
-                value={0}>
-                  profesor
-              </option>
-            
-            
-          </select>
+
         </div>
 
         <div className="input-group">

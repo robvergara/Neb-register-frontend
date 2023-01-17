@@ -24,7 +24,7 @@ export async function post(url, body) {
 
 export async function put(url, params, body) {
   try {
-    const res = await api.patch(url, { params }, body);
+    const res = await api.put(url, params, {body});
     return res.data;
   } catch (reason) {
     console.error(reason.message);

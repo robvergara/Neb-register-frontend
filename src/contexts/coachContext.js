@@ -40,7 +40,7 @@ export function CoachProvider ({children}){
   }
 
   const onSave= async(newcoach)=>{
-    // newcoach.status= 0;
+    newcoach.status= 0;
     console.log(coachData);
 
     if (entrenadores.find(entrenador => entrenador.cedula === newcoach.cedula)){
@@ -85,6 +85,7 @@ export function CoachProvider ({children}){
 
   const onUpdate=async(id,updateCoach)=>{
     try {
+      updateCoach.status = 0;
       const coachIndex = entrenadores.findIndex(entrenador => entrenador._id === id);
       const newList = [...entrenadores];
       newList[coachIndex] = {...newList[coachIndex], updateCoach}
@@ -92,7 +93,7 @@ export function CoachProvider ({children}){
       await updateEntrenadores(id,updateCoach);
       onSuccess();
       console.log('entrenador modificado correctamente');
-      setEntrenadores(newList);
+      return setEntrenadores(newList);
     } catch (error) {
       console.log(error)
     }
@@ -105,7 +106,8 @@ export function CoachProvider ({children}){
       entrenadores, 
       setEntrenadores, 
       handleChange, 
-      onSave, onSubmit, 
+      onSave, 
+      onSubmit, 
       onCancel, 
       coachData, 
       setCoachData, 

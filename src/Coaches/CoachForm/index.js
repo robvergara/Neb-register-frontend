@@ -58,29 +58,7 @@ export function CoachForm(){
         </div>
 
         <div className="input-group mb-3">
-        <select 
-            className="form-select"
-            name="status"
-            onChange={handleChange}
-          >
-            <option 
-              defaultValue 
-              key={3}>
-                status
-            </option>
-              <option 
-                key={1}
-                value={1}>
-                  Admin
-              </option>
-              <option 
-                key={0}
-                value={0}>
-                  profesor
-              </option>
-            
-            
-          </select>
+          
         </div>
 
         <div className="input-group">
