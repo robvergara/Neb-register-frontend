@@ -7,6 +7,7 @@ export function Menu () {
       <h1>Menú</h1>
       <NavLink to={'/entrenadores'}> Entrenadores </NavLink>
       <NavLink to={'/categorias'}>Categorias</NavLink>
+      <NavLink to={'/estudiantes'}>Estudiantes</NavLink>
     </>
   )
 }

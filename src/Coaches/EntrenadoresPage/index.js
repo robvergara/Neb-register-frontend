@@ -10,19 +10,17 @@ export function Entrenadores(){
     <div className="card mb-3">
 
       <h3 className="card-header" >
-        <b>AGREGAR ENTRENADOR</b>
+       {openModal!== true? <b>AGREGAR ENTRENADOR</b> : <b>MODIFICAR ENTRENADOR</b>}
       </h3>
 
       <div  className="card-body">
-        <CoachForm />
+      {openModal=== true? <EditCoachForm/> : <CoachForm/>}
+        {/* <CoachForm /> */}
       </div>
 
       <div className="card">
-        {/* <CoachList />
-        {!!openModal && (
-          <EditCoachForm/>
-        )} */}
-        {openModal=== true? <EditCoachForm/> : <CoachList/>}
+        <CoachList/>
+        {/* {openModal=== true? <EditCoachForm/> : <CoachForm/>} */}
         
       </div>
 

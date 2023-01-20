@@ -7,9 +7,6 @@ import { Coach } from "../Coach";
 export function CoachList(){
   const {entrenadores} = React.useContext(CoachContext)
   // console.log(entrenadores)
-  React.useEffect(()=>{
-    
-  },[])
   return(
     <>    
       <h3 className="card-header">
@@ -28,7 +25,6 @@ export function CoachList(){
         <div className="list-group">
           {entrenadores.map(entrenador => (
             <Coach 
-              className="" 
               key={entrenador.cedula} 
               entrenador = {entrenador} 
             />

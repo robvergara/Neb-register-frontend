@@ -1,14 +1,15 @@
 import React from "react";
+import { CategoryContext } from "../../contexts/categorycontext";
 import { CategoryItem } from "../CategoryItem";
 
 
 
-export function CategoryList({categories, setCategories, state, onConfirm, onCancel}){
-
+export function CategoryList(){
+  const {categories} = React.useContext(CategoryContext);
   return(
     <>    
       <h3 className="card-header">
-        lista de categorias
+        LISTA DE CATEGORIAS
       </h3>
 
       {(!categories || categories.length === 0) && (
@@ -19,15 +20,10 @@ export function CategoryList({categories, setCategories, state, onConfirm, onCan
         </div>
       )}
 
-      {categories.map(categorie => (
+      {categories.map(category => (
         <CategoryItem 
-          key={categorie.id} 
-          categorie = {categorie} 
-          categories={categories}
-          setCategories={setCategories}
-          state={state}
-          onConfirm={onConfirm} 
-          onCancel={onCancel}
+          key={`${category._id}`} 
+          category = {category} 
         />
       ))}
 

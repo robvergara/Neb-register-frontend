@@ -1,18 +1,36 @@
 import React from "react";
 import { CategoryContext } from "../../contexts/categorycontext";
 import { CoachContext } from "../../contexts/coachContext";
+import { ModalContext } from "../../contexts/modalContext";
 import { StateContext } from "../../contexts/statesContext";
-// import { entrenadores } from "../../entrenadores";
+import { genders } from "../CategoryForm";
 
+export function EditCategoryForm(){
+  const {
+    categoryHandleChangeModified,
+    onUpdateCategory, 
+    modifiedCategory,
+  } = React.useContext(CategoryContext);
 
-export function CategoryForm(){
+  const{
+    onCancelModal, 
+    CategoryId
+  } = React.useContext(ModalContext);
 
-  const { categoryHandleChange, onSubmitCategory, categoriesData, onCLeanCategory} = React.useContext(CategoryContext)
-  const {state} = React.useContext(StateContext)
+  const {state} = React.useContext(StateContext);
   const {entrenadores} = React.useContext(CoachContext);
 
-  return(
+  const update=(e)=>{
+    e.preventDefault()
+    onUpdateCategory(CategoryId,modifiedCategory);
+    // console.log(coachId,modifiedCoach);
+    setTimeout(() => {
+      onCancelModal();
+      window.location.reload(true);
+    }, 1000);
+  }
 
+  return(
     <>
       {(state.error) && (
           <h5 className="alert alert-danger">
@@ -25,14 +43,14 @@ export function CategoryForm(){
           </h5>
       )}
 
-      <form onSubmit={onSubmitCategory}>
+      <form onSubmit={update}>
         <div className="input-group mb-3">
           <input 
             className="form-control" 
             placeholder="nombre"
-            value={categoriesData.nombre}
+            value={modifiedCategory.nombre}
             name = "nombre"
-            onChange={categoryHandleChange}
+            onChange={categoryHandleChangeModified}
           />
         </div>
 
@@ -40,15 +58,15 @@ export function CategoryForm(){
           <input 
             className="form-control" 
             placeholder="edad"
-            value={categoriesData.edad}
+            value={modifiedCategory.edad}
             name = "edad"
-            onChange={categoryHandleChange}
+            onChange={categoryHandleChangeModified}
           />
 
           <select 
             className="form-select"
             name="genero"
-            onChange={categoryHandleChange}
+            onChange={categoryHandleChangeModified}
           >
             <option defaultValue>Sexo</option>
             {genders.map(gender => (
@@ -68,7 +86,7 @@ export function CategoryForm(){
           <select 
             className="form-select"
             name="entrenador_id"
-            onChange={categoryHandleChange}
+            onChange={categoryHandleChangeModified}
           >
             <option 
               defaultValue>
@@ -90,27 +108,17 @@ export function CategoryForm(){
           <button 
             className="btn btn-primary"
             type="submit"
-          >guardar</button>
+          >guardar cambios</button>
 
           <button 
             className="btn btn-primary"
-            onClick={onCLeanCategory}
+            onClick={onCancelModal}
           >
-            limpiar
+            cancelar
           </button>
         </div>
 
-
-
-      </form>
-    </>
+    </form>
+  </>
   )
 }
-
-
-export const genders = [
-  'masculino',
-  'femenino',
-  'mixto'
-];
-

@@ -1,41 +1,21 @@
 import React from "react";
-import { CoachContext } from "../../contexts/coachContext";
+import { ModalContext } from "../../contexts/modalContext";
 import { CategoryForm } from "../CategoryForm";
 import { CategoryList } from "../CategoryList";
+import { EditCategoryForm } from "../EditCategoryForm";
 
-export function CategoryPage({
-  categories, 
-  setCategories, 
-  state, 
-  onSuccess, 
-  onError, 
-  onConfirm,
-  onCancel
-}){
-  const {entrenadores} = React.useContext(CoachContext)
+export function CategoryPage(){
+  const {openModal} = React.useContext(ModalContext)
   return(
     <div className="card mb-3">
       <h3 className="card-header">
-        <b>AGREGAR CATEGORIA</b>
+      {openModal!== true? <b>AGREGAR CATEGORIA</b> : <b>MODIFICAR CATEGORIA</b>}
       </h3>
       <div className="card-body">
-        <CategoryForm 
-          entrenadores={entrenadores}
-          categories={categories}
-          setCategories={setCategories}
-          state={state}
-          onSuccess={onSuccess}
-          onError={onError}
-        />
+        {openModal===true?<EditCategoryForm/> :<CategoryForm />}
       </div>
       <div className="card">
-        <CategoryList
-          categories={categories}
-          setCategories={setCategories}
-          state={state}
-          onConfirm={onConfirm}
-          onCancel={onCancel}
-        />
+        <CategoryList/>
       </div>
     </div>
   )

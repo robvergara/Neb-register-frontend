@@ -11,13 +11,15 @@ export function StateProvider({children}){
     setTimeout(()=>dispatch({type:actionTypes.regret}),3000);
   };
 
-
   const onError = ()=> {
     dispatch({ type: actionTypes.error });
     setTimeout(()=>dispatch({type:actionTypes.regret}),3000);
   };
+
   const onConfirm= ()=> dispatch({type: actionTypes.confirm });
+
   const onRegret=()=> dispatch({type:actionTypes.regret});
+  
   return(
     <StateContext.Provider value={{state, onSuccess, onError, onConfirm, onRegret}}>
       {children}

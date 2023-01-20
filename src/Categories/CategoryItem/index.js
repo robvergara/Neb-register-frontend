@@ -1,14 +1,18 @@
 import React from "react";
+import { CategoryContext } from "../../contexts/categorycontext";
+import { CoachContext } from "../../contexts/coachContext";
+import { ModalContext } from "../../contexts/modalContext";
 
-export function CategoryItem({categorie, categories, setCategories,onConfirm, state, onCancel}){
-  const onDelete=(id)=>{
-      const newList = categories.filter(category => (category.id !== id));
-      setCategories(newList);
-  }
+export function CategoryItem({category}){
+  const {onDeleteCategory} = React.useContext(CategoryContext)
+  const {setOpenModal, setCategoryId} = React.useContext(ModalContext);
+  const {entrenadores} = React.useContext(CoachContext);
+
+  const entrenador = entrenadores.find(entrenador=> entrenador._id === category.entrenador_id);
 
   return(
     <>
-    {(!!state.confirm) &&
+    {/* {(!!state.confirm) &&
       (
         <>
           <h5>seguro que deseas eliminar la categoria?</h5>
@@ -22,23 +26,21 @@ export function CategoryItem({categorie, categories, setCategories,onConfirm, st
           </div>
         </>
       )
-    }
+    } */}
 
     <div className="card-body">
       <div className="list-group">
-        <h5 className="mb-1">{categorie.name} - {categorie.gender}</h5>
+        <h5 className="mb-1">{category.nombre} - {category.genero}</h5>
         <div className="btn-group">
-          <button className="btn btn-primary">editar</button>
-          <button className="btn btn-primary" onClick={onConfirm}>
-            eliminar
-          </button>
+          <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setCategoryId(category._id)}}>editar</button>
+          <button className="btn btn-primary" onClick={()=>onDeleteCategory(category._id)}>eliminar</button>
         </div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item list-group-item-dark">
-            <b>Edad: {categorie.age}</b>
+            <b>Edad: {category.edad}</b>
           </li>
           <li className="list-group-item list-group-item-dark">
-            <b>Entrenador: {(!categorie.coach? 'no hay entrenador asignado' :categorie.coach)}</b>
+            <b>Entrenador: {(!entrenador? 'no hay entrenador asignado' :entrenador.nombre)}</b>
           </li>
         </ul>
       </div>
