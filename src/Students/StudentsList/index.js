@@ -3,7 +3,8 @@ import {StudentContext} from "../../contexts/studentContext";
 import {Student} from "../Student"
 
 export function StudentsList(){
-  const {estudiantes}= React.useContext(StudentContext);
+  const {searchedStudents}= React.useContext(StudentContext);
+  const estudiantes = searchedStudents;
 
   return(
     <>

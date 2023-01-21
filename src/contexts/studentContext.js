@@ -17,6 +17,7 @@ export function StudentProvider({children}){
   const [estudiantes, setEstudiantes] = React.useState([]);
   const [modifiedStudent, setModifiedStudent] = React.useState(initialStudentState)
   const [studentData, setstudentData] = React.useState(initialStudentState);
+  const [searchValue, setSearchValue] = React.useState('');
 
   React.useEffect(()=>{
     async function  studentList (){
@@ -25,7 +26,18 @@ export function StudentProvider({children}){
       setEstudiantes(list)
     }
     studentList()
-  },[])
+  },[searchValue])
+
+  let searchedStudents=[];
+
+  if (!searchValue.length >=1){
+    searchedStudents = estudiantes;
+  } else{
+    searchedStudents = estudiantes.filter(estudiante =>{
+      const cedula = estudiante.cedula;
+      return cedula.includes(searchValue);
+    });
+  }
 
   const studentHandleChange = (e) =>{
     const {name, value} = e.target;
@@ -120,7 +132,10 @@ export function StudentProvider({children}){
         onCLeanStudentField,
         onCancel,
         onDelete,
-        onUpdate
+        onUpdate,
+        searchValue, 
+        setSearchValue,
+        searchedStudents
       }}>
       {children}
     </StudentContext.Provider>
