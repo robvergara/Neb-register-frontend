@@ -27,6 +27,7 @@ export function StudentForm(){
             value={studentData.nombre}
             onChange = {studentHandleChange}
             name = "nombre"
+            required = {true}
           />
         </div>
 
@@ -37,6 +38,7 @@ export function StudentForm(){
             value={studentData.apellido}
             onChange = {studentHandleChange}
             name = "apellido"
+            required = {true}
           />
         </div>
 
@@ -47,6 +49,7 @@ export function StudentForm(){
             value={studentData.cedula}
             onChange = {studentHandleChange}
             name = "cedula"
+            required = {true}
           />
         </div>
 
@@ -57,6 +60,7 @@ export function StudentForm(){
               value={studentData.edad}
               onChange = {studentHandleChange}
               name = "edad"
+              required = {true}
             />
         </div>
 
@@ -68,6 +72,7 @@ export function StudentForm(){
               value={studentData.nacimiento}
               onChange = {studentHandleChange}
               name = "nacimiento"
+              required = {true}
             />
         </div>
 
@@ -79,6 +84,7 @@ export function StudentForm(){
               value={studentData.email}
               onChange = {studentHandleChange}
               name = "email"
+              required = {true}
             />
         </div>
 
