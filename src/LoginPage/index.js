@@ -18,10 +18,8 @@ export function LoginPage(){
 
   const login= async(e)=>{
     e.preventDefault();
-    // getLogin(user.usuario, user.password);
     auth.login(user.usuario, user.password);
     console.log(user);
-    // setUser(user);
   }
 
   return(

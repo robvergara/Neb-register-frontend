@@ -26,6 +26,7 @@ export function AuthProvider({children}){
       setUser({userName, status});
       onRegret();
       navigate('/');
+      window.location.reload()
     } catch (error) {
       onError();
       // console.log(error);

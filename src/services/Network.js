@@ -1,4 +1,5 @@
 import axios from "axios";
+import { authHeader } from "./login.services";
 
 export const api = axios.create({baseURL: "http://localhost:3001/api"});
 
@@ -6,6 +7,9 @@ export async function get(url, params) {
   try {
     const res = await api.get(url, {
       params
+    }, 
+    { 
+      bearer: authHeader() 
     });
     console.log(res.data);
     return res.data;
