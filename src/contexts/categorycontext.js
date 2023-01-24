@@ -7,7 +7,7 @@ const categoriesDefault = {nombre:'', edad:'', genero:'', entrenador_id:''}
 export const CategoryContext = React.createContext()
 
 export function CategoryProvider({children}){
-  const {onSuccess, onError} = React.useContext(StateContext);
+  const {onSuccess, onError, onRegret} = React.useContext(StateContext);
   const [categoriesData, setCategoriesData] = React.useState(categoriesDefault);
   const [modifiedCategory, setModifiedCategory] = React.useState(categoriesDefault)
   const [categories, setCategories] = React.useState([]);
@@ -56,8 +56,8 @@ export function CategoryProvider({children}){
 
   const onSubmitCategory=(e)=>{
     e.preventDefault();
+    onRegret();
     onSaveCategory(categoriesData);
-
   }
 
   const onCLeanCategory=(e)=>{

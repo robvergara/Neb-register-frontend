@@ -1,40 +1,42 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
+import { getLogin } from "../services/login.services";
 // import { CoachContext } from "./coachContext";
 
-import { userList } from "../users";
+// import { userList } from "../users";
+import { StateContext } from "./statesContext";
 
 export const AuthContext = React.createContext()
 
 export function AuthProvider({children}){
-  // const {entrenadores} = React.useContext(CoachContext)
+  const {onError, onRegret} = React.useContext(StateContext);
   const navigate = useNavigate();
   const [user, setUser] = React.useState(null);
 
   const login =(usuario,password)=>{
-    console.log(usuario);
-    const profile = userList.find(user => usuario === user.usuario && password === user.contrasena);
-    console.log(profile);
+    // console.log(usuario);
+    // const profile = userList.find(user => usuario === user.usuario && password === user.contrasena);
+    // console.log(profile);
+    const user = getLogin(usuario, password);
 
     try {
-      const userName = profile.nombre;
-      const userLastname = profile.apellido;
-      const status = profile.status;
-      console.log(`El usuario es ${userName} ${userLastname}`);
-      console.log(`El rol del usuario es ${status===1? 'Administrador' : 'Profesor'}`);
+      const userName = user.nombre;
+      const status = user.status;
+      // console.log(`El rol del usuario es ${status===1? 'Administrador' : 'Profesor'}`);
       setUser({userName, status});
+      onRegret();
       navigate('/');
     } catch (error) {
-      console.log('El perfil no existe');
-      console.log(error);
-      // navigate('/error'); HACER PAGINA DE ERROR
+      onError();
+      // console.log(error);
     }
   }
 
   const logout=()=>{
+    localStorage.removeItem("user");
     setUser(null);
-    navigate('/')
-    console.log('salida exitosa')
+    console.log('salida exitosa');
+    navigate('/login');
   }
 
   const auth = {user, login, logout}
@@ -50,3 +52,4 @@ export function useAuth() {
   const auth = React.useContext(AuthContext);
   return auth
 }
+

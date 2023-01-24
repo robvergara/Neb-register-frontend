@@ -13,7 +13,7 @@ export function StateProvider({children}){
 
   const onError = ()=> {
     dispatch({ type: actionTypes.error });
-    setTimeout(()=>dispatch({type:actionTypes.regret}),3000);
+    // setTimeout(()=>dispatch({type:actionTypes.regret}),3000);
   };
 
   const onConfirm= ()=> dispatch({type: actionTypes.confirm });

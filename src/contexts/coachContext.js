@@ -8,7 +8,7 @@ const initialTrainerState = { nombre:'', apellido:'', cedula:'',status:'' };
 export const CoachContext = React.createContext()
 
 export function CoachProvider ({children}){
-  const {onSuccess, onError} = React.useContext(StateContext);
+  const {onSuccess, onError, onRegret} = React.useContext(StateContext);
   // const {setOpenModal} = React.useContext(ModalContext);
   const [entrenadores, setEntrenadores] = React.useState([]);
   const [modifiedCoach, setModifiedCoach] = React.useState(initialTrainerState)
@@ -58,6 +58,7 @@ export function CoachProvider ({children}){
 
   const onSubmit=(e)=>{
     e.preventDefault();
+    onRegret();
     onSave(coachData);
 
   }

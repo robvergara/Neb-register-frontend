@@ -13,7 +13,7 @@ const initialStudentState = {
 export const StudentContext = React.createContext()
 
 export function StudentProvider({children}){
-  const {onSuccess, onError} = React.useContext(StateContext);
+  const {onSuccess, onError, onRegret } = React.useContext(StateContext);
   const [estudiantes, setEstudiantes] = React.useState([]);
   const [modifiedStudent, setModifiedStudent] = React.useState(initialStudentState)
   const [studentData, setstudentData] = React.useState(initialStudentState);
@@ -74,8 +74,8 @@ export function StudentProvider({children}){
 
   const onSubmit=(e)=>{
     e.preventDefault();
+    onRegret();
     onSave(studentData);
-
   }
 
   const onCLeanStudentField=(e)=>{
