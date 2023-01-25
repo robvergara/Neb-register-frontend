@@ -1,7 +1,12 @@
 import {erase, get, post, put} from './Network'
 
 export function getEntrenadores() {
+  // console.log(get("/entrenador"))
   return get("/entrenador")
+}
+
+export function getEntrenador(id){
+  return get(`entrenador/${id}`)
 }
 
 export function createEntrenador(body) {

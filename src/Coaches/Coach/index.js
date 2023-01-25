@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { useAuth } from "../../contexts/auth";
 import { CoachContext } from "../../contexts/coachContext";
 import { ModalContext } from "../../contexts/modalContext";
@@ -14,7 +15,11 @@ export function Coach({entrenador}){
     <>
       <div className="list-group-item">
         <div className="d-flex w-100 justify-content-between">
-          <h5 className="mb-1">{entrenador.nombre} {entrenador.apellido}</h5>
+          <NavLink 
+            className="nav-link active mb-1" 
+            to={`/entrenadores/${entrenador._id}`}>
+              {entrenador.nombre} {entrenador.apellido}
+          </NavLink>
           <div>
             {!!auth.user && (
             <div className="btn-group">

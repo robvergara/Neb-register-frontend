@@ -16,6 +16,7 @@ import { CategoryProvider } from '../contexts/categorycontext';
 import { StudentsPage } from '../Students/StudentsPage';
 import { StudentProvider } from '../contexts/studentContext';
 import { AuthProvider } from '../contexts/auth';
+import { CoachProfile } from '../Coaches/CoachProfile';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
                     <Route path='/logout' element={<LogOutPage/>}/>
                     <Route path='/categorias' element={<CategoryPage/>}/>
                     <Route path='/entrenadores' element={<Entrenadores />}/>
+                    <Route path='/entrenadores/:id' element={<CoachProfile/>} />
                     <Route path='/estudiantes' element={<StudentsPage />}/>
                     <Route path='*' element={<p>Not Found</p>}/>
                   </Routes>
