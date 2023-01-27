@@ -1,10 +1,12 @@
 import React from "react";
 import { StateContext } from "../../contexts/statesContext";
 import { StudentContext } from "../../contexts/studentContext";
+import { CategoryContext } from "../../contexts/categorycontext";
 
 export function StudentForm(){
   const { studentHandleChange, onSubmit, studentData, onCLeanStudentField } = React.useContext(StudentContext);
   const {state}= React.useContext(StateContext);
+  const {categories} = React.useContext(CategoryContext);
 
   return(
     <>
@@ -65,15 +67,26 @@ export function StudentForm(){
         </div>
 
         <div className="input-group mb-3">
-          <label>fecha de nacimiento</label>
-          <input 
-              className="form-control" 
-              type="date"
-              value={studentData.nacimiento}
-              onChange = {studentHandleChange}
-              name = "nacimiento"
-              required = {true}
-            />
+          <select
+            className="form-select"
+            name="categoria_id"
+            onChange={studentHandleChange}
+            placeholder="categoria"
+          >
+            <option
+              defaultValue
+            >
+              categoria
+            </option>
+            {categories.map(category => (
+              <option 
+                key={category._id}
+                value={category._id}
+              >
+                {category.nombre} - {category.genero}: {category.edad} años
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="input-group mb-3">

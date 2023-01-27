@@ -7,11 +7,12 @@ import { EditCategoryForm } from "../EditCategoryForm";
 
 export function CategoryPage(){
   const {openModal} = React.useContext(ModalContext);
-  const auth = useAuth()
+  const auth = useAuth();
+  // console.log(auth)
   return(
     <div className="card mb-3">
 
-      {!!auth.user.token && (
+      {(!!auth.user.token && auth.user.status === 1) && (
         <>
           <h3 className="card-header">
           {openModal!== true? <b>AGREGAR CATEGORIA</b> : <b>MODIFICAR CATEGORIA</b>}

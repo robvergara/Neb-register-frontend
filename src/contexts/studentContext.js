@@ -7,7 +7,7 @@ const initialStudentState = {
   apellido: '',
   cedula: '',
   edad: '',
-  nacimiento: '',
+  categoria_id: '',
   email: ''}
 
 export const StudentContext = React.createContext()
@@ -65,7 +65,7 @@ export function StudentProvider({children}){
     }
     const newList = [...estudiantes];
     newList.push(newStudent);
-    // console.log(newStudent);
+    console.log(newStudent);
     await createStudent(newStudent);
     onSuccess();
     console.log('estudiante guardado correctamente');
@@ -75,12 +75,14 @@ export function StudentProvider({children}){
   const onSubmit=(e)=>{
     e.preventDefault();
     onRegret();
+    console.log(studentData)
     onSave(studentData);
   }
 
   const onCLeanStudentField=(e)=>{
     e.preventDefault();
     setstudentData(initialStudentState);
+    setModifiedStudent(initialStudentState);
   }
 
   const onCancel=(e)=>{
@@ -109,6 +111,7 @@ export function StudentProvider({children}){
       await updateStudent(id,studentToUpdate);
       onSuccess();
       console.log('estudiante modificado correctamente');
+      console.log(newList[studentIndex])
       return setEstudiantes(newList);
     } catch (error) {
       console.log(error)

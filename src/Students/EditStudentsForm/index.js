@@ -2,11 +2,13 @@ import React from "react";
 import { StudentContext } from "../../contexts/studentContext";
 import { ModalContext } from "../../contexts/modalContext";
 import { StateContext } from "../../contexts/statesContext";
+import { CategoryContext } from "../../contexts/categorycontext";
 
 export function EditStudentsForm(){
-  const {handleChangeModified, onUpdate, modifiedStudent} = React.useContext(StudentContext);
+  const {handleChangeModified, onUpdate, modifiedStudent, onCLeanStudentField} = React.useContext(StudentContext);
   const {state} = React.useContext(StateContext);
   const {onCancelModal, studentId} = React.useContext(ModalContext);
+  const {categories} = React.useContext(CategoryContext);
 
   const update=(e)=>{
     e.preventDefault()
@@ -73,14 +75,26 @@ export function EditStudentsForm(){
         </div>
 
         <div className="input-group mb-3">
-          <label>fecha de nacimiento</label>
-          <input 
-              className="form-control" 
-              type="date"
-              value={modifiedStudent.nacimiento}
-              onChange = {handleChangeModified}
-              name = "nacimiento"
-            />
+        <select
+            className="form-select"
+            name="categoria_id"
+            onChange={handleChangeModified}
+            placeholder="categoria"
+          >
+            <option
+              defaultValue
+            >
+              categoria
+            </option>
+            {categories.map(category => (
+              <option 
+                key={category._id}
+                value={category._id}
+              >
+                {category.nombre} - {category.genero}: {category.edad} años
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="input-group mb-3">
@@ -99,6 +113,7 @@ export function EditStudentsForm(){
           <button 
             className="btn btn-primary"
             type="submit"
+            onClick={onCLeanStudentField}
           >
               modificar estudiante
           </button>

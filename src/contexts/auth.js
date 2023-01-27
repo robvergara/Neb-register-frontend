@@ -3,7 +3,6 @@ import {useNavigate} from "react-router-dom";
 import { getCurrentUser, getLogin } from "../services/login.services";
 // import { CoachContext } from "./coachContext";
 
-// import { userList } from "../users";
 import { StateContext } from "./statesContext";
 
 export const AuthContext = React.createContext()
@@ -26,8 +25,6 @@ export function AuthProvider({children}){
     
     try {
       const user = await getLogin(usuario, password);
-      // const userName = 'Karolay';
-      // const status = 1;      
       const userName = user.nombre;
       const status = user.status;
 

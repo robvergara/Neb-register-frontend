@@ -9,10 +9,11 @@ import { StudentsList } from "../StudentsList";
 export function StudentsPage(){
   const {openModal} = React.useContext(ModalContext);
   const auth = useAuth();
+  // console.log(auth)
   return(
     <div className="card mb-3">
       <StudentSearch/>
-      {!!auth.user && (
+      {(!!auth.user && !!auth.user.token) && (
         <>
           <h3 className="card-header">
             {openModal!== true? <b>AGREGAR ESTUDIANTE</b> : <b>MODIFICAR CATEGORIA</b>}

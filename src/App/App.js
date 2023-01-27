@@ -17,6 +17,7 @@ import { StudentsPage } from '../Students/StudentsPage';
 import { StudentProvider } from '../contexts/studentContext';
 import { AuthProvider } from '../contexts/auth';
 import { CoachProfile } from '../Coaches/CoachProfile';
+import { PaymentProvider } from '../contexts/paymentscontext';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <CategoryProvider>
               <StudentProvider>
                 <AuthProvider>
+                  <PaymentProvider>
                   <Menu/>
                   <Routes>
                     <Route path='/' element={<HomePage/>}/>
@@ -41,6 +43,7 @@ function App() {
                     <Route path='/estudiantes' element={<StudentsPage />}/>
                     <Route path='*' element={<p>Not Found</p>}/>
                   </Routes>
+                  </PaymentProvider>
                 </AuthProvider>
               <Footer/>
               </StudentProvider>

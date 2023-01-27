@@ -1,7 +1,12 @@
 import React from "react";
+import { HomeSearch } from "./HomeSearch";
+import { PaymentsList } from "./PaymentsList";
 
 export function HomePage(){
   return(
-    <h1>Homepage</h1>
+    <div className="card mb-3">
+      <HomeSearch/>
+      <PaymentsList/>
+    </div>
   )
 }
