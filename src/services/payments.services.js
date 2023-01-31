@@ -5,11 +5,12 @@ export function getArrayPayments(id) {
 }
 
 export function enterPayment(body) {
+  console.log(body)
   return post("/pagos",{
     cedula: body.cedula,
     estudiante_id: body.estudiante_id,
-    mes: body.month,
-    ano: body.year,
+    mes: body.mes,
+    ano: body.ano,
   })
 }
 

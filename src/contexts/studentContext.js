@@ -65,7 +65,7 @@ export function StudentProvider({children}){
     }
     const newList = [...estudiantes];
     newList.push(newStudent);
-    console.log(newStudent);
+    // console.log(newStudent);
     await createStudent(newStudent);
     onSuccess();
     console.log('estudiante guardado correctamente');
@@ -75,7 +75,7 @@ export function StudentProvider({children}){
   const onSubmit=(e)=>{
     e.preventDefault();
     onRegret();
-    console.log(studentData)
+    // console.log(studentData)
     onSave(studentData);
   }
 

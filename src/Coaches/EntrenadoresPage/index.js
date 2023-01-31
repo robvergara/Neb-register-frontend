@@ -8,18 +8,16 @@ import { EditCoachForm } from "../EditCoachForm";
 export function Entrenadores(){
   const {openModal} = React.useContext(ModalContext);
   const auth = useAuth()
-  // console.log(auth.user);
   return(
     <div className="card mb-3">
 
-      {(auth.user.token && auth.user.status === 1) && (
+      {(!!auth.user && !!auth.user.token) && (
         <>
           <h3 className="card-header" >
           {openModal!== true? <b>AGREGAR ENTRENADOR</b> : <b>MODIFICAR ENTRENADOR</b>}
           </h3>
           <div  className="card-body">
             {openModal=== true? <EditCoachForm/> : <CoachForm/>}
-            {/* <CoachForm /> */}
           </div> 
         </>
       )}

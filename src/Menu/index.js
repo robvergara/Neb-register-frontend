@@ -17,6 +17,8 @@ export function Menu () {
             <NavLink className="nav-link active" to={'/entrenadores'}> Entrenadores </NavLink>
             <NavLink className="nav-link active" to={'/categorias'}>Categorias</NavLink>
             <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink>
+            {/* <NavLink className="nav-link active" to={'/pagos'}>Pagos</NavLink> */}
+
           </div>
         </div>
         <ul className="navbar justify-content-end">

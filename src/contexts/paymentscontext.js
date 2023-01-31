@@ -17,6 +17,14 @@ export function PaymentProvider({children}){
     setSearchValue(e.target.value);
   };
 
+  const handleChange=(e)=>{
+    const {name, value} = e.target;
+    setdataPayment(prevState=>({
+      ...prevState,
+      [name]:value
+    }))
+  }
+
   const PaymentHandleChange= (e) =>{
     const {value} = e.target;
     setdataPayment(prevState=>({
@@ -42,17 +50,27 @@ export function PaymentProvider({children}){
   }
 
   const onSave = async(newPayment)=>{
-    if (payments.find(payment=> payment.month === newPayment.month && payment.year === newPayment.year)){
+    if (payments.find(payment=> 
+      payment.mes === newPayment.mes && 
+      payment.ano === newPayment.ano && 
+      payment.cedula === newPayment.cedula
+      )){
       onError();
       console.log('el pago de este mes ya ha sido realizado');
+      onError();
+      return 
     }
-
-    const newList = [...payments];
     try {      
-      await enterPayment(newPayment);
-      newList.push(newPayment);
+      // const newList = [...payments];
+      const {message} = await enterPayment(newPayment);
+      console.log(message.errors);
+      if(message.errors){
+        onError()
+        return;
+      }
+      // newList.push(newPayment);
       onSuccess();
-      setPayments(newList);
+      // setPayments(newList);
     } catch (error) {
       console.log(error);
       onError()
@@ -68,7 +86,21 @@ export function PaymentProvider({children}){
 
 
   return(
-    <PaymentContext.Provider value={{searchValue, payments, estudianteQuePago, setEstudianteQuePago, setSearchValue, HomeSearchHandleChange, onSearch, PaymentHandleChange, onSubmit}}>
+    <PaymentContext.Provider 
+      value={{
+        searchValue, 
+        payments, 
+        estudianteQuePago, 
+        dataPayment, 
+        setEstudianteQuePago, 
+        setSearchValue, 
+        HomeSearchHandleChange, 
+        onSearch, 
+        PaymentHandleChange, 
+        onSubmit, 
+        handleChange, 
+        setdataPayment
+      }}>
       {children}
     </PaymentContext.Provider>
   )

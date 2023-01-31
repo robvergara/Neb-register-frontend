@@ -18,6 +18,7 @@ import { StudentProvider } from '../contexts/studentContext';
 import { AuthProvider } from '../contexts/auth';
 import { CoachProfile } from '../Coaches/CoachProfile';
 import { PaymentProvider } from '../contexts/paymentscontext';
+import { PaymentPage } from '../Payment/PaymentPage';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
                     <Route path='/entrenadores' element={<Entrenadores />}/>
                     <Route path='/entrenadores/:id' element={<CoachProfile/>} />
                     <Route path='/estudiantes' element={<StudentsPage />}/>
+                    <Route path='/pagos' element={<PaymentPage/>} />
                     <Route path='*' element={<p>Not Found</p>}/>
                   </Routes>
                   </PaymentProvider>
