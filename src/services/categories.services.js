@@ -4,6 +4,10 @@ export function getCategories() {
   return get("/categoria")
 }
 
+export function getCategory(id) {
+  return get(`/categoria/${id}`)
+}
+
 export function createCategory(body) {
   return post("/categoria",{
     nombre: body.nombre,

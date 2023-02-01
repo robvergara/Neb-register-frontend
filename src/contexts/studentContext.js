@@ -101,7 +101,7 @@ export function StudentProvider({children}){
     const newList = [...estudiantes];
     newList.splice(deleteStudentIndex,1);
     await deleteStudent(id)
-    console.log(newList)
+    // console.log(newList)
     setEstudiantes(newList);
   }
 
@@ -111,11 +111,11 @@ export function StudentProvider({children}){
       const studentIndex = estudiantes.findIndex(estudiante => estudiante._id === id);
       const newList = [...estudiantes];
       newList[studentIndex] = {...newList[studentIndex], studentToUpdate}
-      console.log(newList[studentIndex])
+      // console.log(newList[studentIndex])
       await updateStudent(id,studentToUpdate);
       onSuccess();
       console.log('estudiante modificado correctamente');
-      console.log(newList[studentIndex])
+      // console.log(newList[studentIndex])
       return setEstudiantes(newList);
     } catch (error) {
       console.log(error)
