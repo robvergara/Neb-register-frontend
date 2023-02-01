@@ -63,7 +63,7 @@ export function Student({estudiante}){
             <b>email: </b>{estudiante.email}
           </li>
           <li className="list-group-item list-group-item-dark">
-            <b>Categoria: </b>{categoria.nombre} - {categoria.genero}
+            <b>categoria: </b>{categoria.nombre} - {categoria.genero}
           </li>
         </ul>
       </div>   

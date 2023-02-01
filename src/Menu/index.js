@@ -14,9 +14,17 @@ export function Menu () {
         <div className="collapse navbar-collapse">
           <div className="navbar-nav">
             <NavLink className="nav-link active" to={'/'}> Home </NavLink>
-            <NavLink className="nav-link active" to={'/entrenadores'}> Entrenadores </NavLink>
-            <NavLink className="nav-link active" to={'/categorias'}>Categorias</NavLink>
             <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink>
+            {!!auth.user && (
+              <>
+                <NavLink className="nav-link active" to={'/categorias'}>Categorias</NavLink>
+                {auth.user.status === 1 && (
+                  <NavLink className="nav-link active" to={'/entrenadores'}> Entrenadores </NavLink>
+                )}
+
+              </>
+            )}
+
             {/* <NavLink className="nav-link active" to={'/pagos'}>Pagos</NavLink> */}
 
           </div>
