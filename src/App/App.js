@@ -26,32 +26,32 @@ function App() {
   return (
     <HashRouter>
       <StateProvider>
-        <ModalProvider>          
-          <CoachProvider>
-            <CategoryProvider>
-              <StudentProvider>
-                <AuthProvider>
-                  <PaymentProvider>
-                  <Menu/>
-                  <Routes>
-                    <Route path='/' element={<HomePage/>}/>
-                    <Route path='/login' element={<LoginPage/>}/>
-                    <Route path='/signup' element={<SignUpPage/>}/>
-                    <Route path='/logout' element={<LogOutPage/>}/>
-                    <Route path='/categorias' element={<CategoryPage/>}/>
-                    <Route path='/entrenadores' element={<Entrenadores />}/>
-                    <Route path='/entrenadores/:id' element={<CoachProfile/>} />
-                    <Route path='/estudiantes' element={<StudentsPage />}/>
-                    <Route path='/pagos' element={<PaymentPage/>} />
-                    <Route path='*' element={<p>Not Found</p>}/>
-                  </Routes>
-                  </PaymentProvider>
-                </AuthProvider>
-              <Footer/>
-              </StudentProvider>
-            </CategoryProvider>
-          </CoachProvider>
-        </ModalProvider>
+        <AuthProvider>
+          <ModalProvider>          
+            <CoachProvider>
+              <CategoryProvider>
+                <StudentProvider>
+                    <PaymentProvider>
+                    <Menu/>
+                    <Routes>
+                      <Route path='/' element={<HomePage/>}/>
+                      <Route path='/login' element={<LoginPage/>}/>
+                      <Route path='/signup' element={<SignUpPage/>}/>
+                      <Route path='/logout' element={<LogOutPage/>}/>
+                      <Route path='/categorias' element={<CategoryPage/>}/>
+                      <Route path='/entrenadores' element={<Entrenadores />}/>
+                      <Route path='/entrenadores/:id' element={<CoachProfile/>} />
+                      <Route path='/estudiantes' element={<StudentsPage />}/>
+                      <Route path='/pagos' element={<PaymentPage/>} />
+                      <Route path='*' element={<p>Not Found</p>}/>
+                    </Routes>
+                    </PaymentProvider>
+                <Footer/>
+                </StudentProvider>
+              </CategoryProvider>
+            </CoachProvider>
+          </ModalProvider>
+        </AuthProvider>
       </StateProvider>
     </HashRouter>
   );

@@ -26,7 +26,7 @@ export function PaymentPage(){
       )}
       {(state.success) && (
         <h4 className="alert alert-success">
-          La categoria fue guardada correctamente!
+          Pago realizado correctamente!
         </h4>
       )}
 

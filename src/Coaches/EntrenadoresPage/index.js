@@ -11,7 +11,7 @@ export function Entrenadores(){
   return(
     <div className="card mb-3">
 
-      {(!!auth.user && !!auth.user.token) && (
+      {(!!auth.user.token && auth.user.status === 1) && (
         <>
           <h3 className="card-header" >
           {openModal!== true? <b>AGREGAR ENTRENADOR</b> : <b>MODIFICAR ENTRENADOR</b>}

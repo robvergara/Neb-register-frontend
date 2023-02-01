@@ -2,6 +2,7 @@ import React from "react";
 import { createEntrenador, getEntrenadores, deleteEntrenador, updateEntrenadores } from '../services/entrenadores.services';
 // import { ModalContext } from "./modalContext";
 import { StateContext } from "./statesContext";
+import { useAuth } from "./auth";
 
 const initialTrainerState = { nombre:'', apellido:'', cedula:'',status:'' };
 
@@ -11,8 +12,11 @@ export function CoachProvider ({children}){
   const {onSuccess, onError, onRegret} = React.useContext(StateContext);
   // const {setOpenModal} = React.useContext(ModalContext);
   const [entrenadores, setEntrenadores] = React.useState([]);
-  const [modifiedCoach, setModifiedCoach] = React.useState(initialTrainerState)
+  const [modifiedCoach, setModifiedCoach] = React.useState(initialTrainerState);
   const [coachData, setCoachData] = React.useState(initialTrainerState);
+  const auth = useAuth();
+
+
 
   React.useEffect(()=>{
     async function  trainerList (){
@@ -20,6 +24,8 @@ export function CoachProvider ({children}){
       // console.log(list)
       setEntrenadores(list)
     }
+    // if(auth.user.token){
+    // }
     trainerList()
   },[])
 

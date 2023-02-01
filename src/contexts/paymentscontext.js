@@ -42,6 +42,7 @@ export function PaymentProvider({children}){
       // console.log(studentWhoPaid);
       // console.log(paymentList);
       setPayments(paymentList);
+      setSearchValue('');
     } catch (error) {
       console.log(error);
       setPayments(undefined);
