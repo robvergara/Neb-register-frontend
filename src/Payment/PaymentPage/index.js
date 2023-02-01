@@ -67,6 +67,7 @@ export function PaymentPage(){
             className="mb-3 mx-1 col-sm-2"
             name="mes"
             onChange={handleChange}
+            required
           >
             <option defaultValue readOnly> Mes </option>
             {months.map(month=> (

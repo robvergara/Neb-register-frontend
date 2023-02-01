@@ -72,12 +72,13 @@ export function StudentForm(){
             name="categoria_id"
             onChange={studentHandleChange}
             placeholder="categoria"
+            required
           >
-            <option
-              defaultValue
-            >
+
+            <option defaultValue value={null} >
               categoria
             </option>
+
             {categories.map(category => (
               <option 
                 key={category._id}

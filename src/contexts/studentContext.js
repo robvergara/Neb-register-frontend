@@ -57,11 +57,14 @@ export function StudentProvider({children}){
 
   const onSave= async(newStudent)=>{
 
-    // console.log(studentData);
+    console.log(newStudent);
 
     if (estudiantes.find(estudiante => estudiante.cedula === newStudent.cedula)){
       onError();
-      return(console.log('la cedula ya ha sido registrada'))
+      return(console.log('la cedula ya ha sido registrada'));
+    } else if (!newStudent.categoria_id || newStudent.categoria_id === null){
+      onError();
+      return (console.log('debe seleccionar una categoria'));
     }
     const newList = [...estudiantes];
     newList.push(newStudent);
@@ -81,6 +84,7 @@ export function StudentProvider({children}){
 
   const onCLeanStudentField=(e)=>{
     e.preventDefault();
+    onRegret();
     setstudentData(initialStudentState);
     setModifiedStudent(initialStudentState);
   }
