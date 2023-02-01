@@ -52,7 +52,7 @@ export function PaymentPage(){
           
           <input type="hidden" value={dataPayment.estudiante_id} />
 
-          <input 
+          {/* <input 
             value={dataPayment.mes} 
             className="mb-3 mx-1 col-sm-2" 
             type="number" 
@@ -61,7 +61,19 @@ export function PaymentPage(){
             placeholder="mes" 
             onChange={handleChange} 
             name="mes" 
-          />
+          /> */}
+
+          <select 
+            className="mb-3 mx-1 col-sm-2"
+            name="mes"
+            onChange={handleChange}
+          >
+            <option defaultValue readOnly> Mes </option>
+            {months.map(month=> (
+              <option key={month.value} value={month.value}>{month.name}</option>
+            ))}
+          </select>
+
           <input 
             value={dataPayment.ano} 
             className="mb-3 mx-1 col-sm-3" 
@@ -91,3 +103,18 @@ export function PaymentPage(){
     </>
   )
 }
+
+const months = [];
+
+months.push({name: "Enero", value: 0});
+months.push({name: "Febrero", value: 1});
+months.push({name: "Marzo", value: 2});
+months.push({name: "Abril", value: 3});
+months.push({name: "Mayo", value: 4});
+months.push({name: "Junio", value: 5});
+months.push({name: "Julio", value: 6});
+months.push({name: "Agosto", value: 7});
+months.push({name: "Septiembre", value: 8});
+months.push({name: "Octubre", value: 9});
+months.push({name: "Noviembre", value: 10});
+months.push({name: "Diciembre", value: 11});
