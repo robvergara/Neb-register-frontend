@@ -53,10 +53,8 @@ export function CategoryList(){
             key={`${category._id}`} 
             category = {category} 
           />
-        ))
-      )
+        )))
       
-
       }
 
     </>
