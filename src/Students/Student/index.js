@@ -14,9 +14,7 @@ export function Student({estudiante}){
   const [categoria, setCategoria] = React.useState({})
 
   const studentDataPayment = {estudiante_id: estudiante._id, cedula: estudiante.cedula}
-  // console.log(studentDataPayment)
   const categoria_id = estudiante.categoria_id;
-  // console.log(categoria_id);
 
   React.useEffect(()=>{
     async function obtenerCategoria(){
@@ -45,11 +43,10 @@ export function Student({estudiante}){
             <div className="btn-group">
               <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setStudentId(estudiante._id)}}>editar</button>
               <button className="btn btn-primary" onClick={()=>onDelete(estudiante._id)}>eliminar</button>
-              {auth.user.status === 1 && (
-                <NavLink className="btn btn-secondary active" to={'/pagos'} onClick={()=>setdataPayment(studentDataPayment)} >Realizar pago</NavLink>
-              )}
+              <NavLink className="btn btn-secondary active" to={'/pagos'} onClick={()=>setdataPayment(studentDataPayment)} >Realizar pago</NavLink>
             </div>
             )}
+
           </div>
         </div>
         <ul className="list-group list-group-flush">

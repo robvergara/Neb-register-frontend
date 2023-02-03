@@ -1,5 +1,5 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import {Navigate, useNavigate} from "react-router-dom";
 import { getCurrentUser, getLogin } from "../services/login.services";
 // import { CoachContext } from "./coachContext";
 
@@ -59,5 +59,15 @@ export function AuthProvider({children}){
 export function useAuth() {
   const auth = React.useContext(AuthContext);
   return auth
+}
+
+export function AuthRoute(props) {
+  const auth = useAuth();
+
+  if(!auth.user){
+    return <Navigate to='/login'/>
+  }
+
+  return props.children;
 }
 

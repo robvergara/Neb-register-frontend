@@ -15,7 +15,7 @@ import { ModalProvider } from '../contexts/modalContext';
 import { CategoryProvider } from '../contexts/categorycontext';
 import { StudentsPage } from '../Students/StudentsPage';
 import { StudentProvider } from '../contexts/studentContext';
-import { AuthProvider } from '../contexts/auth';
+import { AuthProvider, AuthRoute } from '../contexts/auth';
 import { CoachProfile } from '../Coaches/CoachProfile';
 import { PaymentProvider } from '../contexts/paymentscontext';
 import { PaymentPage } from '../Payment/PaymentPage';
@@ -36,13 +36,56 @@ function App() {
                     <Routes>
                       <Route path='/' element={<HomePage/>}/>
                       <Route path='/login' element={<LoginPage/>}/>
-                      <Route path='/signup' element={<SignUpPage/>}/>
-                      <Route path='/logout' element={<LogOutPage/>}/>
-                      <Route path='/categorias' element={<CategoryPage/>}/>
-                      <Route path='/entrenadores' element={<Entrenadores />}/>
-                      <Route path='/entrenadores/:id' element={<CoachProfile/>} />
-                      <Route path='/estudiantes' element={<StudentsPage />}/>
-                      <Route path='/pagos' element={<PaymentPage/>} />
+                      {/* <Route path='/signup' element={<SignUpPage/>}/> */}
+
+                      <Route 
+                        path='/logout' 
+                          element={
+                            <AuthRoute>
+                              <LogOutPage/>
+                            </AuthRoute>
+                          }
+                      />
+                      <Route 
+                        path='/categorias' 
+                        element={
+                          <AuthRoute>
+                            <CategoryPage/>
+                          </AuthRoute>
+                          }
+                      />
+                      <Route 
+                        path='/entrenadores' 
+                        element={
+                          <AuthRoute>
+                            <Entrenadores />
+                          </AuthRoute>
+                        }
+                      />
+                      <Route 
+                        path='/entrenadores/:id' 
+                        element={
+                          <AuthRoute>
+                            <CoachProfile/>
+                          </AuthRoute>
+                          } 
+                      />
+                      <Route 
+                        path='/estudiantes' 
+                        element={
+                          <AuthRoute>
+                            <StudentsPage />
+                          </AuthRoute>
+                          }
+                      />
+                      <Route 
+                        path='/pagos' 
+                        element={
+                          <AuthRoute>
+                            <PaymentPage/>
+                          </AuthRoute>
+                        } 
+                      />
                       <Route path='*' element={<p>Not Found</p>}/>
                     </Routes>
                     </PaymentProvider>

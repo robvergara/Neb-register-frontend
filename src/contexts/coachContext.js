@@ -14,9 +14,7 @@ export function CoachProvider ({children}){
   const [entrenadores, setEntrenadores] = React.useState([]);
   const [modifiedCoach, setModifiedCoach] = React.useState(initialTrainerState);
   const [coachData, setCoachData] = React.useState(initialTrainerState);
-  const auth = useAuth();
-
-
+  const auth = useAuth()
 
   React.useEffect(()=>{
     async function  trainerList (){
@@ -24,9 +22,7 @@ export function CoachProvider ({children}){
       // console.log(list)
       setEntrenadores(list)
     }
-    // if(auth.user.token){
-    // }
-    trainerList()
+      trainerList()
   },[])
 
   const handleChange = (e) =>{

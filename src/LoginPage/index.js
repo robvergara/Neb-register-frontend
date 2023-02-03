@@ -1,4 +1,5 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import { useAuth } from "../contexts/auth";
 import { StateContext } from "../contexts/statesContext";
 
@@ -20,6 +21,10 @@ export function LoginPage(){
     e.preventDefault();
     auth.login(user.usuario, user.password);
     console.log(user);
+  }
+
+  if(auth.user){
+    return <Navigate to={"/"}/>
   }
 
   return(

@@ -3,13 +3,25 @@ import { useAuth } from "../../contexts/auth";
 import { CategoryContext } from "../../contexts/categorycontext";
 import { CoachContext } from "../../contexts/coachContext";
 import { ModalContext } from "../../contexts/modalContext";
+import { getStudents } from "../../services/students.services";
 
 export function CategoryItem({category}){
   const {onDeleteCategory} = React.useContext(CategoryContext)
   const {setOpenModal, setCategoryId} = React.useContext(ModalContext);
   const {entrenadores} = React.useContext(CoachContext);
   const auth = useAuth()
+  const [estudiantes, setEstudiantes] = React.useState(0);
   const entrenador = entrenadores.find(entrenador=> entrenador._id === category.entrenador_id);
+  // console.log(category)
+
+  React.useEffect(()=>{
+    async function obtenerEstudiantes(){
+      const studentList = await getStudents();
+      const studentListFiltered = studentList.filter(student=> student.categoria_id === category._id);
+      setEstudiantes(studentListFiltered.length);
+    }
+    obtenerEstudiantes()
+  },[])
 
   return(
     <>
@@ -32,6 +44,9 @@ export function CategoryItem({category}){
             </li>
             <li className="list-group-item list-group-item-dark">
               <b>Entrenador: {(!entrenador? 'no hay entrenador asignado' :entrenador.nombre)}</b>
+            </li>
+            <li className="list-group-item list-group-item-dark">
+              <b>Cantidad de estudiantes: {(estudiantes === 0? 'no hay estudiantes inscritos' :estudiantes)}</b>
             </li>
           </ul>
         </div>

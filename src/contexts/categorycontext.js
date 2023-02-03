@@ -18,7 +18,7 @@ export function CategoryProvider({children}){
       // console.log(list)
       setCategories(list)
     }
-    trainerList()
+      trainerList()
   },[]);
 
   const categoryHandleChange = (e) =>{

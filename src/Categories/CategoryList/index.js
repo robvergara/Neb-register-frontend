@@ -14,11 +14,13 @@ export function CategoryList(){
   const auth = useAuth();
 
   React.useEffect(()=>{
-    const cedula = auth.user.usuario;
+    const cedula = auth.user?.usuario;
     const coach = entrenadores.find( entrenador => entrenador.cedula === cedula);
     async function obtenerEntrenador(){
-      const entrenador = await getEntrenador(coach._id);
-      setCoach(entrenador[0]);
+      if(coach !== undefined){
+        const entrenador = await getEntrenador(coach._id);
+        setCoach(entrenador[0]);
+      }
     }
     obtenerEntrenador();
   },[])
@@ -39,7 +41,7 @@ export function CategoryList(){
         </div>
       )}
 
-      {auth.user.status === 1 &&(
+      {auth.user?.status === 1 &&(
         categories.map(category => (
           <CategoryItem 
             key={`${category._id}`} 
@@ -47,7 +49,7 @@ export function CategoryList(){
           />
       )))}
 
-      {auth.user.status === 0 && (
+      {auth.user?.status === 0 && (
         coachCategories.map(category => (
           <CategoryItem 
             key={`${category._id}`} 
