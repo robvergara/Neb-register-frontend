@@ -30,7 +30,7 @@ export function EditCoachForm(){
     // console.log(coachId,modifiedCoach);
     setTimeout(() => {
       onCancelModal();
-      window.location.reload(true);
+      // window.location.reload(true);
     }, 1000);
   }
   

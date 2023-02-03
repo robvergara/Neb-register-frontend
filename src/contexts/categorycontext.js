@@ -1,5 +1,6 @@
 import React from "react";
 import {getCategories, createCategory, updateCategory, deleteCategory} from "../services/categories.services"
+import { useAuth } from "./auth";
 import { StateContext } from "./statesContext";
 
 const categoriesDefault = {nombre:'', edad:'', genero:'', entrenador_id:''}
@@ -11,6 +12,7 @@ export function CategoryProvider({children}){
   const [categoriesData, setCategoriesData] = React.useState(categoriesDefault);
   const [modifiedCategory, setModifiedCategory] = React.useState(categoriesDefault)
   const [categories, setCategories] = React.useState([]);
+  const auth = useAuth()
 
   React.useEffect(()=>{
     async function  trainerList (){
@@ -18,8 +20,10 @@ export function CategoryProvider({children}){
       // console.log(list)
       setCategories(list)
     }
+    if(!!auth.user){
       trainerList()
-  },[]);
+    }
+  },[auth]);
 
   const categoryHandleChange = (e) =>{
     const {name, value} = e.target;

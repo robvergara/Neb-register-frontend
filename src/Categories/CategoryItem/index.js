@@ -6,7 +6,7 @@ import { ModalContext } from "../../contexts/modalContext";
 import { getStudents } from "../../services/students.services";
 
 export function CategoryItem({category}){
-  const {onDeleteCategory} = React.useContext(CategoryContext)
+  const {onDeleteCategory, setModifiedCategory} = React.useContext(CategoryContext)
   const {setOpenModal, setCategoryId} = React.useContext(ModalContext);
   const {entrenadores} = React.useContext(CoachContext);
   const auth = useAuth()
@@ -21,7 +21,7 @@ export function CategoryItem({category}){
       setEstudiantes(studentListFiltered.length);
     }
     obtenerEstudiantes()
-  },[])
+  },[category])
 
   return(
     <>
@@ -32,7 +32,7 @@ export function CategoryItem({category}){
           {auth.user.status === 1 && (
             <>
               <div className="btn-group">
-                <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setCategoryId(category._id)}}>editar</button>
+                <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setCategoryId(category._id); setModifiedCategory(category)}}>editar</button>
                 <button className="btn btn-primary" onClick={()=>onDeleteCategory(category._id)}>eliminar</button>
               </div>
             </>

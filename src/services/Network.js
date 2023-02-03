@@ -23,7 +23,7 @@ export async function post(url, body) {
   }
 }
 
-export async function put(url, params, body) {
+export async function put(url, body, params) {
   try {
     const res = await api.put(url, body, {params, headers: authHeader() });
     return res.data;
