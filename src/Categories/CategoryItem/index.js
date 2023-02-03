@@ -7,7 +7,7 @@ import { getStudents } from "../../services/students.services";
 
 export function CategoryItem({category}){
   const {onDeleteCategory, setModifiedCategory} = React.useContext(CategoryContext)
-  const {setOpenModal, setCategoryId} = React.useContext(ModalContext);
+  const {setOpenModal} = React.useContext(ModalContext);
   const {entrenadores} = React.useContext(CoachContext);
   const auth = useAuth()
   const [estudiantes, setEstudiantes] = React.useState(0);
@@ -32,7 +32,7 @@ export function CategoryItem({category}){
           {auth.user.status === 1 && (
             <>
               <div className="btn-group">
-                <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setCategoryId(category._id); setModifiedCategory(category)}}>editar</button>
+                <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCategory(category)}}>editar</button>
                 <button className="btn btn-primary" onClick={()=>onDeleteCategory(category._id)}>eliminar</button>
               </div>
             </>

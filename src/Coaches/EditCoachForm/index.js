@@ -15,22 +15,15 @@ export function EditCoachForm(){
 
   const {state} = React.useContext(StateContext);
 
-  const{
-    onCancelModal, 
-    coachId
-  } = React.useContext(ModalContext);
-
-  // const list = [...entrenadores];
-  // const coachToUpdate = list.find(entrenador=> entrenador._id === coachId);
-  // setModifiedCoach(coachToUpdate);
+  const{onCancelModal} = React.useContext(ModalContext);
 
   const update=(e)=>{
     e.preventDefault()
-    onUpdate(coachId,modifiedCoach);
-    // console.log(coachId,modifiedCoach);
+    onUpdate(modifiedCoach._id,modifiedCoach);
+    // console.log(modifiedCoach);
     setTimeout(() => {
       onCancelModal();
-      // window.location.reload(true);
+      window.location.reload(true);
     }, 1000);
   }
   

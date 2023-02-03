@@ -5,15 +5,15 @@ import { StateContext } from "../../contexts/statesContext";
 import { CategoryContext } from "../../contexts/categorycontext";
 
 export function EditStudentsForm(){
-  const {handleChangeModified, onUpdate, modifiedStudent, onCLeanStudentField} = React.useContext(StudentContext);
+  const {handleChangeModified, onUpdate, modifiedStudent} = React.useContext(StudentContext);
   const {state} = React.useContext(StateContext);
-  const {onCancelModal, studentId} = React.useContext(ModalContext);
+  const {onCancelModal} = React.useContext(ModalContext);
   const {categories} = React.useContext(CategoryContext);
-
+  
   const update=(e)=>{
     e.preventDefault()
-    onUpdate(studentId,modifiedStudent);
-    // console.log(studentId,modifiedStudent;
+    console.log(modifiedStudent)
+    onUpdate(modifiedStudent._id,modifiedStudent);
     setTimeout(() => {
       onCancelModal();
       window.location.reload(true);
@@ -113,7 +113,7 @@ export function EditStudentsForm(){
           <button 
             className="btn btn-primary"
             type="submit"
-            onClick={onCLeanStudentField}
+            
           >
               modificar estudiante
           </button>

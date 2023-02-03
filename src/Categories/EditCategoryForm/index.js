@@ -11,11 +11,8 @@ export function EditCategoryForm(){
     onUpdateCategory, 
     modifiedCategory,
   } = React.useContext(CategoryContext);
-  console.log(modifiedCategory)
-  const{
-    onCancelModal 
-    
-  } = React.useContext(ModalContext);
+  // console.log(modifiedCategory)
+  const{onCancelModal} = React.useContext(ModalContext);
 
   const {state} = React.useContext(StateContext);
   const {entrenadores} = React.useContext(CoachContext);
@@ -25,7 +22,7 @@ export function EditCategoryForm(){
     onUpdateCategory(modifiedCategory._id, modifiedCategory);
     setTimeout(() => {
       onCancelModal();
-      // window.location.reload(true);
+      window.location.reload(true);
     }, 1000);
   }
 

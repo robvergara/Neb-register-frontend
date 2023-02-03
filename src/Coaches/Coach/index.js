@@ -6,8 +6,8 @@ import { ModalContext } from "../../contexts/modalContext";
 // import { entrenadores } from "../../entrenadores";
 
 export function Coach({entrenador}){
-  const {onDelete} = React.useContext(CoachContext)
-  const {setOpenModal, setCoachId} = React.useContext(ModalContext);
+  const {onDelete, setModifiedCoach} = React.useContext(CoachContext)
+  const {setOpenModal} = React.useContext(ModalContext);
   const auth = useAuth();
   // console.log(entrenadores)
 
@@ -23,7 +23,7 @@ export function Coach({entrenador}){
           <div>
             {!!auth.user && (
             <div className="btn-group">
-              <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setCoachId(entrenador._id)}}>editar</button>
+              <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCoach(entrenador)}}>editar</button>
               <button className="btn btn-primary" onClick={()=>onDelete(entrenador._id)}>eliminar</button>
             </div>
             )}

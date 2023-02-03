@@ -7,8 +7,8 @@ import { PaymentContext } from "../../contexts/paymentscontext";
 import { getCategory } from "../../services/categories.services";
 
 export function Student({estudiante}){
-  const {onDelete}= React.useContext(StudentContext);
-  const {setOpenModal, setStudentId}= React.useContext(ModalContext);
+  const {onDelete, setModifiedStudent}= React.useContext(StudentContext);
+  const {setOpenModal}= React.useContext(ModalContext);
   const {setdataPayment} = React.useContext(PaymentContext);
   const auth = useAuth();
   const [categoria, setCategoria] = React.useState({})
@@ -30,7 +30,7 @@ export function Student({estudiante}){
     }
 
     obtenerCategoria()
-  },[])
+  },[categoria_id])
 
   return(
     <>
@@ -41,7 +41,7 @@ export function Student({estudiante}){
 
             {!!auth.user && (
             <div className="btn-group">
-              <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setStudentId(estudiante._id)}}>editar</button>
+              <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedStudent(estudiante)}}>editar</button>
               <button className="btn btn-primary" onClick={()=>onDelete(estudiante._id)}>eliminar</button>
               <NavLink className="btn btn-secondary active" to={'/pagos'} onClick={()=>setdataPayment(studentDataPayment)} >Realizar pago</NavLink>
             </div>

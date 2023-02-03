@@ -111,7 +111,7 @@ export function StudentProvider({children}){
       const studentIndex = estudiantes.findIndex(estudiante => estudiante._id === id);
       const newList = [...estudiantes];
       newList[studentIndex] = {...newList[studentIndex], studentToUpdate}
-      // console.log(newList[studentIndex])
+      console.log(newList[studentIndex])
       await updateStudent(id,studentToUpdate);
       onSuccess();
       console.log('estudiante modificado correctamente');
