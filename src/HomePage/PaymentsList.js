@@ -21,7 +21,7 @@ export function PaymentsList(){
         <div className="col-sm-10 text-center">
           <div className="mb-3 row">
             <h4 className="col-sm-9">Pagos realizados por {estudianteQuePago.nombre} {estudianteQuePago.apellido}</h4>
-            {auth.user.status === 1 && 
+            {auth.user?.status === 1 && 
               <div className="col-sm-3 btn-group">
                 <NavLink className="btn btn-primary" to={"/pagos"} onClick={()=>setdataPayment(studentDataPayment)}> 
                   nuevo pago 
