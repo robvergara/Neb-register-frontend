@@ -1,7 +1,7 @@
 import React from "react";
 import {getArrayPayments, enterPayment} from "../services/payments.services";
 import { StateContext } from "./statesContext";
-import{getStudents} from "../services/students.services"
+import{getStudent} from "../services/students.services"
 
 export const PaymentContext = React.createContext()
 
@@ -11,7 +11,7 @@ export function PaymentProvider({children}){
   const [dataPayment, setdataPayment] = React.useState({});
   const [payments, setPayments] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
-  const [estudianteQuePago, setEstudianteQuePago] = React.useState({})
+  const [estudianteQuePago, setEstudianteQuePago] = React.useState({});
 
   const HomeSearchHandleChange=(e) =>{
     setSearchValue(e.target.value);
@@ -34,15 +34,19 @@ export function PaymentProvider({children}){
   }
 
   const onSearch = async(cedula)=>{
+    const paymentList = await getArrayPayments(cedula);
+    // console.log(paymentList)
     try {
-      const paymentList = await getArrayPayments(cedula);
-      const studentList = await getStudents();
-      const studentWhoPaid = studentList.find(student => student.cedula === cedula);
-      setEstudianteQuePago(studentWhoPaid);
-      // console.log(studentWhoPaid);
-      // console.log(paymentList);
-      setPayments(paymentList);
-      setSearchValue('');
+      if (!paymentList.error){
+        const studentWhoPaid = await getStudent(cedula);
+        // console.log(studentWhoPaid);
+        setEstudianteQuePago(studentWhoPaid[0]);
+        setPayments(paymentList);
+        setSearchValue('');
+      } else {
+        setPayments(paymentList);
+        onError()
+      }
     } catch (error) {
       console.log(error);
       setPayments(undefined);
@@ -92,7 +96,7 @@ export function PaymentProvider({children}){
         searchValue, 
         payments, 
         estudianteQuePago, 
-        dataPayment, 
+        dataPayment,
         setEstudianteQuePago, 
         setSearchValue, 
         HomeSearchHandleChange, 

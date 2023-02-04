@@ -5,7 +5,7 @@ import { StateContext } from "../../contexts/statesContext";
 
 export function PaymentPage(){
   const {dataPayment, setdataPayment, handleChange, onSubmit} = React.useContext(PaymentContext);
-  // console.log (dataPayment);
+  console.log (dataPayment);
   const navigate = useNavigate();
   const {state, onRegret} = React.useContext(StateContext);
 
@@ -65,7 +65,7 @@ export function PaymentPage(){
 
           <select 
             className="mb-3 mx-1 col-sm-2"
-            name="mes"
+            name="month"
             onChange={handleChange}
             required
           >
@@ -81,7 +81,7 @@ export function PaymentPage(){
             type="number" min={2023} 
             placeholder="año" 
             onChange={handleChange} 
-            name="ano" 
+            name="year" 
           />
 
         </div>
