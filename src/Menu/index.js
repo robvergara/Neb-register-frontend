@@ -4,7 +4,7 @@ import { useAuth } from "../contexts/auth";
 
 export function Menu () {
   const auth = useAuth()
-  // console.log(auth);
+  // console.log(auth.user.status);
   return(
     <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
@@ -21,6 +21,10 @@ export function Menu () {
                 <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink>
                 {auth.user.status === 1 && (
                   <NavLink className="nav-link active" to={'/entrenadores'}> Entrenadores </NavLink>
+                )}
+
+                {auth.user.status === 1 && (
+                  <NavLink className="nav-link active" to={'/reportes'} >Reportes</NavLink>
                 )}
 
               </>

@@ -26,3 +26,11 @@ export function modifyPayment(id, body) {
 export function deletePayment(id){
   return erase(`/pagos/${id}`)
 }
+
+export function createReport (body){
+  console.log(body);
+  return post ("reporte/pagos-consolidado", {
+    mes: body.month,
+    ano: body.year
+  })
+}

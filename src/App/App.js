@@ -5,7 +5,7 @@ import { Menu } from '../Menu';
 import { Footer } from '../Footer';
 import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
-import { SignUpPage } from '../SignUpPage';
+// import { SignUpPage } from '../SignUpPage';
 import { LogOutPage } from '../LogOutPage';
 import { CategoryPage } from '../Categories/CategoryPage';
 import { Entrenadores } from '../Coaches/EntrenadoresPage';
@@ -19,6 +19,7 @@ import { AuthProvider, AuthRoute } from '../contexts/auth';
 import { CoachProfile } from '../Coaches/CoachProfile';
 import { PaymentProvider } from '../contexts/paymentscontext';
 import { PaymentPage } from '../Payment/PaymentPage';
+import { ReportPage } from '../ReportPage';
 
 
 function App() {
@@ -86,6 +87,14 @@ function App() {
                           </AuthRoute>
                         } 
                       />
+
+                      <Route 
+                        path='/reportes' 
+                        element={
+                          <AuthRoute>
+                            <ReportPage/>
+                          </AuthRoute>
+                        } />
                       <Route path='*' element={<p>Not Found</p>}/>
                     </Routes>
                     </PaymentProvider>

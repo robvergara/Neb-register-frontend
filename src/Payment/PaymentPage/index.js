@@ -52,17 +52,6 @@ export function PaymentPage(){
           
           <input type="hidden" value={dataPayment.estudiante_id} />
 
-          {/* <input 
-            value={dataPayment.mes} 
-            className="mb-3 mx-1 col-sm-2" 
-            type="number" 
-            min={1}
-            max={12} 
-            placeholder="mes" 
-            onChange={handleChange} 
-            name="mes" 
-          /> */}
-
           <select 
             className="mb-3 mx-1 col-sm-2"
             name="month"
@@ -105,7 +94,7 @@ export function PaymentPage(){
   )
 }
 
-const months = [];
+export const months = [];
 
 months.push({name: "Enero", value: 0});
 months.push({name: "Febrero", value: 1});
