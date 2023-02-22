@@ -4,7 +4,7 @@ import { PaymentsList } from "./PaymentsList";
 
 export function HomePage(){
   return(
-    <div className="card mb-3">
+    <div className="">
       <HomeSearch/>
       <PaymentsList/>
     </div>

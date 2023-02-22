@@ -23,11 +23,11 @@ export function PaymentsList(){
 
   return(
     <>
-      {payments.length <= 0  && (
+      {/* {payments.length <= 0  && (
         <div className="container text-center">
           <h2 className="my-5"><b>Realiza tu busqueda</b></h2>
         </div>
-      )}
+      )} */}
 
       {payments.length >= 1 && (
         <div>
