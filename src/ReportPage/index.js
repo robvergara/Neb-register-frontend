@@ -6,7 +6,7 @@ import { StateContext } from "../contexts/statesContext";
 export function ReportPage(){
   const [dataForReport , setDataForReport] = React.useState({});
   const {onError, onSuccess ,onCancel , state} = React.useContext(StateContext);
-  console.log(dataForReport)
+  // console.log(dataForReport)
   const handleChange=(e)=>{
     const {name, value} = e.target;
     setDataForReport(prevState=>({

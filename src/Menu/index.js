@@ -8,10 +8,10 @@ export function Menu () {
   return(
     <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-        <div className="collapse navbar-collapse">
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbar-toggler">
           <div className="navbar-nav">
             <NavLink className="nav-link active" to={'/'}> Home </NavLink>
             {/* <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink> */}

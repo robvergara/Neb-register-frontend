@@ -26,78 +26,82 @@ export function CategoryForm(){
       )}
 
       <form onSubmit={onSubmitCategory}>
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="nombre"
-            value={categoriesData.nombre}
-            name = "nombre"
-            onChange={categoryHandleChange}
-          />
-        </div>
+        <div className="row">
+          <div className="mb-3 col-12 col-md-4">
+            <input 
+              className="form-control" 
+              placeholder="nombre"
+              value={categoriesData.nombre}
+              name = "nombre"
+              onChange={categoryHandleChange}
+            />
+          </div>
 
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="edad"
-            value={categoriesData.edad}
-            name = "edad"
-            onChange={categoryHandleChange}
-          />
+          <div className="col-12 col-md-4 mb-3">
+            <input 
+              className="form-control" 
+              placeholder="edad"
+              value={categoriesData.edad}
+              name = "edad"
+              onChange={categoryHandleChange}
+            />
 
-          <select 
-            className="form-select"
-            name="genero"
-            onChange={categoryHandleChange}
-          >
-            <option defaultValue>Sexo</option>
-            {genders.map(gender => (
+          </div>
+          <div className="col-12 col-md-4 mb-3">            
+            <select 
+              className="form-select"
+              name="genero"
+              onChange={categoryHandleChange}
+            >
+              <option defaultValue>Sexo</option>
+              {genders.map(gender => (
+                <option 
+                  key={gender}
+                  value={gender}
+                >
+                  {gender}
+                </option>
+              ))
+              }
+            </select>
+          </div>
+          
+          <div className="col-12 col-md-4 mb-3">
+
+            <select 
+              className="form-select"
+              name="entrenador_id"
+              onChange={categoryHandleChange}
+            >
               <option 
-                key={gender}
-                value={gender}
-              >
-                {gender}
+                defaultValue>
+                entrenador(opcional)
               </option>
-            ))
-            }
-          </select>
-        </div>
-        
-        <div className="input-group mb-3">
 
-          <select 
-            className="form-select"
-            name="entrenador_id"
-            onChange={categoryHandleChange}
-          >
-            <option 
-              defaultValue>
-              entrenador(opcional)
-            </option>
+              {entrenadores.map(entrenador => (
+                <option 
+                  key={entrenador._id}
+                  value={entrenador._id}
+                >
+                  {entrenador.nombre}
+                </option>
+              ))}
+            </select>
+          </div>
 
-            {entrenadores.map(entrenador => (
-              <option 
-                key={entrenador._id}
-                value={entrenador._id}
-              >
-                {entrenador.nombre}
-              </option>
-            ))}
-          </select>
-        </div>
+          <div className="row d-flex justify-content-center">
+            <button 
+              className="col-4 col-md-2 mx-1 btn btn-primary"
+              type="submit"
+            >guardar</button>
 
-        <div className="input-group">
-          <button 
-            className="btn btn-primary"
-            type="submit"
-          >guardar</button>
-
-          <button 
-            className="btn btn-primary"
-            onClick={onCLeanCategory}
-          >
-            limpiar
-          </button>
+            <button 
+              className="col-4 col-md-2 mx-1 btn btn-primary"
+              onClick={onCLeanCategory}
+            >
+              limpiar
+            </button>
+          </div>
         </div>
 
 

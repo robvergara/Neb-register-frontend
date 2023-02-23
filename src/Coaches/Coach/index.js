@@ -1,4 +1,5 @@
 import React from "react";
+import "./Coach.css"
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../contexts/auth";
 import { CoachContext } from "../../contexts/coachContext";
@@ -14,23 +15,23 @@ export function Coach({entrenador}){
   return(
     <>
       <div className="list-group-item">
-        <div className="d-flex w-100 justify-content-between">
+        <div className="row d-flex justify-content-between">
           <NavLink 
-            className="nav-link active mb-1" 
+            className="nav-link active col-sm7 col-md-6 mb-1 ms-2 title-card" 
             to={`/entrenadores/${entrenador._id}`}>
               {entrenador.nombre} {entrenador.apellido}
           </NavLink>
-          <div>
+
             {!!auth.user && (
-            <div className="btn-group">
-              <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCoach(entrenador)}}>editar</button>
-              <button className="btn btn-primary" onClick={()=>onDelete(entrenador._id)}>eliminar</button>
+            <div className="col-12 col-md-4 d-flex action-buttons">
+              <button className="col-5 col-sm-6 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCoach(entrenador)}}>editar</button>
+              <button className="col-5 col-sm-6 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>onDelete(entrenador._id)}>eliminar</button>
             </div>
             )}
-          </div>
+
         </div>
         <ul className="list-group list-group-flush">
-          <li className="list-group-item list-group-item-dark">
+          <li className="list-group-item d-flex">
             <b>CC: </b>{entrenador.cedula}
           </li>
         </ul>
