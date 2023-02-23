@@ -30,8 +30,37 @@ export function PaymentsList(){
       )} */}
 
       {payments.length >= 1 && (
-        <div>
-          <div className="col-sm-10 text-center">
+        <div className="container">
+          <table class="table table-striped caption-top">
+            <caption>
+                <div className="d-flex justify-content-between">
+                  Pagos realizados por {estudianteQuePago.nombre} {estudianteQuePago.apellido}
+                  <div className="col-sm-3 btn-group">
+                    <NavLink className="btn btn-primary" to={"/pagos"} onClick={()=>setdataPayment(estudianteQuePago)}> 
+                      Realizar Pago 
+                    </NavLink>  
+                  </div>
+                </div>
+            </caption>
+    
+            <thead>
+              <tr>
+                <th scope="col">MES</th>
+                <th scope="col">AÑO</th>
+                <th scope="col">VALOR</th>
+              </tr>
+            </thead>
+            <tbody>
+              {payments.map(payment=> (
+                <tr key={payment._id}>
+                  <th scope="row">{payment.mes}</th>
+                  <td>{payment.ano}</td>
+                  <td>VALOR</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {/* <div className="col-sm-10 text-center">
             <div className="mb-3 row">
               <h4 className="col-sm-9">Pagos realizados por {estudianteQuePago.nombre} {estudianteQuePago.apellido}</h4>
               {auth.user?.status === 1 && 
@@ -42,14 +71,14 @@ export function PaymentsList(){
                 </div>
               }
             </div>
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             {payments.map(payment=> (
               <div key={payment._id}>
                 <p><b>Fecha de pago: </b> {payment.mes} de {payment.ano}</p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
         
       )}

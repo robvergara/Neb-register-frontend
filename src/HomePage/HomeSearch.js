@@ -8,8 +8,8 @@ export function HomeSearch(){
 
   // console.log(searchValue);
   return(
-    <div className="container d-flex align-items-center justify-content-center pb-3">
-      <div className="card w-25">
+    <div className="container d-flex align-items-center justify-content-center">
+      <div className="card w-25 mb-5">
         <div className="card-header text-center">
           BUSQUEDA DE PAGOS
         </div>

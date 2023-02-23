@@ -4,7 +4,7 @@ import { PaymentsList } from "./PaymentsList";
 
 export function HomePage(){
   return(
-    <div className="">
+    <div className="p-4">
       <HomeSearch/>
       <PaymentsList/>
     </div>
