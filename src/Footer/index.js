@@ -15,6 +15,9 @@ export function Footer(){
               <h6>Cel: +57 301 3679934</h6>
             </div>
             <div className="col-3">
+            <a className="iconos-redes-sociales" href="https://instagram.com/escuelanebcolombia?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer">
+                  <i className="bi bi-instagram"></i>
+                </a>
               <div className="d-flex flex-wrap align-items-center justify-content-center">
                 <a className="iconos-redes-sociales " href="https://instagram.com/escuelanebcolombia?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer">
                   <i className="bi bi-instagram"></i>
