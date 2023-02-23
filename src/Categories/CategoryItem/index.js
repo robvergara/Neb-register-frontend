@@ -44,13 +44,13 @@ export function CategoryItem({category}){
             
             <ul className="list-group list-group-flush">
               <li className="list-group-item ">
-                <b>Edad: {category.edad}</b>
+                <b>Edad: </b>{category.edad}
               </li>
               <li className="list-group-item ">
-                <b>Entrenador: {(!entrenador? 'no hay entrenador asignado' :entrenador.nombre)}</b>
+                <b>Entrenador: </b>{(!entrenador? 'no hay entrenador asignado' :entrenador.nombre)}
               </li>
               <li className="list-group-item ">
-                <b>Cantidad de estudiantes: {(estudiantes === 0? 'no hay estudiantes inscritos' :estudiantes)}</b>
+                <b>Cantidad de estudiantes: </b> {(estudiantes === 0? 'no hay estudiantes inscritos' :estudiantes)}
               </li>
             </ul>
           </div>
