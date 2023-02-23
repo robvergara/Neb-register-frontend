@@ -27,56 +27,54 @@ export function CoachForm(){
       )}
 
       <form onSubmit={onSubmit}>
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="nombre"
-            value={coachData.nombre}
-            onChange = {handleChange}
-            name = "nombre"
-          />
-        </div>
+        <div className="row">
+          <div className="mb-3 col-12 col-md-4">
+            <input 
+              className="form-control" 
+              placeholder="nombre"
+              value={coachData.nombre}
+              onChange = {handleChange}
+              name = "nombre"
+            />
+          </div>
 
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="apellido"
-            value={coachData.apellido}
-            onChange = {handleChange}
-            name = "apellido"
-          />
-        </div>
+          <div className="mb-3 col-12 col-md-4">
+            <input 
+              className="form-control" 
+              placeholder="apellido"
+              value={coachData.apellido}
+              onChange = {handleChange}
+              name = "apellido"
+            />
+          </div>
 
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="cedula"
-            value={coachData.cedula}
-            onChange = {handleChange}
-            name = "cedula"
-          />
-        </div>
+          <div className="mb-3 col-12 col-md-4">
+            <input 
+              className="form-control" 
+              placeholder="cedula"
+              value={coachData.cedula}
+              onChange = {handleChange}
+              name = "cedula"
+            />
+          </div>
 
-        <div className="input-group mb-3">
-          
-        </div>
+          <div className="row d-flex justify-content-center">
 
-        <div className="input-group">
+            <button 
+              className="col-4 col-md-2 mx-1 btn btn-primary"
+              type="submit"
+            >
+                guardar
+            </button>
 
-          <button 
-            className="btn btn-primary"
-            type="submit"
-          >
-              guardar
-          </button>
+            <button
+              className="col-4 col-md-2 mx-1 btn btn-primary"
+              onClick={onCLean}
+            >
+              limpiar
+            </button>
 
-          <button
-            className="btn btn-primary"
-            onClick={onCLean}
-          >
-            limpiar
-          </button>
-
+          </div>
         </div>
 
       </form>

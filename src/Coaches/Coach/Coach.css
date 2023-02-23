@@ -1,0 +1,28 @@
+li{
+  justify-content: flex-start;
+}
+.action-buttons{
+  justify-content: center;
+}
+
+.title-card{
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 576px) {
+  .action-buttons{
+    justify-content: flex-end;
+  }
+  .title-card {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  li{
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+}

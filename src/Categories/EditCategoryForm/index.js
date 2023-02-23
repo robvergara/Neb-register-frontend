@@ -40,78 +40,81 @@ export function EditCategoryForm(){
       )}
 
       <form onSubmit={update}>
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="nombre"
-            value={modifiedCategory.nombre}
-            name = "nombre"
-            onChange={categoryHandleChangeModified}
-          />
-        </div>
+        <div className="row">
+          <div className="col-6 col-md-4 mb-3">
+            <input 
+              className="form-control" 
+              placeholder="nombre"
+              value={modifiedCategory.nombre}
+              name = "nombre"
+              onChange={categoryHandleChangeModified}
+            />
+          </div>
 
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="edad"
-            value={modifiedCategory.edad}
-            name = "edad"
-            onChange={categoryHandleChangeModified}
-          />
+          <div className="col-6 col-md-4 mb-3">
+            <input 
+              className="form-control" 
+              placeholder="edad"
+              value={modifiedCategory.edad}
+              name = "edad"
+              onChange={categoryHandleChangeModified}
+            />
 
-          <select 
-            className="form-select"
-            name="genero"
-            onChange={categoryHandleChangeModified}
-          >
-            <option defaultValue>Sexo</option>
-            {genders.map(gender => (
+          </div>
+          <div className="col-6 col-md-4 mb-3">
+            <select 
+              className="form-select"
+              name="genero"
+              onChange={categoryHandleChangeModified}
+            >
+              <option defaultValue>Sexo</option>
+              {genders.map(gender => (
+                <option 
+                  key={gender}
+                  value={gender}
+                >
+                  {gender}
+                </option>
+              ))
+              }
+            </select>
+          </div>
+          
+          <div className="col-6 col-md-4 mb-3">
+            <select 
+              className="form-select"
+              name="entrenador_id"
+              onChange={categoryHandleChangeModified}
+            >
               <option 
-                key={gender}
-                value={gender}
-              >
-                {gender}
+                defaultValue>
+                entrenador(opcional)
               </option>
-            ))
-            }
-          </select>
-        </div>
-        
-        <div className="input-group mb-3">
 
-          <select 
-            className="form-select"
-            name="entrenador_id"
-            onChange={categoryHandleChangeModified}
-          >
-            <option 
-              defaultValue>
-              entrenador(opcional)
-            </option>
+              {entrenadores.map(entrenador => (
+                <option 
+                  key={entrenador._id}
+                  value={entrenador._id}
+                >
+                  {entrenador.nombre}
+                </option>
+              ))}
+            </select>
+          </div>
 
-            {entrenadores.map(entrenador => (
-              <option 
-                key={entrenador._id}
-                value={entrenador._id}
-              >
-                {entrenador.nombre}
-              </option>
-            ))}
-          </select>
-        </div>
+          <div className="row d-flex justify-content-center">
+            <button 
+              className="col-4 col-md-2 mx-1 btn btn-primary"
+              type="submit"
+            >guardar cambios</button>
 
-        <div className="input-group">
-          <button 
-            className="btn btn-primary"
-            type="submit"
-          >guardar cambios</button>
-
-          <button 
-            className="btn btn-primary"
-            onClick={onCancelModal}
-          >
-            cancelar
-          </button>
+            <button 
+              className="col-4 col-md-2 mx-1 btn btn-primary"
+              onClick={onCancelModal}
+            >
+              cancelar
+            </button>
+          </div>
         </div>
 
     </form>

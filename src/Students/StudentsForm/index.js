@@ -22,102 +22,104 @@ export function StudentForm(){
       )}
 
       <form onSubmit={onSubmit}>
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="nombre"
-            value={studentData.nombre}
-            onChange = {studentHandleChange}
-            name = "nombre"
-            required = {true}
-          />
-        </div>
-
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="apellido"
-            value={studentData.apellido}
-            onChange = {studentHandleChange}
-            name = "apellido"
-            required = {true}
-          />
-        </div>
-
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="cedula"
-            value={studentData.cedula}
-            onChange = {studentHandleChange}
-            name = "cedula"
-            required = {true}
-          />
-        </div>
-
-        <div className="input-group mb-3">
-          <input 
+        <div className="row">
+          <div className="mb-3 col-12 col-md-4">
+            <input 
               className="form-control" 
-              placeholder="edad"
-              value={studentData.edad}
+              placeholder="nombre"
+              value={studentData.nombre}
               onChange = {studentHandleChange}
-              name = "edad"
+              name = "nombre"
               required = {true}
             />
-        </div>
+          </div>
 
-        <div className="input-group mb-3">
-          <select
-            className="form-select"
-            name="categoria_id"
-            onChange={studentHandleChange}
-            placeholder="categoria"
-            required
-          >
+          <div className="mb-3 col-12 col-md-4">
+            <input 
+              className="form-control" 
+              placeholder="apellido"
+              value={studentData.apellido}
+              onChange = {studentHandleChange}
+              name = "apellido"
+              required = {true}
+            />
+          </div>
 
-            <option defaultValue value={null} >
-              categoria
-            </option>
+          <div className="mb-3 col-12 col-md-4">
+            <input 
+              className="form-control" 
+              placeholder="cedula"
+              value={studentData.cedula}
+              onChange = {studentHandleChange}
+              name = "cedula"
+              required = {true}
+            />
+          </div>
 
-            {categories.map(category => (
-              <option 
-                key={category._id}
-                value={category._id}
-              >
-                {category.nombre} - {category.genero}: {category.edad} años
+          <div className="mb-3 col-12 col-md-4">
+            <input 
+                className="form-control" 
+                placeholder="edad"
+                value={studentData.edad}
+                onChange = {studentHandleChange}
+                name = "edad"
+                required = {true}
+              />
+          </div>
+
+          <div className="mb-3 col-12 col-md-4">
+            <select
+              className="form-select"
+              name="categoria_id"
+              onChange={studentHandleChange}
+              placeholder="categoria"
+              required
+            >
+
+              <option defaultValue value={null} >
+                categoria
               </option>
-            ))}
-          </select>
-        </div>
 
-        <div className="input-group mb-3">
-          <input 
-              className="form-control" 
-              placeholder="email"
-              type="email"
-              value={studentData.email}
-              onChange = {studentHandleChange}
-              name = "email"
-              required = {true}
-            />
-        </div>
+              {categories.map(category => (
+                <option 
+                  key={category._id}
+                  value={category._id}
+                >
+                  {category.nombre} - {category.genero}: {category.edad} años
+                </option>
+              ))}
+            </select>
+          </div>
 
-        <div className="input-group">
+          <div className="mb-3 col-12 col-md-4">
+            <input 
+                className="form-control" 
+                placeholder="email"
+                type="email"
+                value={studentData.email}
+                onChange = {studentHandleChange}
+                name = "email"
+                required = {true}
+              />
+          </div>
 
-          <button 
-            className="btn btn-primary"
-            type="submit"
-          >
-              guardar
-          </button>
+          <div className="row d-flex justify-content-center">
 
-          <button
-            className="btn btn-primary"
-            onClick={onCLeanStudentField}
-          >
-            limpiar
-          </button>
+            <button 
+              className="col-4 col-md-2 mx-1 btn btn-primary"
+              type="submit"
+            >
+                guardar
+            </button>
 
+            <button
+              className="col-4 col-md-2 mx-1 btn btn-primary"
+              onClick={onCLeanStudentField}
+            >
+              limpiar
+            </button>
+
+          </div>
         </div>
 
       </form>
