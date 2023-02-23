@@ -13,7 +13,7 @@ export function Menu () {
       </button>
         <div className="collapse navbar-collapse">
           <div className="navbar-nav">
-            <NavLink className="nav-link active" to={'/'}> Home </NavLink>
+            <NavLink className="nav-link active" to={'/'}>Inicio</NavLink>
             {/* <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink> */}
             {!!auth.user && (
               <>

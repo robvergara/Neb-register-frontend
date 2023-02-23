@@ -5,8 +5,8 @@ import "./Footer.css"
 export function Footer(){
   return(
     <>
-      <footer className="footer mt-auto py-3 bg-light">
-      {/* <footer className="section seccion-oscura d-flex flex-column justify-content-center align-items-center mt-3 bg-dark"> */}
+      {/* <footer className="footer mt-auto py-3 bg-light"> */}
+      <footer className="section seccion-oscura d-flex flex-column justify-content-center align-items-center mt-3 bg-dark">
         <div className="container">
           <div className="row">
             <div className="col-3 text-center">
