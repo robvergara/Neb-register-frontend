@@ -30,7 +30,7 @@ export function PaymentsList(){
       )} */}
 
       {payments.length >= 1 && (
-        <div className="container">
+        <div className="container m-auto">
           <table class="table table-striped caption-top">
             <caption>
                 <div className="d-flex justify-content-between">
