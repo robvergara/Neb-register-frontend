@@ -33,7 +33,11 @@ export function ReportPage(){
   }
 
   return(
+<<<<<<< HEAD
     <div className="report-body container text-center my-5 d-flex flex-column align-items-center justify-content-center">
+=======
+    <div className="container text-center my-5 d-flex flex-column align-items-center justify-content-center">
+>>>>>>> 43a466b (mejoras en el estilo pagina reporte)
       <h4 className="mb-5">Selecciona el mes y año para generar el reporte (este sera enviado a tu correo electronico en formato PDF)</h4>
       <form onSubmit={onSubmit}>
         <div className="row d-flex justify-content-center">
