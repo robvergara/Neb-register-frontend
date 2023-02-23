@@ -1,4 +1,5 @@
 import React from "react"; 
+import "./ReportPage.css"
 import {createReport} from "../services/payments.services"
 import { months } from "../Payment/PaymentPage";
 import { StateContext } from "../contexts/statesContext";
@@ -32,8 +33,8 @@ export function ReportPage(){
   }
 
   return(
-    <div className="container text-center mt-5">
-      <h4>Selecciona el mes y año para generar el reporte (este sera enviado a tu correo electronico en formato PDF)</h4>
+    <div className="container text-center my-5 d-flex flex-column align-items-center justify-content-center">
+      <h4 className="mb-5">Selecciona el mes y año para generar el reporte (este sera enviado a tu correo electronico en formato PDF)</h4>
       <form onSubmit={onSubmit}>
         <div className="row d-flex justify-content-center">
           <select 
@@ -57,7 +58,7 @@ export function ReportPage(){
             name="year" 
           />
 
-          <div row>
+          <div className="row d-flex justify-content-center">
             <button 
               className="col-6 col-md-4 btn btn-primary mb-3 mx-1">
                 generar reporte
