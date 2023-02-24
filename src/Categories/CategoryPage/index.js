@@ -15,7 +15,7 @@ export function CategoryPage(){
 
         {(!!auth.user?.token && auth.user?.status === 1) && (
           <>
-            <h3 className="card-header">
+            <h3 className="card-header bg-secondary bg-opacity-25">
             {openModal!== true? <b>AGREGAR CATEGORIA</b> : <b>MODIFICAR CATEGORIA</b>}
             </h3>
             <div className="card-body">

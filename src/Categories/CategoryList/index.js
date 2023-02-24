@@ -28,8 +28,8 @@ export function CategoryList(){
   const coachCategories = categories.filter(category=> category.entrenador_id === coach._id);
 
   return(
-    <>    
-      <h3 className="card-header">
+    <>     
+      <h3 className="card-header bg-secondary bg-opacity-25">
         LISTA DE CATEGORIAS
       </h3>
 
