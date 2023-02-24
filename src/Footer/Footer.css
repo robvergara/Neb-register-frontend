@@ -1,24 +1,8 @@
-<<<<<<< HEAD
-/* .section {
-=======
 .section {
->>>>>>> bab44b8 (estilando footer de la app)
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-} */
-.seccion-oscura{
-  color: white;
-}
-
-/* footer {
-  min-height: 300px;
-} */
-
-/* .footer-logo{
-=======
 }
 .seccion-oscura{
   color: white;
@@ -30,28 +14,10 @@ footer {
 }
 
 .footer-logo{
->>>>>>> bab44b8 (estilando footer de la app)
   height: 150px;
   width: 150px;
   margin: 10px;
   color: white;
-<<<<<<< HEAD
-} */
-
-/* .footer-texto{
-  font-size: 1.5rem;
-  padding: 20px;
-  font-family: 'Quicksand', sans-serif;
-} */
-
-.iconos-redes-sociales{
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1px;
-=======
 }
 
 .footer-texto{
@@ -68,7 +34,6 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 2px;
->>>>>>> bab44b8 (estilando footer de la app)
   margin: 10px;
   border: 2px solid white;
   border-radius: 50%;
@@ -77,43 +42,6 @@ footer {
 
 .iconos-redes-sociales i {
   color: white;
-<<<<<<< HEAD
-  font-size: 1.2rem;
-  transition: all 0.2s ease-in;
-}
-
-/* .iconos-redes-sociales a:hover {
-  background-color: white;
-  border: 1px solid rgb(13, 110, 253);
-} */
-
-/* .iconos-redes-sociales a:hover i {
-  color: black;
-} */
-
-/* .derechos-de-autor {
-  font-size: 15px;
-  color: #aeaeae;
-  padding: 20px;
-} */
-
-/* 
-body{
-  position: relative;
-} */
-
-/* .main{
-  margin-bottom: 220px;
-} */
-
-/* .footer-bs{
-  position: absolute;
-  width: 100%;
-  min-height: 320px;
-  bottom: 40px;
-  left: 0;
-} */
-=======
   font-size: 1.5rem;
   transition: all 0.2s ease-in;
 }
@@ -132,4 +60,3 @@ body{
   color: #aeaeae;
   padding: 20px;
 }
->>>>>>> bab44b8 (estilando footer de la app)
