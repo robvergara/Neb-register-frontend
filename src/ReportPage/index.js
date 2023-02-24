@@ -32,41 +32,43 @@ export function ReportPage(){
   }
 
   return(
-    <div className="container text-center">
+    <div className="container text-center mt-5">
       <h4>Selecciona el mes y año para generar el reporte (este sera enviado a tu correo electronico en formato PDF)</h4>
       <form onSubmit={onSubmit}>
-        <select 
-          className="mb-3 mx-1 col-sm-3 py-1"
-          name="month"
-          onChange={handleChange}
-          required
-        >
-          <option defaultValue readOnly> Mes </option>
-          {months.map(month=> (
-            <option key={month.value} value={month.value}>{month.name}</option>
-          ))}
-        </select>
+        <div className="row d-flex justify-content-center">
+          <select 
+            className="col-6 col-md-3 mb-3 mx-1 py-1"
+            name="month"
+            onChange={handleChange}
+            required
+          >
+            <option defaultValue readOnly> Mes </option>
+            {months.map(month=> (
+              <option key={month.value} value={month.value}>{month.name}</option>
+            ))}
+          </select>
 
-        <input 
-          value={dataForReport.year} 
-          className="mb-3 mx-1 col-sm-3" 
-          type="number" min={2023} 
-          placeholder="año" 
-          onChange={handleChange} 
-          name="year" 
-        />
+          <input 
+            value={dataForReport.year} 
+            className="col-6 col-md-3 mb-3 mx-1 " 
+            type="number" min={2023} 
+            placeholder="año" 
+            onChange={handleChange} 
+            name="year" 
+          />
 
-        <div>
-          <button 
-            className="btn btn-primary mx-1 col-lg-4">
-              generar reporte
-          </button>
+          <div row>
+            <button 
+              className="col-6 col-md-4 btn btn-primary mb-3 mx-1">
+                generar reporte
+            </button>
 
-          <button 
-            className="btn btn-primary mx-1 col-lg-4" 
-            onClick={onCancel}> 
-              regresar 
-          </button>
+            <button 
+              className="col-6 col-md-4 btn btn-primary mb-3 mx-1" 
+              onClick={onCancel}> 
+                regresar 
+            </button>
+          </div>
         </div>
       </form>
       {!!state.success && (
