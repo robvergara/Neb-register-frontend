@@ -27,28 +27,37 @@ export function CategoryItem({category}){
     <>
       <div className="card-body">
         <div className="list-group">
-          <h5 className="mb-1">{category.nombre} - {category.genero}</h5>
-
-          {auth.user.status === 1 && (
-            <>
-              <div className="btn-group">
-                <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCategory(category)}}>editar</button>
-                <button className="btn btn-primary" onClick={()=>onDeleteCategory(category._id)}>eliminar</button>
+          <h5 className="mb-1 ">{category.nombre} - {category.genero}</h5>
+            <div className="row">
+              <div className="col-8">
+                <ul className="list-group list-group-flush rounded">
+                  <li className="list-group-item list-group-item-dark">
+                    <b>Edad:</b> {category.edad}
+                  </li>
+                  <li className="list-group-item list-group-item-dark">
+                    <b>Entrenador:</b> {(!entrenador? 'no hay entrenador asignado' :entrenador.nombre)}
+                  </li>
+                  <li className="list-group-item list-group-item-dark">
+                    <b>Estudiantes:</b> {(estudiantes === 0? 'no hay estudiantes inscritos' :estudiantes)}
+                  </li>
+                </ul>
               </div>
-            </>
-          )}
-          
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item list-group-item-dark">
-              <b>Edad: {category.edad}</b>
-            </li>
-            <li className="list-group-item list-group-item-dark">
-              <b>Entrenador: {(!entrenador? 'no hay entrenador asignado' :entrenador.nombre)}</b>
-            </li>
-            <li className="list-group-item list-group-item-dark">
-              <b>Cantidad de estudiantes: {(estudiantes === 0? 'no hay estudiantes inscritos' :estudiantes)}</b>
-            </li>
-          </ul>
+              <div className="col-2 btn-group">
+                {auth.user.status === 1 && (
+                  <>
+                    <button className="btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCategory(category)}}>editar</button>
+                  </>
+                )}
+              </div>
+              <div className="col-2 btn-group">
+                {auth.user.status === 1 && (
+                  <>
+                    <button className="btn btn-primary" onClick={()=>onDeleteCategory(category._id)}>eliminar</button>
+                  </>
+                )}
+              </div>              
+              
+            </div>
         </div>
       </div>
     </>

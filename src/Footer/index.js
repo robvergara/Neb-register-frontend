@@ -7,7 +7,7 @@ export function Footer(){
     <>
       {/* <footer className="footer mt-auto py-3 bg-light"> */}
       <footer className="section seccion-oscura d-flex flex-column justify-content-center align-items-center mt-3 bg-dark">
-        <div className="container">
+        <div className="container-sm">
           <div className="row">
             <div className="col-3 text-center">
               <img src="neb-logo.png" className="w-50 my-4" alt="Logo"/>

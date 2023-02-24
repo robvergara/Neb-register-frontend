@@ -10,21 +10,23 @@ export function CategoryPage(){
   const auth = useAuth();
   // console.log(auth)
   return(
-    <div className="card mb-3">
+    <div className="container-sm">
+      <div className="card mb-3">
 
-      {(!!auth.user?.token && auth.user?.status === 1) && (
-        <>
-          <h3 className="card-header">
-          {openModal!== true? <b>AGREGAR CATEGORIA</b> : <b>MODIFICAR CATEGORIA</b>}
-          </h3>
-          <div className="card-body">
-            {openModal===true?<EditCategoryForm/> :<CategoryForm />}
-          </div>
-        </>
-      )}
+        {(!!auth.user?.token && auth.user?.status === 1) && (
+          <>
+            <h3 className="card-header">
+            {openModal!== true? <b>AGREGAR CATEGORIA</b> : <b>MODIFICAR CATEGORIA</b>}
+            </h3>
+            <div className="card-body">
+              {openModal===true?<EditCategoryForm/> :<CategoryForm />}
+            </div>
+          </>
+        )}
 
-      <div className="card">
-        <CategoryList/>
+        <div className="card">
+          <CategoryList/>
+        </div>
       </div>
     </div>
   )

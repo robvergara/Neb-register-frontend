@@ -87,17 +87,8 @@ export function CategoryForm(){
         </div>
 
         <div className="input-group">
-          <button 
-            className="btn btn-primary"
-            type="submit"
-          >guardar</button>
-
-          <button 
-            className="btn btn-primary"
-            onClick={onCLeanCategory}
-          >
-            limpiar
-          </button>
+          <button className="btn btn-primary" type="submit">GUARDAR</button>
+          <button className="btn btn-primary" onClick={onCLeanCategory}>LIMPIAR</button>
         </div>
 
 

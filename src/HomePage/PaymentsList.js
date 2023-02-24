@@ -30,8 +30,8 @@ export function PaymentsList(){
       )} */}
 
       {payments.length >= 1 && (
-        <div className="container m-auto">
-          <table class="table table-striped caption-top">
+        <div className="container-sm m-auto bg-light rounded py-3 px-5">
+          <table class="table table-striped caption-top mb-2">
             <caption>
                 <div className="d-flex justify-content-between">
                   Pagos realizados por {estudianteQuePago.nombre} {estudianteQuePago.apellido}
