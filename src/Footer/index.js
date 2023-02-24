@@ -14,7 +14,7 @@ export function Footer(){
             <div className="col-6 m-auto">
               <h3>NEB COLOMBIA</h3>
               <h6>Profesor: Deivis José Seidel Delgado</h6>
-              <h7>Cel: +57 301 3679934</h7>
+              <h6>Cel: +57 301 3679934</h6>
             </div>
             <div className="col-3 m-auto">
               <div className="d-flex flex-wrap align-items-center justify-content-center">
@@ -25,7 +25,7 @@ export function Footer(){
                   <i className="bi bi-envelope-at-fill"></i>
                 </a>
                 <a className="iconos-redes-sociales " href="https://www.facebook.com/profile.php?id=100076279402140" target="_blank" rel="noopener noreferrer">
-                  <i class="bi bi-facebook"></i>
+                  <i className="bi bi-facebook"></i>
                 </a>
               </div>
             </div>
