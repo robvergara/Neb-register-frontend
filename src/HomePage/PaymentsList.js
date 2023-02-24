@@ -31,15 +31,17 @@ export function PaymentsList(){
 
       {payments.length >= 1 && (
         <div className="container m-auto">
-          <table class="table table-striped caption-top">
+          <table className="table table-striped caption-top">
             <caption>
                 <div className="d-flex justify-content-between">
                   Pagos realizados por {estudianteQuePago.nombre} {estudianteQuePago.apellido}
+                  {auth.user?.status === 1 && 
                   <div className="col-sm-3 btn-group">
                     <NavLink className="btn btn-primary" to={"/pagos"} onClick={()=>setdataPayment(estudianteQuePago)}> 
                       Realizar Pago 
                     </NavLink>  
                   </div>
+                  }
                 </div>
             </caption>
     
