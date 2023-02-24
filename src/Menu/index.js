@@ -12,8 +12,8 @@ export function Menu () {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbar-toggler">
-          <div className="navbar-nav">
-            <NavLink className="nav-link active" to={'/'}>Inicio</NavLink>
+          <div className="navbar-nav d-flex justify-content-center align-items-center">
+            <NavLink className="nav-link active" to={'/'}> Home </NavLink>
             {/* <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink> */}
             {!!auth.user && (
               <>
@@ -34,7 +34,7 @@ export function Menu () {
 
           </div>
         </div>
-        <ul className="navbar justify-content-end">
+        <ul className="navbar-brand">
           {loginRoutes.map(route => {
             if(route.publicOnly && auth.user) return null; //PARA QUE NO SE RENDERICE EL LOGIN
             if(route.private && !auth.user) return null; // PARA QUE NO SE RENDERICE EL PERFIL YL EL LOGOUT SI NO HAY LOGIN
