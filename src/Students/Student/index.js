@@ -35,37 +35,22 @@ export function Student({estudiante}){
 
   return(
     <>
-      <div className="card-body">
-        <div className="row d-flex justify-content-between">
-          <h5 className="col-sm-12 col-md-5 mb-1 ms-2 title-card">{estudiante.nombre} {estudiante.apellido}</h5>
-        
-            {!!auth.user && (
-            <div className="col-12 col-md-6 d-flex action-buttons">
-              <button className="col-4 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedStudent(estudiante)}}>editar</button>
-              <button className="col-4 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>onDelete(estudiante._id)}>eliminar</button>
-              <NavLink className="col-4 col-lg-4  mb-1 btn btn-primary" to={'/pagos'} onClick={()=>setdataPayment(studentDataPayment)} >Realizar pago</NavLink>
-            </div>
-            )}
-
-        </div>
-
+      <div className="col-12 col-lg-4 mb-2">
         <div className="card">
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              <b>CC: </b>{estudiante.cedula}
-            </li>
-            <li className="list-group-item">
-              <b>edad: </b>{estudiante.edad}
-            </li>
-            <li className="list-group-item">
-              <b>email: </b>{estudiante.email}
-            </li>
-            <li className="list-group-item">
-              <b>categoria: </b>{categoria.nombre} - {categoria.genero}
-            </li>
-          </ul>
+          <div className="card-body">
+            <h4 className="card-title m-auto mb-3"><b>{estudiante.nombre} {estudiante.apellido}</b></h4>
+            <p className="card-text m-auto"><u><b>CC:</b></u> {estudiante.cedula}</p>
+            <p className="card-text m-auto"><u><b>Edad:</b></u> {estudiante.edad}</p>
+            <p className="card-text m-auto"><u><b>Email:</b></u> {estudiante.email}</p>
+            <p className="card-text m-auto"><u><b>Categoria:</b></u> {categoria.nombre} - {categoria.genero}</p>
+          </div>
+          <div className="card-footer d-flex">
+            <button className="col-4 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedStudent(estudiante)}}><i class="fa-solid fa-pen-to-square"></i></button>
+            <button className="col-4 col-lg-4  me-1 mb-1 btn btn-danger" onClick={()=>onDelete(estudiante._id)}><i class="fa-solid fa-trash"></i></button>
+            <NavLink className="col-4 col-lg-4  mb-1 btn btn-success" to={'/pagos'} onClick={()=>setdataPayment(studentDataPayment)}><i class="fa-solid fa-dollar-sign"></i></NavLink>
+          </div>
         </div>
-      </div>   
+      </div>
     </>
   )
 }

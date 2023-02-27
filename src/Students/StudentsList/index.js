@@ -19,8 +19,15 @@ export function StudentsList(){
           </div>
       </div>
       )}
-      
-      <div className="card-body">
+      <div className="row p-3">
+        {estudiantes.map(estudiante => (
+            <Student 
+              key={estudiante.cedula} 
+              estudiante = {estudiante} 
+            />
+        ))}
+      </div>
+      {/* <div className="card-body">
         <div className="list-group">
           {estudiantes.map(estudiante => (
             <Student 
@@ -29,7 +36,7 @@ export function StudentsList(){
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
