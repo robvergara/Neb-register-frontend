@@ -40,25 +40,25 @@ export function CategoryList(){
           </div>
         </div>
       )}
+      <div className="row p-3">
+        {auth.user?.status === 1 &&(
+          categories.map(category => (
+            <CategoryItem 
+              key={`${category._id}`} 
+              category = {category} 
+            />
+        )))}
 
-      {auth.user?.status === 1 &&(
-        categories.map(category => (
-          <CategoryItem 
-            key={`${category._id}`} 
-            category = {category} 
-          />
-      )))}
-
-      {auth.user?.status === 0 && (
-        coachCategories.map(category => (
-          <CategoryItem 
-            key={`${category._id}`} 
-            category = {category} 
-          />
-        )))
-      
-      }
-
+        {auth.user?.status === 0 && (
+          coachCategories.map(category => (
+              <CategoryItem 
+                key={`${category._id}`} 
+                category = {category} 
+              />
+          )))
+        
+        }
+      </div>
     </>
 
   )

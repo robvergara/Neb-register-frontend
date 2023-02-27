@@ -42,82 +42,38 @@ export function EditCategoryForm(){
       <form onSubmit={update}>
         <div className="row">
           <div className="col-6 col-md-4 mb-3">
-            <input 
-              className="form-control" 
-              placeholder="nombre"
-              value={modifiedCategory.nombre}
-              name = "nombre"
-              onChange={categoryHandleChangeModified}
-            />
-          </div>
-
-          <div className="col-6 col-md-4 mb-3">
-            <input 
-              className="form-control" 
-              placeholder="edad"
-              value={modifiedCategory.edad}
-              name = "edad"
-              onChange={categoryHandleChangeModified}
-            />
-
+            <input className="form-control" placeholder="nombre" value={modifiedCategory.nombre} name = "nombre" onChange={categoryHandleChangeModified}/>
           </div>
           <div className="col-6 col-md-4 mb-3">
-            <select 
-              className="form-select"
-              name="genero"
-              onChange={categoryHandleChangeModified}
-            >
+            <input className="form-control" placeholder="edad" value={modifiedCategory.edad} name = "edad" onChange={categoryHandleChangeModified}/>
+          </div>
+          <div className="col-6 col-md-4 mb-3">
+            <select className="form-select" name="genero" onChange={categoryHandleChangeModified}>
               <option defaultValue>Sexo</option>
               {genders.map(gender => (
-                <option 
-                  key={gender}
-                  value={gender}
-                >
+                <option key={gender} value={gender}>
                   {gender}
                 </option>
-              ))
-              }
+              ))}
             </select>
           </div>
-          
           <div className="col-6 col-md-4 mb-3">
-            <select 
-              className="form-select"
-              name="entrenador_id"
-              onChange={categoryHandleChangeModified}
-            >
-              <option 
-                defaultValue>
-                entrenador(opcional)
-              </option>
-
+            <select className="form-select" name="entrenador_id" onChange={categoryHandleChangeModified}>
+              <option defaultValue>entrenador(opcional)</option>
               {entrenadores.map(entrenador => (
-                <option 
-                  key={entrenador._id}
-                  value={entrenador._id}
-                >
+                <option key={entrenador._id} value={entrenador._id}>
                   {entrenador.nombre}
                 </option>
               ))}
             </select>
           </div>
-
           <div className="row d-flex justify-content-center">
-            <button 
-              className="col-4 col-md-2 mx-1 btn btn-primary"
-              type="submit"
-            >guardar cambios</button>
-
-            <button 
-              className="col-4 col-md-2 mx-1 btn btn-primary"
-              onClick={onCancelModal}
-            >
-              cancelar
-            </button>
+            <button className="col-4 col-md-2 mx-1 btn btn-success" type="submit">Guardar cambios</button>
+            <button className="col-4 col-md-2 mx-1 btn btn-danger" onClick={onCancelModal}><i class="fa-solid fa-trash"></i> Cancelar</button>
           </div>
         </div>
 
-    </form>
-  </>
+      </form>
+    </>
   )
 }

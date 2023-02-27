@@ -24,7 +24,7 @@ export function PaymentsList(){
   return(
     <>
       {payments.length >= 1 && (
-        <div className="container-sm m-auto bg-light rounded py-3 px-5">
+        <div className="m-auto px-4 py-3 bg-light rounded">
           <table className="table table-striped caption-top mb-2">
             <caption>
                 <div className="d-flex justify-content-between">
@@ -39,17 +39,17 @@ export function PaymentsList(){
     
             <thead>
               <tr>
-                <th scope="col">MES</th>
-                <th scope="col">AÑO</th>
-                <th scope="col">VALOR</th>
+                <th scope="col" className="text-center">MES</th>
+                <th scope="col" className="text-center">AÑO</th>
+                <th scope="col" className="text-center">VALOR</th>
               </tr>
             </thead>
             <tbody>
               {payments.map(payment=> (
                 <tr key={payment._id}>
-                  <th scope="row">{payment.mes}</th>
-                  <td>{payment.ano}</td>
-                  <td>VALOR</td>
+                  <th scope="row" className="text-center">{payment.mes}</th>
+                  <td className="text-center">{payment.ano}</td>
+                  <td className="text-center">VALOR</td>
                 </tr>
               ))}
             </tbody>

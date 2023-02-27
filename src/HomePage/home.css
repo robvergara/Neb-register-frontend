@@ -5,3 +5,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
+#estudiante {
+    height: 380px;
+    width: 300px;
+}

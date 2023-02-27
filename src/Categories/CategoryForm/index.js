@@ -26,13 +26,13 @@ export function CategoryForm(){
 
       <form onSubmit={onSubmitCategory}>
         <div className="row m-auto">
-          <div className="col-4 col-md-4 m-auto">
+          <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
             <input className="form-control align-middle" placeholder="nombre" value={categoriesData.nombre} name = "nombre" onChange={categoryHandleChange}/>
           </div>
-          <div className="col-4 col-md-4 m-auto px-2 my-2">
+          <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
             <input className="form-control" placeholder="edad" value={categoriesData.edad} name = "edad" onChange={categoryHandleChange}/>
           </div>
-          <div className="col-4 col-md-4 m-auto px-2 my-2">            
+          <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">            
             <select className="form-select" name="genero" onChange={categoryHandleChange}>
               <option defaultValue>Sexo</option>
               {genders.map(gender => (
@@ -40,7 +40,7 @@ export function CategoryForm(){
               ))}
             </select>
           </div>
-          <div className="col-4 col-md-4 m-auto px-2 my-2">
+          <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
             <select className="form-select" name="entrenador_id" onChange={categoryHandleChange}>
               <option defaultValue>entrenador(opcional)</option>
               {entrenadores.map(entrenador => (
@@ -48,10 +48,10 @@ export function CategoryForm(){
               ))}
             </select>
           </div>
-          <div className="col-4 col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+          <div className="col-6 col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
             <button className="col-md btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i>  Guardar</button>
           </div>
-          <div className="col-4 col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+          <div className="col-6 col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
             <button className="col-md btn btn-primary" onClick={onCLeanCategory}><i class="fa-solid fa-trash"></i>  Limpiar</button>
           </div>
         </div>

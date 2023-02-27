@@ -5,7 +5,7 @@ import "./home.css"
 
 export function HomePage(){
   return(
-    <div className="p-4 px-5">
+    <div className="container-sm">
       <HomeSearch/>
       <PaymentsList/>
     </div>

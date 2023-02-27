@@ -26,33 +26,21 @@ export function CategoryItem({category}){
 
   return(
     <>
-      <div className="card-body">
-        <div className="row d-flex justify-content-between">
-          <h5 className="col-sm7 col-md-6 mb-1 ms-2 title-card">{category.nombre} - {category.genero}</h5>
-
-          {auth.user.status === 1 && (
-            <>
-              <div className="col-12 col-md-4 d-flex action-buttons">
-                <button className="col-5 col-sm-6 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCategory(category)}}>editar</button>
-                <button className="col-5 col-sm-6 col-lg-4  mb-1 btn btn-primary" onClick={()=>onDeleteCategory(category._id)}>eliminar</button>
-              </div>
-            </>
-          )}
-        </div>
-        <div className="card">
-          <div className="list-group">
-            
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item ">
-                <b>Edad: </b>{category.edad}
-              </li>
-              <li className="list-group-item ">
-                <b>Entrenador: </b>{(!entrenador? 'no hay entrenador asignado' :entrenador.nombre)}
-              </li>
-              <li className="list-group-item ">
-                <b>Cantidad de estudiantes: </b> {(estudiantes === 0? 'no hay estudiantes inscritos' :estudiantes)}
-              </li>
-            </ul>
+      <div className="col-12 col-lg-4 mb-2">
+        <div className="card h-100">
+          <div className="card-body">
+            <h4 className="card-title m-auto mb-3"><b>{category.nombre} - {category.genero}</b></h4>
+            <p className="card-text m-auto"><u><b>Entrenador:</b></u> {(!entrenador? 'no hay entrenador asignado' :entrenador.nombre)}</p>
+            <p className="card-text m-auto"><u><b>Edad:</b></u> {category.edad}</p>
+          </div>
+          <div className="card-footer d-flex">
+            <p className="col-6 text-muted flex-fill m-auto"><b>Estudiantes</b> {(estudiantes === 0? 'no hay estudiantes inscritos' :estudiantes)}</p>
+              {auth.user.status === 1 && (
+                <>
+                  <button className="col-3 m-1 p-2 btn btn-primary flex-fill" onClick={()=>{setOpenModal(true); setModifiedCategory(category)}}><i class="fa-solid fa-pen-to-square"></i></button>
+                  <button className="col-3 m-1  p-2 btn btn-danger flex-fill" onClick={()=>onDeleteCategory(category._id)}><i class="fa-solid fa-trash"></i></button>
+                </>
+              )}
           </div>
         </div>
       </div>
