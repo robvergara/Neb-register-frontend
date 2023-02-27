@@ -23,7 +23,7 @@ export function StudentForm(){
 
       <form onSubmit={onSubmit}>
         <div className="row">
-          <div className="col-md-10 col-12">
+          <div className="col-xl-10 col-12">
             <div className="row">
               <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
                 <input className="form-control" placeholder="nombre" value={studentData.nombre} onChange = {studentHandleChange} name = "nombre" required = {true}/>
@@ -53,7 +53,7 @@ export function StudentForm(){
               
             </div>
           </div>
-          <div className="col-md-2 col-12 d-flex justify-content-center">
+          <div className="col-xl-2 col-12 d-flex justify-content-center">
             <div className="d-flex justify-content-center">
               <button className="mx-1 btn btn-primary" type="submit" ><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
             </div>
