@@ -23,105 +23,45 @@ export function StudentForm(){
 
       <form onSubmit={onSubmit}>
         <div className="row">
-          <div className="mb-3 col-12 col-md-4">
-            <input 
-              className="form-control" 
-              placeholder="nombre"
-              value={studentData.nombre}
-              onChange = {studentHandleChange}
-              name = "nombre"
-              required = {true}
-            />
+          <div className="col-md-10 col-12">
+            <div className="row">
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="nombre" value={studentData.nombre} onChange = {studentHandleChange} name = "nombre" required = {true}/>
+              </div>
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="apellido" value={studentData.apellido} onChange = {studentHandleChange} name = "apellido" required = {true}/>
+              </div>
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="cedula" value={studentData.cedula} onChange = {studentHandleChange} name = "cedula" required = {true}/>
+              </div>
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="edad" value={studentData.edad} onChange = {studentHandleChange} name = "edad" required = {true}/>
+              </div>
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <select className="form-select" name="categoria_id" onChange={studentHandleChange} placeholder="categoria" required>
+                  <option defaultValue value={null}>categoria</option>
+                  {categories.map(category => (
+                    <option key={category._id} value={category._id}>
+                      {category.nombre} - {category.genero}: {category.edad} años
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="email" type="email" value={studentData.email} onChange = {studentHandleChange} name = "email" required = {true}/>
+              </div>
+              
+            </div>
           </div>
-
-          <div className="mb-3 col-12 col-md-4">
-            <input 
-              className="form-control" 
-              placeholder="apellido"
-              value={studentData.apellido}
-              onChange = {studentHandleChange}
-              name = "apellido"
-              required = {true}
-            />
-          </div>
-
-          <div className="mb-3 col-12 col-md-4">
-            <input 
-              className="form-control" 
-              placeholder="cedula"
-              value={studentData.cedula}
-              onChange = {studentHandleChange}
-              name = "cedula"
-              required = {true}
-            />
-          </div>
-
-          <div className="mb-3 col-12 col-md-4">
-            <input 
-                className="form-control" 
-                placeholder="edad"
-                value={studentData.edad}
-                onChange = {studentHandleChange}
-                name = "edad"
-                required = {true}
-              />
-          </div>
-
-          <div className="mb-3 col-12 col-md-4">
-            <select
-              className="form-select"
-              name="categoria_id"
-              onChange={studentHandleChange}
-              placeholder="categoria"
-              required
-            >
-
-              <option defaultValue value={null} >
-                categoria
-              </option>
-
-              {categories.map(category => (
-                <option 
-                  key={category._id}
-                  value={category._id}
-                >
-                  {category.nombre} - {category.genero}: {category.edad} años
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="mb-3 col-12 col-md-4">
-            <input 
-                className="form-control" 
-                placeholder="email"
-                type="email"
-                value={studentData.email}
-                onChange = {studentHandleChange}
-                name = "email"
-                required = {true}
-              />
-          </div>
-
-          <div className="row d-flex justify-content-center">
-
-            <button 
-              className="col-4 col-md-2 mx-1 btn btn-primary"
-              type="submit"
-            >
-                guardar
-            </button>
-
-            <button
-              className="col-4 col-md-2 mx-1 btn btn-primary"
-              onClick={onCLeanStudentField}
-            >
-              limpiar
-            </button>
-
+          <div className="col-md-2 col-12 d-flex justify-content-center">
+            <div className="d-flex justify-content-center">
+              <button className="mx-1 btn btn-primary" type="submit" ><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+            </div>
+            <div className="d-flex justify-content-center">
+              <button className="mx-1 btn btn-danger" onClick={onCLeanStudentField}><i class="fa-solid fa-trash"></i> Limpiar</button>
+            </div>
           </div>
         </div>
-
       </form>
     </>
   )

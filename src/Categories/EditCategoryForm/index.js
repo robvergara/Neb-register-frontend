@@ -41,13 +41,13 @@ export function EditCategoryForm(){
 
       <form onSubmit={update}>
         <div className="row">
-          <div className="col-6 col-md-4 mb-3">
+          <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
             <input className="form-control" placeholder="nombre" value={modifiedCategory.nombre} name = "nombre" onChange={categoryHandleChangeModified}/>
           </div>
-          <div className="col-6 col-md-4 mb-3">
+          <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
             <input className="form-control" placeholder="edad" value={modifiedCategory.edad} name = "edad" onChange={categoryHandleChangeModified}/>
           </div>
-          <div className="col-6 col-md-4 mb-3">
+          <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
             <select className="form-select" name="genero" onChange={categoryHandleChangeModified}>
               <option defaultValue>Sexo</option>
               {genders.map(gender => (
@@ -57,7 +57,7 @@ export function EditCategoryForm(){
               ))}
             </select>
           </div>
-          <div className="col-6 col-md-4 mb-3">
+          <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
             <select className="form-select" name="entrenador_id" onChange={categoryHandleChangeModified}>
               <option defaultValue>entrenador(opcional)</option>
               {entrenadores.map(entrenador => (
@@ -67,12 +67,13 @@ export function EditCategoryForm(){
               ))}
             </select>
           </div>
-          <div className="row d-flex justify-content-center">
-            <button className="col-4 col-md-2 mx-1 btn btn-success" type="submit">Guardar cambios</button>
-            <button className="col-4 col-md-2 mx-1 btn btn-danger" onClick={onCancelModal}><i class="fa-solid fa-trash"></i> Cancelar</button>
+          <div className="col-6 col-md-4 m-auto px-2 my-2 d-flex justify-content-center w-100">
+            <button className="col-md btn btn-success" type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar cambios</button>
+          </div>
+          <div className="col-6 col-md-4 m-auto px-2 my-2 d-flex justify-content-center w-100">
+            <button className="col-md btn btn-danger" onClick={onCancelModal}><i class="fa-solid fa-trash"></i> Cancelar</button>
           </div>
         </div>
-
       </form>
     </>
   )
