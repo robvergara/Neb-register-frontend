@@ -34,7 +34,7 @@ export function ConfigPaymets(){
           <div className="col-md-8 col-12">
             <div className="row px-5">
               <div className="col-md-12 col-12 my-2">
-                <div class="row">
+                <div className="row">
                   <b className="col-6 m-auto">Mensualidad: </b>
                   <div className="text-end col-6">
                     <input value={dataConfig.monthly} type="number" placeholder="mensualidad" onChange={handleChange} name="monthly" className="col-12"/>
@@ -43,7 +43,7 @@ export function ConfigPaymets(){
                 
               </div>
               <div className="col-md-12 col-12 my-2">
-                <div class="row">
+                <div className="row">
                   <b className="col-6 m-auto">Porcentaje: </b>
                   <div className="text-end col-6">
                     <input value={dataConfig.percent} type="number" placeholder="porcentaje"  onChange={handleChange} name="percent" className="col-12"/>
@@ -53,7 +53,7 @@ export function ConfigPaymets(){
             </div>
           </div>
           <div className="col-md-4 m-auto px-4 my-2 d-flex justify-content-center">
-            <button className="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Guardar Cambios</button>
+            <button className="btn btn-primary"><i className="fa-solid fa-floppy-disk"></i> Guardar Cambios</button>
           </div>          
         </div>
 

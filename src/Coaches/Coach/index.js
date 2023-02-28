@@ -29,8 +29,8 @@ export function Coach({entrenador}){
             <p className="ps-2"><b>CC: </b>{entrenador.cedula}</p>
           </div>
           <div className="card-footer d-flex">
-            <button className="col-6 col-lg-6  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCoach(entrenador)}}><i class="fa-solid fa-pen-to-square"></i></button>
-            <button className="col-6 col-lg-6  me-1 mb-1 btn btn-danger" onClick={()=>onDelete(entrenador._id)}><i class="fa-solid fa-trash"></i></button>
+            <button className="col-6 col-lg-6  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCoach(entrenador)}}><i className="fa-solid fa-pen-to-square"></i></button>
+            <button className="col-6 col-lg-6  me-1 mb-1 btn btn-danger" onClick={()=>onDelete(entrenador._id)}><i className="fa-solid fa-trash"></i></button>
           </div>
         </div>
       </div>

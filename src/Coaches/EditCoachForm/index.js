@@ -57,10 +57,10 @@ export function EditCoachForm(){
           </div>
           <div className="col-xl-2 col-12 d-flex justify-content-center">
             <div className="px-1 my-1 d-flex justify-content-center">
-              <button className="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar cambios</button>
+              <button className="btn btn-primary" type="submit"><i className="fa-solid fa-floppy-disk"></i> Guardar cambios</button>
             </div>
             <div className="px-1 my-1 d-flex justify-content-center">
-              <button className="btn btn-danger" onClick={onCancelModal}><i class="fa-solid fa-trash"></i>Cancelar</button>
+              <button className="btn btn-danger" onClick={onCancelModal}><i className="fa-solid fa-trash"></i>Cancelar</button>
             </div>
           </div>
         </div>
