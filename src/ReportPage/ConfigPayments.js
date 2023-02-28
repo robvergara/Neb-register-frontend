@@ -4,7 +4,7 @@ import { StateContext } from "../contexts/statesContext";
 
 export function ConfigPaymets(){
   const [dataConfig, setDataConfig] = React.useState({monthly:0, percent:0});
-  const {onError, onSuccess ,onCancel , state} = React.useContext(StateContext);
+  const {onError, onSuccess, state} = React.useContext(StateContext);
 
   // console.log(dataConfig)
 
@@ -53,6 +53,17 @@ export function ConfigPaymets(){
               Cambiar configuracion de pagos
           </button>
         </div>
+
+        {!!state.success && (
+          <h4 className="alert alert-success">
+            configuracion de pagos modificada correctamente
+          </h4>
+        ) }
+        {!!state.error && (
+          <h4 className="alert alert-danger">
+            Hubo un problema al generar la configuracion
+          </h4>
+        ) }
       </form>
     </>
   )
