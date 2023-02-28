@@ -13,7 +13,7 @@ export function Menu () {
         </button>
         <div className="collapse navbar-collapse" id="navbar-toggler">
           <div className="navbar-nav d-flex justify-content-center align-items-center">
-            <NavLink className="nav-link active" to={'/'}> Home </NavLink>
+            <NavLink className="nav-link active" to={'/'}> Inicio </NavLink>
             {/* <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink> */}
             {!!auth.user && (
               <>
@@ -34,7 +34,7 @@ export function Menu () {
 
           </div>
         </div>
-        <ul className="navbar-brand">
+        <div className="navbar-brand">
           {loginRoutes.map(route => {
             if(route.publicOnly && auth.user) return null; //PARA QUE NO SE RENDERICE EL LOGIN
             if(route.private && !auth.user) return null; // PARA QUE NO SE RENDERICE EL PERFIL YL EL LOGOUT SI NO HAY LOGIN
@@ -50,7 +50,7 @@ export function Menu () {
             );
           })}
           {/* <NavLink className="nav-link active" to={'/login'}>login</NavLink> */}
-        </ul>
+        </div>
       </div>
 
     </nav>
@@ -60,12 +60,12 @@ export function Menu () {
 const loginRoutes = [];
 loginRoutes.push({
   to: '/login',
-  text: 'login',
+  text: 'Login',
   private: false,
   publicOnly: true,
 });
 loginRoutes.push({
   to: '/logout',
-  text: 'logout',
+  text: 'Logout',
   private: true,
 });
