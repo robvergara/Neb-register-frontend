@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { getEntrenador } from "../../services/entrenadores.services";
+import "./profile.css"
 
 
 export function CoachProfile(){
@@ -18,9 +19,23 @@ export function CoachProfile(){
 
   // console.log(coach);
   return(
-    <>
-      <h1>Perfil de {coach.nombre} {coach.apellido} </h1>
-      <p><b> Cedula: </b> {coach.cedula}</p>
+    <> 
+      <div className="container-sm">
+        <div className="card p-5">
+          <div className="row">
+            <div className="col-md-2 d-flex justify-content-center my-2">
+              <img src="sin-foto.png" className="img-thumbnail"/>
+            </div>
+            <div className="col-md-10 my-2">
+              <h1>Perfil de {coach.nombre} {coach.apellido} </h1>
+              <p><b> Cedula: </b> {coach.cedula}</p>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+      
     </>
   )
 }

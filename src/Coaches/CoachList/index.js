@@ -21,15 +21,13 @@ export function CoachList(){
       </div>
       )}
       
-      <div className="card-body">
-        <div className="list-group">
-          {entrenadores.map(entrenador => (
+      <div className="row p-3">
+        {entrenadores.map(entrenador => (
             <Coach 
               key={entrenador.cedula} 
               entrenador = {entrenador} 
             />
-          ))}
-        </div>
+        ))} 
       </div>
 
     </>

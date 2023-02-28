@@ -28,55 +28,28 @@ export function CoachForm(){
 
       <form onSubmit={onSubmit}>
         <div className="row">
-          <div className="mb-3 col-12 col-md-4">
-            <input 
-              className="form-control" 
-              placeholder="nombre"
-              value={coachData.nombre}
-              onChange = {handleChange}
-              name = "nombre"
-            />
+          <div className="col-xl-10 col-12 m-auto">
+            <div className="row m-auto d-flex justify-content-center">
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="nombre" value={coachData.nombre} onChange = {handleChange} name = "nombre"/>
+              </div>
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="apellido" value={coachData.apellido} onChange = {handleChange} name = "apellido"/>
+              </div>
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="cedula" value={coachData.cedula} onChange = {handleChange} name = "cedula"/>
+              </div>
+            </div>
           </div>
-
-          <div className="mb-3 col-12 col-md-4">
-            <input 
-              className="form-control" 
-              placeholder="apellido"
-              value={coachData.apellido}
-              onChange = {handleChange}
-              name = "apellido"
-            />
-          </div>
-
-          <div className="mb-3 col-12 col-md-4">
-            <input 
-              className="form-control" 
-              placeholder="cedula"
-              value={coachData.cedula}
-              onChange = {handleChange}
-              name = "cedula"
-            />
-          </div>
-
-          <div className="row d-flex justify-content-center">
-
-            <button 
-              className="col-4 col-md-2 mx-1 btn btn-primary"
-              type="submit"
-            >
-                guardar
-            </button>
-
-            <button
-              className="col-4 col-md-2 mx-1 btn btn-primary"
-              onClick={onCLean}
-            >
-              limpiar
-            </button>
-
+          <div className="col-xl-2 col-12 d-flex justify-content-center">
+            <div className="px-1 my-1 d-flex justify-content-center">
+              <button className="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+            </div>
+            <div className="px-1 my-1 d-flex justify-content-center">
+              <button className="btn btn-danger" onClick={onCLean}><i class="fa-solid fa-trash"></i> Limpiar</button>
+            </div>
           </div>
         </div>
-
       </form>
     </>
   )

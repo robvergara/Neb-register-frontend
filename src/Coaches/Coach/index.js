@@ -14,28 +14,26 @@ export function Coach({entrenador}){
 
   return(
     <>
-      <div className="list-group-item">
-        <div className="row d-flex justify-content-between">
-          <NavLink 
-            className="nav-link active col-sm7 col-md-6 mb-1 ms-2 title-card" 
-            to={`/entrenadores/${entrenador._id}`}>
-              {entrenador.nombre} {entrenador.apellido}
-          </NavLink>
-
-            {!!auth.user && (
-            <div className="col-12 col-md-4 d-flex action-buttons">
-              <button className="col-5 col-sm-6 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCoach(entrenador)}}>editar</button>
-              <button className="col-5 col-sm-6 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>onDelete(entrenador._id)}>eliminar</button>
-            </div>
-            )}
-
+      <div className="col-12 col-lg-4 mb-3">
+        <div className="card">
+          <div className="card-body">
+            <h3 className="card-title mb-3">
+              <b>
+                <NavLink 
+                className="nav-link active col-sm7 col-md-6 mb-1 ms-2 title-card" 
+                to={`/entrenadores/${entrenador._id}`}>
+                  {entrenador.nombre} {entrenador.apellido}
+                </NavLink>
+              </b>
+            </h3>
+            <p className="ps-2"><b>CC: </b>{entrenador.cedula}</p>
+          </div>
+          <div className="card-footer d-flex">
+            <button className="col-6 col-lg-6  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedCoach(entrenador)}}><i class="fa-solid fa-pen-to-square"></i></button>
+            <button className="col-6 col-lg-6  me-1 mb-1 btn btn-danger" onClick={()=>onDelete(entrenador._id)}><i class="fa-solid fa-trash"></i></button>
+          </div>
         </div>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item d-flex">
-            <b>CC: </b>{entrenador.cedula}
-          </li>
-        </ul>
-      </div>        
+      </div>
     </>
   )
 }

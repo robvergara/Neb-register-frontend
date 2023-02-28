@@ -72,7 +72,9 @@ export function EditStudentsForm(){
               <button className="mx-1 btn btn-danger" onClick={onCancelModal}><i class="fa-solid fa-trash"></i> Cancelar</button>
             </div>
           </div>
+
         </div>
+
       </form>
     </>
   )

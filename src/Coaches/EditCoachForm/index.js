@@ -41,58 +41,29 @@ export function EditCoachForm(){
       )}
 
       <form onSubmit={update}>
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="nombre"
-            value={modifiedCoach.nombre}
-            onChange = {handleChangeModified}
-            name = "nombre"
-          />
+        <div className="row">
+          <div className="col-xl-10 col-12 m-auto">
+            <div className="row m-auto d-flex justify-content-center">
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="nombre" value={modifiedCoach.nombre} onChange = {handleChangeModified} name = "nombre"/>
+              </div>
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="apellido" value={modifiedCoach.apellido} onChange = {handleChangeModified} name = "apellido"/>
+              </div>
+              <div className="col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
+                <input className="form-control" placeholder="cedula" value={modifiedCoach.cedula} onChange = {handleChangeModified} name = "cedula"/>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-2 col-12 d-flex justify-content-center">
+            <div className="px-1 my-1 d-flex justify-content-center">
+              <button className="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar cambios</button>
+            </div>
+            <div className="px-1 my-1 d-flex justify-content-center">
+              <button className="btn btn-danger" onClick={onCancelModal}><i class="fa-solid fa-trash"></i>Cancelar</button>
+            </div>
+          </div>
         </div>
-
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="apellido"
-            value={modifiedCoach.apellido}
-            onChange = {handleChangeModified}
-            name = "apellido"
-          />
-        </div>
-
-        <div className="input-group mb-3">
-          <input 
-            className="form-control" 
-            placeholder="cedula"
-            value={modifiedCoach.cedula}
-            onChange = {handleChangeModified}
-            name = "cedula"
-          />
-        </div>
-
-        <div className="input-group mb-3">
-
-        </div>
-
-        <div className="input-group">
-
-          <button 
-            className="btn btn-primary"
-            type="submit"
-          >
-            guardar cambios
-          </button>
-
-          <button
-            className="btn btn-primary"
-            onClick={onCancelModal}
-          >
-            cancelar
-          </button>
-
-        </div>
-
       </form>
     </>
   )

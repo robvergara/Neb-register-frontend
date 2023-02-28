@@ -9,7 +9,7 @@ export function Entrenadores(){
   const {openModal} = React.useContext(ModalContext);
   const auth = useAuth()
   return(
-    <div className="container">
+    <div className="container-sm">
       <div className="card mb-3">
         {(!!auth.user?.token && auth.user?.status === 1) && (
           <>
