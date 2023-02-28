@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../contexts/auth";
 import { PaymentContext } from "../contexts/paymentscontext";
 import { StateContext } from "../contexts/statesContext";
+import {months} from "../Payment/PaymentPage/index"
 
 export function PaymentsList(){
   const {payments, setdataPayment, estudianteQuePago} = React.useContext(PaymentContext);
@@ -29,11 +30,12 @@ export function PaymentsList(){
             <caption>
                 <div className="d-flex justify-content-between">
                   Pagos realizados por {estudianteQuePago.nombre} {estudianteQuePago.apellido}
+                  {(!!auth.user?.token && auth.user?.status === 1) &&
                   <div className="col-sm-3 btn-group">
                     <NavLink className="btn btn-primary" to={"/pagos"} onClick={()=>setdataPayment(estudianteQuePago)}> 
                       Realizar Pago 
                     </NavLink>  
-                  </div>
+                  </div>}
                 </div>
             </caption>
     
@@ -45,13 +47,13 @@ export function PaymentsList(){
               </tr>
             </thead>
             <tbody>
-              {payments.map(payment=> (
+              {payments.map(payment=> 
                 <tr key={payment._id}>
-                  <th scope="row" className="text-center">{payment.mes}</th>
+                  <th scope="row" className="text-center">{months[payment.mes].name}</th>
                   <td className="text-center">{payment.ano}</td>
-                  <td className="text-center">VALOR</td>
-                </tr>
-              ))}
+                  <td className="text-center">{payment.valor}</td>
+                </tr>  
+              )}
             </tbody>
           </table>
         </div>
