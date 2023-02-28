@@ -94,7 +94,9 @@ function App() {
                           <AuthRoute>
                             <ReportPage/>
                           </AuthRoute>
-                        } />
+                        } 
+                      />
+
                       <Route path='*' element={<p>Not Found</p>}/>
                     </Routes>
                     </PaymentProvider>

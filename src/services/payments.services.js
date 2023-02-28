@@ -33,4 +33,15 @@ export function createReport (body){
     mes: body.month,
     ano: body.year
   })
+};
+
+export function getConfigPayments() {
+  return get(`/conf`);
+}
+
+export function modifyConfigPayments(body) {
+  return put (`/conf`, {
+    mensualidad: body.monthly,
+    porcentaje: body.percent
+  });
 }
