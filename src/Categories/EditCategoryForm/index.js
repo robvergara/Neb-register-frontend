@@ -68,10 +68,10 @@ export function EditCategoryForm(){
             </select>
           </div>
           <div className="col-6 col-md-4 m-auto px-2 my-2 d-flex justify-content-center w-100">
-            <button className="col-md btn btn-success" type="submit"><i className="fa-solid fa-floppy-disk"></i> Guardar cambios</button>
+            <button className="col-md btn btn-success" type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar cambios</button>
           </div>
           <div className="col-6 col-md-4 m-auto px-2 my-2 d-flex justify-content-center w-100">
-            <button className="col-md btn btn-danger" onClick={onCancelModal}><i className="fa-solid fa-trash"></i> Cancelar</button>
+            <button className="col-md btn btn-danger" onClick={onCancelModal}><i class="fa-solid fa-trash"></i> Cancelar</button>
           </div>
         </div>
       </form>

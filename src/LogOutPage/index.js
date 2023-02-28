@@ -35,13 +35,13 @@ export function LogOutPage(){
                   <div className="btn-group row m-auto">
                     <button className="btn btn-danger col-6" type="submit">
                       <div className="row">
-                        <i className="fa-solid fa-xmark col-12"></i>
+                        <i class="fa-solid fa-xmark col-12"></i>
                         <b className="col-12">SI</b>
                       </div>  
                     </button>
                     <button className="btn btn-success col-6" onClick={onCancel}>
                       <div className="row">
-                        <i className="fa-solid fa-check col-12"></i>
+                        <i class="fa-solid fa-check col-12"></i>
                         <b className="col-12">NO</b>
                       </div>  
                     </button>

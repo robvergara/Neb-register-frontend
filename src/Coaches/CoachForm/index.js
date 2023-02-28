@@ -43,10 +43,10 @@ export function CoachForm(){
           </div>
           <div className="col-xl-2 col-12 d-flex justify-content-center">
             <div className="px-1 my-1 d-flex justify-content-center">
-              <button className="btn btn-primary" type="submit"><i className="fa-solid fa-floppy-disk"></i> Guardar</button>
+              <button className="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
             </div>
             <div className="px-1 my-1 d-flex justify-content-center">
-              <button className="btn btn-danger" onClick={onCLean}><i className="fa-solid fa-trash"></i> Limpiar</button>
+              <button className="btn btn-danger" onClick={onCLean}><i class="fa-solid fa-trash"></i> Limpiar</button>
             </div>
           </div>
         </div>

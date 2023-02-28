@@ -19,13 +19,13 @@ export function Footer(){
             <div className="col-3 m-auto">
               <div className="d-flex flex-wrap align-items-center justify-content-center">
                 <a className="iconos-redes-sociales " href="https://instagram.com/escuelanebcolombia?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer">
-                  <i className="bi bi-instagram"></i>
+                  <i class="bi bi-instagram"></i>
                 </a>
                 <a className="iconos-redes-sociales " href="mailto:neb.notificaciones@gmail.com">
-                  <i className="bi bi-envelope-at-fill"></i>
+                  <i class="bi bi-envelope-at-fill"></i>
                 </a>
                 <a className="iconos-redes-sociales " href="https://www.facebook.com/profile.php?id=100076279402140" target="_blank" rel="noopener noreferrer">
-                  <i className="bi bi-facebook"></i>
+                  <i class="bi bi-facebook"></i>
                 </a>
               </div>
             </div>

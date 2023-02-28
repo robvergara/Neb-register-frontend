@@ -66,10 +66,10 @@ export function EditStudentsForm(){
           </div>
           <div className="col-xl-2 col-12 d-flex justify-content-center">
             <div className="px-2 my-2 d-flex justify-content-center">
-              <button className="mx-1 btn btn-primary" type="submit"><i className="fa-solid fa-floppy-disk"></i> Modificar</button>
+              <button className="mx-1 btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Modificar</button>
             </div>
             <div className="px-2 my-2 d-flex justify-content-center">
-              <button className="mx-1 btn btn-danger" onClick={onCancelModal}><i className="fa-solid fa-trash"></i> Cancelar</button>
+              <button className="mx-1 btn btn-danger" onClick={onCancelModal}><i class="fa-solid fa-trash"></i> Cancelar</button>
             </div>
           </div>
 

@@ -53,7 +53,7 @@ export function ConfigPaymets(){
             </div>
           </div>
           <div className="col-md-4 m-auto px-4 my-2 d-flex justify-content-center">
-            <button className="btn btn-primary"><i className="fa-solid fa-floppy-disk"></i> Guardar Cambios</button>
+            <button className="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Guardar Cambios</button>
           </div>          
         </div>
 
