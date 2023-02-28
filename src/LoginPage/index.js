@@ -55,46 +55,9 @@ export function LoginPage(){
                   <button className="btn btn-primary mt-3 col-sm-6 mx-auto" type="submit">Entrar</button>
                 </div>
               </div>
-              
-              {/* <div className="row mb-3">
-                <input required={true} className="form-control" placeholder="********" name="usuario" value={user.usuario} onChange={handleChange}/>
-                
-              </div>
-              <h5 className="text-start">contraseña</h5>
-              <div className="row mb-3">
-                <input required={true} type="password" className="form-control"  placeholder="********" name="password" value={user.password} onChange={handleChange}/>
-              </div>
-              <button className="btn btn-primary mt-3 col-sm-6 mx-auto" type="submit">Entrar</button> */}
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {/* <div className="row mb-3">
-          <label className="col-sm-2 col-form-label">Usuario</label>
-          <div className="col-sm-8">
-            <input required={true} className="form-control" placeholder="********" name="usuario" value={user.usuario} onChange={handleChange}/>
-          </div>
-        </div>
-        <div className="row mb-3">
-          <label className="col-sm-2 col-form-label" >Contraseña</label>
-          <div className="col-sm-8">
-            <input required={true} type="password" className="form-control"  placeholder="********" name="password" value={user.password} onChange={handleChange}/>
-          </div>
-          <button className="btn btn-primary mt-3 col-sm-6 mx-auto" type="submit">Entrar</button>
-        </div> */}
       </form>
 
       {!!state.error && (
