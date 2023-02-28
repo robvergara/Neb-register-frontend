@@ -27,16 +27,6 @@ export function StudentsList(){
             />
         ))}
       </div>
-      {/* <div className="card-body">
-        <div className="list-group">
-          {estudiantes.map(estudiante => (
-            <Student 
-              key={estudiante.cedula} 
-              estudiante = {estudiante} 
-            />
-          ))}
-        </div>
-      </div> */}
     </>
   )
 }
