@@ -29,29 +29,32 @@ export function ConfigPaymets(){
 
   return(
     <>
-      <h2>Configuracion de pago</h2>
-      <form onSubmit={onSubmit}>
-        <input
-          value={dataConfig.monthly}
-          type="number"
-          placeholder="mensualidad"
-          onChange={handleChange}
-          name="monthly"
-
-        />
-        <input
-          value={dataConfig.percent}
-          type="number"
-          placeholder="porcentaje"
-          onChange={handleChange}
-          name="percent"
-        />
-
-        <div className="row d-flex justify-content-center">
-          <button 
-            className="col-6 col-md-4 btn btn-primary mb-3 mx-1">
-              Cambiar configuracion de pagos
-          </button>
+      <form onSubmit={onSubmit} className="m-auto ">
+        <div className="row px-5">
+          <div className="col-md-8 col-12">
+            <div className="row px-5">
+              <div className="col-md-12 col-12 my-2">
+                <div class="row">
+                  <b className="col-6 m-auto">Mensualidad: </b>
+                  <div className="text-end col-6">
+                    <input value={dataConfig.monthly} type="number" placeholder="mensualidad" onChange={handleChange} name="monthly" className="col-12"/>
+                  </div>
+                </div>
+                
+              </div>
+              <div className="col-md-12 col-12 my-2">
+                <div class="row">
+                  <b className="col-6 m-auto">Porcentaje: </b>
+                  <div className="text-end col-6">
+                    <input value={dataConfig.percent} type="number" placeholder="porcentaje"  onChange={handleChange} name="percent" className="col-12"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 m-auto px-4 my-2 d-flex justify-content-center">
+            <button className="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Guardar Cambios</button>
+          </div>          
         </div>
 
         {!!state.success && (
