@@ -31,7 +31,7 @@ export function PaymentPage(){
 
 
       <div className="container-sm">
-          <div className="card">
+          <div className="card shadow">
             <h3 className="card-header">
               <b>FORMATO PARA PAGOS</b>
             </h3>
