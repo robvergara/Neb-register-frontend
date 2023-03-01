@@ -19,7 +19,7 @@ export function LogOutPage(){
 
   return(
     <>
-      <form className="container text-center" onSubmit={logout}>
+      <form className="container text-center mb-4" onSubmit={logout}>
         <div className="d-flex align-items-center justify-content-center align-middle">
           <div className="card ingresar" id="">
             <div className="card-header text-center">

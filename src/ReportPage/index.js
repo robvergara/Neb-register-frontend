@@ -37,7 +37,7 @@ export function ReportPage(){
 
   return(
     <>
-      <div className="container-sm">
+      <div className="container-sm mb-4">
         <div className="card shadow">
           <div className="row m-0 p-0">
             <div className="col-xl-6 col-12 m-0 p-0 tarjetas">

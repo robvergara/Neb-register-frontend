@@ -11,7 +11,7 @@ export function StudentsPage(){
   const auth = useAuth();
   // console.log(auth)
   return(
-    <div className="container-sm">
+    <div className="container-sm mb-4">
       <StudentSearch/>
       <div className="card mb-3 shadow">
         {(!!auth.user && !!auth.user.token) && (

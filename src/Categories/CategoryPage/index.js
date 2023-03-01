@@ -10,7 +10,7 @@ export function CategoryPage(){
   const auth = useAuth();
   // console.log(auth)
   return(
-    <div className="container-sm">
+    <div className="container-sm mb-4">
       <div className="card mb-3 shadow">
         {(!!auth.user?.token && auth.user?.status === 1) && (
           <>
