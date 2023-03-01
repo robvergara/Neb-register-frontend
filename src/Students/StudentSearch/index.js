@@ -13,7 +13,7 @@ export function StudentSearch(){
   return(
     <div>
       <input
-        className="StudentSearch my-3 mx-auto" 
+        className="StudentSearch my-3 mx-auto shadow" 
         type="text" 
         placeholder="Busca por la cedula"
         value={searchValue}

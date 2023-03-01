@@ -36,7 +36,7 @@ export function Student({estudiante}){
   return(
     <>
       <div className="col-12 col-lg-4 mb-2">
-        <div className="card">
+        <div className="card shadow">
           <div className="card-body">
             <h4 className="card-title m-auto mb-3"><b>{estudiante.nombre} {estudiante.apellido}</b></h4>
             <p className="card-text m-auto"><u><b>CC:</b></u> {estudiante.cedula}</p>

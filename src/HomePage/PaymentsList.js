@@ -25,7 +25,7 @@ export function PaymentsList(){
   return(
     <>
       {payments.length >= 1 && (
-        <div className="m-auto px-4 py-3 bg-light rounded">
+        <div className="m-auto px-4 py-3 bg-light rounded shadow">
           <table className="table table-striped caption-top mb-2">
             <caption>
                 <div className="d-flex justify-content-between">

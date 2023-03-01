@@ -27,7 +27,7 @@ export function CategoryItem({category}){
   return(
     <>
       <div className="col-12 col-lg-4 mb-2">
-        <div className="card h-100">
+        <div className="card h-100 shadow">
           <div className="card-body">
             <h4 className="card-title m-auto mb-3"><b>{category.nombre} - {category.genero}</b></h4>
             <p className="card-text m-auto"><u><b>Entrenador:</b></u> {(!entrenador? 'no hay entrenador asignado' :entrenador.nombre)}</p>

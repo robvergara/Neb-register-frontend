@@ -8,13 +8,18 @@ export function Footer(){
     <footer className="section seccion-oscura d-flex flex-column justify-content-center align-items-center mt-3 bg-dark">
         <div className="container-sm">
           <div className="row">
-            <div className="col-3 text-center">
-              <img src="neb-logo.png" className="w-50 my-4" alt="Logo"/>
-            </div>
-            <div className="col-6 m-auto">
-              <h3>NEB COLOMBIA</h3>
-              <h6>Profesor: Deivis José Seidel Delgado</h6>
-              <h6>Cel: +57 301 3679934</h6>
+            <div className="col-9">
+              <div className="row">
+                <div className="col-xl-3 col-12 text-center">
+                  <img src="neb-logo.png" className="w-50 my-4" alt="Logo"/>
+                </div>
+                <div className="col-xl-9 col-12 m-auto">
+                  <h3>NEB COLOMBIA</h3>
+                  <h6>Profesor: Deivis José Seidel Delgado</h6>
+                  <h6>Cel: +57 301 3679934</h6>
+                  <h6>Parque Las Américas</h6>
+                </div>
+              </div>
             </div>
             <div className="col-3 m-auto">
               <div className="d-flex flex-wrap align-items-center justify-content-center">

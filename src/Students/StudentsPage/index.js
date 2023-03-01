@@ -13,7 +13,7 @@ export function StudentsPage(){
   return(
     <div className="container-sm">
       <StudentSearch/>
-      <div className="card mb-3">
+      <div className="card mb-3 shadow">
         {(!!auth.user && !!auth.user.token) && (
           <>
             <h3 className="card-header">
@@ -27,7 +27,7 @@ export function StudentsPage(){
         )}
 
       </div>
-      <div className="card">
+      <div className="card shadow">
         <StudentsList/>
       </div>
     </div>

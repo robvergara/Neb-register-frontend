@@ -9,7 +9,7 @@ export function HomeSearch(){
   // console.log(searchValue);
   return(
     <div className="d-flex align-items-center justify-content-center align-middle">
-      <div className="card mb-5" id="estudiante">
+      <div className="card mb-5 shadow" id="estudiante">
         <div className="card-header text-center">
           BUSQUEDA DE PAGOS
         </div>
