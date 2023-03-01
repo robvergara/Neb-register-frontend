@@ -18,7 +18,7 @@ export function ConfigPaymets(){
       dataConfigPayment();
     }
   },[auth])
-  console.log(dataConfig)
+  // console.log(dataConfig)
 
   const handleChange=(e)=>{
     const {name, value} = e.target;
