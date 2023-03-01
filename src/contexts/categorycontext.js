@@ -23,7 +23,7 @@ export function CategoryProvider({children}){
     if(!!auth.user){
       trainerList()
     }
-  },[auth]);
+  },[]);
 
   const categoryHandleChange = (e) =>{
     const {name, value} = e.target;

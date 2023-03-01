@@ -1,11 +1,23 @@
 import React from "react";
-import { modifyConfigPayments } from "../services/payments.services";
+import { modifyConfigPayments, getConfigPayments } from "../services/payments.services";
 import { StateContext } from "../contexts/statesContext";
+import { useAuth } from "../contexts/auth";
 
 export function ConfigPaymets(){
-  const [dataConfig, setDataConfig] = React.useState({monthly:0, percent:0});
+  const [dataConfig, setDataConfig] = React.useState({});
   const {onError, onSuccess, state} = React.useContext(StateContext);
+  const auth = useAuth()
 
+  React.useEffect(()=>{
+    async function dataConfigPayment (){
+      const config = await getConfigPayments();
+      // console.log(config);
+      setDataConfig(config[0]);
+    };
+    if(!!auth.user){
+      dataConfigPayment();
+    }
+  },[auth])
   // console.log(dataConfig)
 
   const handleChange=(e)=>{
@@ -37,7 +49,7 @@ export function ConfigPaymets(){
                 <div className="row">
                   <b className="col-6 m-auto">Mensualidad: </b>
                   <div className="text-end col-6">
-                    <input value={dataConfig.monthly} type="number" placeholder="mensualidad" onChange={handleChange} name="monthly" className="col-12"/>
+                    <input value={dataConfig.mensualidad} type="number" placeholder="mensualidad" onChange={handleChange} name="monthly" className="col-12"/>
                   </div>
                 </div>
                 
@@ -46,7 +58,7 @@ export function ConfigPaymets(){
                 <div className="row">
                   <b className="col-6 m-auto">Porcentaje: </b>
                   <div className="text-end col-6">
-                    <input value={dataConfig.percent} type="number" placeholder="porcentaje"  onChange={handleChange} name="percent" className="col-12"/>
+                    <input value={dataConfig.porcentaje} type="number" placeholder="porcentaje"  onChange={handleChange} name="percent" className="col-12"/>
                   </div>
                 </div>
               </div>

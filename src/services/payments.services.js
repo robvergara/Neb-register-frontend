@@ -41,7 +41,7 @@ export function getConfigPayments() {
 
 export function modifyConfigPayments(body) {
   return put (`/conf`, {
-    mensualidad: body.monthly,
-    porcentaje: body.percent
+    mensualidad: body.mensualidad,
+    porcentaje: body.porcentaje
   });
 }
