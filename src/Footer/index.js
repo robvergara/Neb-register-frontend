@@ -5,8 +5,8 @@ import "./Footer.css"
 export function Footer(){
   return(
     <>
-    <footer className="footer mt-auto bg-dark mt-4">
-      <div className="container-sm text-white mt-3 p-4">
+    <footer className="footer mt-auto bg-dark">
+      <div className="container-sm text-white mt-3 p-1">
         <div className="row">
           <div className="col-9">
             <div className="row">

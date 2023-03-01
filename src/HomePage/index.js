@@ -5,9 +5,11 @@ import "./home.css"
 
 export function HomePage(){
   return(
-    <div className="container-sm">
-      <HomeSearch/>
-      <PaymentsList/>
+    <div className="flex-shrink-0">
+      <div className="container-sm">
+        <HomeSearch/>
+        <PaymentsList/>
+      </div>
     </div>
   )
 }
