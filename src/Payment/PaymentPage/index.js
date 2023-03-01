@@ -32,62 +32,26 @@ export function PaymentPage(){
 
       <form onSubmit={onSubmit}>
         <div>
-
           {(!dataPayment.cedula) && (
-            <input 
-              value={dataPayment.cedula} 
-              placeholder="cedula" 
-              onChange={handleChange}
-              name="cedula" 
-              className="mb-3 mx-1 col-sm-6"
-            />)}
-
+            <input value={dataPayment.cedula} placeholder="cedula" onChange={handleChange} name="cedula" className="mb-3 mx-1 col-sm-6"/>
+          )}
           {(!!dataPayment.cedula) && (
-            <input 
-              value={dataPayment.cedula} 
-              placeholder="cedula" 
-              className="mb-3 mx-1 col-sm-6"
-              readOnly 
-            />)}
-          
-          <input type="hidden" value={dataPayment.estudiante_id} />
-
-          <select 
-            className="mb-3 mx-1 col-sm-2"
-            name="month"
-            onChange={handleChange}
-            required
-          >
+            <input value={dataPayment.cedula} placeholder="cedula" className="mb-3 mx-1 col-sm-6" readOnly/>
+          )}
+          <input type="hidden" value={dataPayment.estudiante_id}/>
+          <select className="mb-3 mx-1 col-sm-2" name="month" onChange={handleChange} required>
             <option defaultValue readOnly> Mes </option>
             {months.map(month=> (
               <option key={month.value} value={month.value}>{month.name}</option>
             ))}
           </select>
 
-          <input 
-            value={dataPayment.ano} 
-            className="mb-3 mx-1 col-sm-3" 
-            type="number" min={2023} 
-            placeholder="año" 
-            onChange={handleChange} 
-            name="year" 
-          />
-
+          <input value={dataPayment.ano} className="mb-3 mx-1 col-sm-3" type="number" min={2023} placeholder="año" onChange={handleChange} name="year"/>
         </div>
 
         <div className="text-center" >
-
-          <button 
-            className="btn btn-primary mx-1 col-lg-4">
-              realizar pago
-          </button>
-
-          <button 
-            className="btn btn-primary mx-1 col-lg-4" 
-            onClick={onCancel}> 
-              regresar 
-          </button>
-
+          <button className="btn btn-primary mx-1 col-lg-4">realizar pago</button>
+          <button className="btn btn-primary mx-1 col-lg-4" onClick={onCancel}>regresar</button>
         </div>
       </form>
     </>

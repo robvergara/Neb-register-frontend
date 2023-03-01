@@ -64,7 +64,7 @@ export function ReportPage(){
                         </div>
                       </div>
                       <div className="col-md-4 m-auto px-4 my-2 d-flex justify-content-center">
-                        <button className="col-md btn btn-primary"><i class="fa-solid fa-flag"></i> Generar Reporte</button>
+                        <button className="col-md btn btn-primary"><i className="fa-solid fa-flag"></i> Generar Reporte</button>
                         {/* <button className="col-6 col-md-4 btn btn-primary mb-3 mx-1"onClick={onCancel}>regresar</button> */}
                       </div>
                     </div>

@@ -45,9 +45,9 @@ export function Student({estudiante}){
             <p className="card-text m-auto"><u><b>Categoria:</b></u> {categoria.nombre} - {categoria.genero}</p>
           </div>
           <div className="card-footer d-flex">
-            <button className="col-4 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedStudent(estudiante)}}><i class="fa-solid fa-pen-to-square"></i></button>
-            <button className="col-4 col-lg-4  me-1 mb-1 btn btn-danger" onClick={()=>onDelete(estudiante._id)}><i class="fa-solid fa-trash"></i></button>
-            <NavLink className="col-4 col-lg-4  mb-1 btn btn-success" to={'/pagos'} onClick={()=>setdataPayment(studentDataPayment)}><i class="fa-solid fa-dollar-sign"></i></NavLink>
+            <button className="col-4 col-lg-4  me-1 mb-1 btn btn-primary" onClick={()=>{setOpenModal(true); setModifiedStudent(estudiante)}}><i className="fa-solid fa-pen-to-square"></i></button>
+            <button className="col-4 col-lg-4  me-1 mb-1 btn btn-danger" onClick={()=>onDelete(estudiante._id)}><i className="fa-solid fa-trash"></i></button>
+            <NavLink className="col-4 col-lg-4  mb-1 btn btn-success" to={'/pagos'} onClick={()=>setdataPayment(studentDataPayment)}><i className="fa-solid fa-dollar-sign"></i></NavLink>
           </div>
         </div>
       </div>
