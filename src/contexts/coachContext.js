@@ -25,7 +25,7 @@ export function CoachProvider ({children}){
     if(!!auth.user){
       trainerList()
     }
-  },[])
+  },[auth])
 
   const handleChange = (e) =>{
     const {name, value} = e.target;

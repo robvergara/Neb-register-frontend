@@ -21,9 +21,9 @@ export function CategoryProvider({children}){
       setCategories(list)
     }
     if(!!auth.user){
-      trainerList()
+      trainerList();
     }
-  },[]);
+  },[auth]);
 
   const categoryHandleChange = (e) =>{
     const {name, value} = e.target;

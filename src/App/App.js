@@ -42,25 +42,25 @@ function App() {
                       <Route 
                         path='/logout' 
                           element={
-                            <AuthRoute>
+                            //<AuthRoute>
                               <LogOutPage/>
-                            </AuthRoute>
+                            //</AuthRoute>
                           }
                       />
                       <Route 
                         path='/categorias' 
                         element={
-                          <AuthRoute>
+                          // <AuthRoute>
                             <CategoryPage/>
-                          </AuthRoute>
+                          /* </AuthRoute> */
                           }
                       />
                       <Route 
                         path='/entrenadores' 
                         element={
-                          <AuthRoute>
+                          // <AuthRoute>
                             <Entrenadores />
-                          </AuthRoute>
+                          /* </AuthRoute> */
                         }
                       />
                       <Route 
@@ -74,26 +74,26 @@ function App() {
                       <Route 
                         path='/estudiantes' 
                         element={
-                          <AuthRoute>
+                          // <AuthRoute>
                             <StudentsPage />
-                          </AuthRoute>
+                          // </AuthRoute>
                           }
                       />
                       <Route 
                         path='/pagos' 
                         element={
-                          <AuthRoute>
+                          //<AuthRoute>
                             <PaymentPage/>
-                          </AuthRoute>
+                          //</AuthRoute>
                         } 
                       />
 
                       <Route 
                         path='/reportes' 
                         element={
-                          <AuthRoute>
+                          //<AuthRoute>
                             <ReportPage/>
-                          </AuthRoute>
+                          //</AuthRoute>
                         } 
                       />
 
