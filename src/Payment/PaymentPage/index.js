@@ -6,7 +6,7 @@ import { useAuth } from "../../contexts/auth"
 
 export function PaymentPage(){
   const {dataPayment, setdataPayment, handleChange, onSubmit} = React.useContext(PaymentContext);
-  console.log (dataPayment);
+  // console.log (dataPayment);
   const navigate = useNavigate();
   const auth = useAuth();
   const {state, onRegret} = React.useContext(StateContext);
@@ -17,7 +17,7 @@ export function PaymentPage(){
     onRegret();
     navigate(-1);
   }
-  console.log(auth)
+  // console.log(auth)
   
   if(auth.user?.status === 1) {
     return(
@@ -81,7 +81,7 @@ export function PaymentPage(){
                               <b>AÑO:</b>
                             </div>
                             <div className="col-12">
-                              <input value={dataPayment.ano} className="col-12" type="number" min={2023} placeholder="año" onChange={handleChange} name="year"/>
+                              <input value={dataPayment.year} className="col-12" type="number" min={2023} placeholder="año" onChange={handleChange} name="year"/>
                             </div>
                           </div>
                         </div>
