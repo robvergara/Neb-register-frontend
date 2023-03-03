@@ -23,7 +23,7 @@ export function CategoryList(){
       }
     }
     obtenerEntrenador();
-  },[])
+  },[auth.user, entrenadores])
 
   const coachCategories = categories.filter(category=> category.entrenador_id === coach._id);
 

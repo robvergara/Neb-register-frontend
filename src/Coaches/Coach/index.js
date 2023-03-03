@@ -1,7 +1,6 @@
 import React from "react";
 import "./Coach.css"
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../../contexts/auth";
 import { CoachContext } from "../../contexts/coachContext";
 import { ModalContext } from "../../contexts/modalContext";
 // import { entrenadores } from "../../entrenadores";
@@ -9,7 +8,6 @@ import { ModalContext } from "../../contexts/modalContext";
 export function Coach({entrenador}){
   const {onDelete, setModifiedCoach} = React.useContext(CoachContext)
   const {setOpenModal} = React.useContext(ModalContext);
-  const auth = useAuth();
   // console.log(entrenadores)
 
   return(

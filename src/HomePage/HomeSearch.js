@@ -19,9 +19,9 @@ export function HomeSearch(){
           <div className="row mb-3">
             <input className="w-75 mx-auto text-center" type="text" placeholder="#####" value={searchValue} onChange={HomeSearchHandleChange } />
           </div>
-          <div className="row mb-3">
-            <button className="w-75 btn btn-primary mx-auto" onClick={()=>{onSearch(searchValue); onRegret()}}><i className="fa-solid fa-magnifying-glass"></i> BUSCAR</button>
-          </div>
+            <div className="row mb-3">
+              <button className="w-75 btn btn-primary mx-auto" disabled={searchValue.length < 7 ? true : false} onClick={()=>{onSearch(searchValue); onRegret()}}><i className="fa-solid fa-magnifying-glass"></i> BUSCAR</button>
+            </div>
           </div>
       </div>
     </div>
