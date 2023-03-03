@@ -35,26 +35,31 @@ export function CategoryList(){
 
       {(!categories || categories.length === 0) && (
         <div className="list-group-item">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1">No hay categorias</h5>
+          <div className="d-flex w-100 justify-content-between p-3">
+            <h5 className="m-auto">No hay categorias</h5>
           </div>
         </div>
       )}
+      
       <div className="row p-3">
         {auth.user?.status === 1 &&(
           categories.map(category => (
-            <CategoryItem 
-              key={`${category._id}`} 
-              category = {category} 
-            />
-        )))}
-
-        {auth.user?.status === 0 && (
-          coachCategories.map(category => (
+            
               <CategoryItem 
                 key={`${category._id}`} 
                 category = {category} 
               />
+            
+        )))}
+
+        {auth.user?.status === 0 && (
+          coachCategories.map(category => (
+            
+              <CategoryItem 
+                key={`${category._id}`} 
+                category = {category} 
+              />
+            
           )))
         
         }

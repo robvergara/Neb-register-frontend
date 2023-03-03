@@ -17,7 +17,8 @@ export function PaymentsList(){
   if (state.error){
     return (
       <>
-        <h1 className="alert alert-danger">{payments.message}</h1>
+        {/* <h1 className="alert alert-danger">{payments.message}</h1> */}
+        <h1 className="alert alert-danger">No se registran pagos</h1>
       </>
     )
   }

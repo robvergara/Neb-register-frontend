@@ -14,17 +14,18 @@ export function StudentsList(){
 
       {(!estudiantes || estudiantes.length === 0) && (
         <div className="list-group-item">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1">No hay estudiantes</h5>
+          <div className="d-flex w-100 justify-content-between p-3">
+            <h5 className="m-auto m-3">No hay estudiantes</h5>
           </div>
       </div>
       )}
+      
       <div className="row p-3">
         {estudiantes.map(estudiante => (
-            <Student 
-              key={estudiante.cedula} 
-              estudiante = {estudiante} 
-            />
+          <Student 
+            key={estudiante.cedula} 
+            estudiante = {estudiante} 
+          />
         ))}
       </div>
     </>

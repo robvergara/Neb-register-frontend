@@ -52,7 +52,7 @@ export function CategoryForm(){
             <button className="col-md btn btn-primary" type="submit"><i className="fa-solid fa-floppy-disk"></i>  Guardar</button>
           </div>
           <div className="col-6 col-md-4 m-auto px-2 my-2 d-flex justify-content-center">
-            <button className="col-md btn btn-primary" onClick={onCLeanCategory}><i className="fa-solid fa-trash"></i>  Limpiar</button>
+            <button className="col-md btn btn-warning" onClick={onCLeanCategory}><i className="fa-solid fa-broom"></i>  Limpiar</button>
           </div>
         </div>
       </form>

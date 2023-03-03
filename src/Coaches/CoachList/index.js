@@ -15,20 +15,22 @@ export function CoachList(){
 
       {(!entrenadores || entrenadores.length === 0) && (
         <div className="list-group-item">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1">No hay entrenadores</h5>
+          <div className="d-flex w-100 justify-content-between p-3">
+            <h5 className="m-auto">No hay entrenadores</h5>
           </div>
       </div>
       )}
       
       <div className="row p-3">
         {entrenadores.map(entrenador => (
-            <Coach 
-              key={entrenador.cedula} 
-              entrenador = {entrenador} 
-            />
-        ))} 
-      </div>
+          <Coach 
+            key={entrenador.cedula} 
+            entrenador = {entrenador} 
+          />
+          
+      ))}
+      </div> 
+      
 
     </>
   )
