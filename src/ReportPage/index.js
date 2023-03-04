@@ -8,7 +8,7 @@ import { ConfigPaymets } from "./ConfigPayments";
 
 export function ReportPage(){
   const [dataForReport , setDataForReport] = React.useState({});
-  const {onError, onSuccess, state} = React.useContext(StateContext);
+  const {state, onSuccessPayment, onErrorPayment} = React.useContext(StateContext);
   const auth = useAuth();
   // console.log(dataForReport)
   const handleChange=(e)=>{
@@ -28,10 +28,10 @@ export function ReportPage(){
       //   onError()
       //   return;
       // }
-      onSuccess();
+      onSuccessPayment();
     } catch (error) {
       console.log(error);
-      onError()
+      onErrorPayment()
     }
   }
 
@@ -70,12 +70,12 @@ export function ReportPage(){
                         </div>
                       </div>
                     </form>
-                    {!!state.success && (
+                    {!!state.paymentSuccess && (
                       <h4 className="alert alert-success">
                         Reporte generado correctamente! por favor revisa tu correo electronico
                       </h4>
                     ) }
-                    {!!state.error && (
+                    {!!state.paymentError && (
                       <h4 className="alert alert-danger">
                         Hubo un problema al generar el reporte. por favor revisa los datos ingresados
                       </h4>

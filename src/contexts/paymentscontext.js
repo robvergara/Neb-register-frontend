@@ -34,7 +34,7 @@ export function PaymentProvider({children}){
   }
 
   const onSearch = async(cedula)=>{
-    const paymentList = await getArrayPayments(cedula);
+    const paymentList = await getArrayPayments(searchValue);
     // console.log(paymentList)
     try {
       if (!paymentList.error){
@@ -56,8 +56,8 @@ export function PaymentProvider({children}){
 
   const onSave = async(newPayment)=>{
     if (payments.find(payment=> 
-      payment.mes === newPayment.mes && 
-      payment.ano === newPayment.ano && 
+      payment.mes === newPayment.month && 
+      payment.ano === newPayment.year && 
       payment.cedula === newPayment.cedula
       )){
       onError();

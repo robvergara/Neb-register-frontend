@@ -10,10 +10,25 @@ export function StateProvider({children}){
     dispatch({ type: actionTypes.success });
     setTimeout(()=>dispatch({type:actionTypes.regret}),3000);
   };
-
+  const onSuccessPayment =()=> {
+    dispatch({ type: actionTypes.paymentSuccess });
+    setTimeout(()=>dispatch({type:actionTypes.regret}),3000);
+  };
+  const onSuccessConfig =()=> {
+    dispatch({ type: actionTypes.configSuccess });
+    setTimeout(()=>dispatch({type:actionTypes.regret}),3000);
+  };
   const onError = ()=> {
     dispatch({ type: actionTypes.error });
-    // setTimeout(()=>dispatch({type:actionTypes.regret}),3000);
+    setTimeout(()=>dispatch({type:actionTypes.regret}),2000);
+  };
+  const onErrorPayment = ()=> {
+    dispatch({ type: actionTypes.paymentError });
+    setTimeout(()=>dispatch({type:actionTypes.regret}),2000);
+  };
+  const onErrorConfig = ()=> {
+    dispatch({ type: actionTypes.configError });
+    setTimeout(()=>dispatch({type:actionTypes.regret}),2000);
   };
 
   const onConfirm= ()=> dispatch({type: actionTypes.confirm });
@@ -21,7 +36,7 @@ export function StateProvider({children}){
   const onRegret=()=> dispatch({type:actionTypes.regret});
   
   return(
-    <StateContext.Provider value={{state, onSuccess, onError, onConfirm, onRegret}}>
+    <StateContext.Provider value={{state, onSuccess, onError, onConfirm, onRegret, onSuccessPayment, onSuccessConfig, onErrorPayment, onErrorConfig}}>
       {children}
     </StateContext.Provider>
   )
@@ -29,6 +44,10 @@ export function StateProvider({children}){
 
 const initialState= {
   error: false,
+  paymentError: false,
+  paymentSuccess: false,
+  configError:false,
+  configSuccess:false,
   success: false,
   confirm: false,
 
@@ -37,7 +56,11 @@ const actionTypes = {
   success: 'SUCCESS',
   error:'ERROR',
   confirm: 'CONFIRM',
-  regret:'REGRET'
+  regret:'REGRET',
+  paymentError: 'PAYMENTERROR',
+  paymentSuccess: 'PAYMENTSUCCESS',
+  configError: 'CONFIGERROR',
+  configSuccess: 'CONFIGSUCCESS'
 }
 
 const reducerObject = (state, payload)=>({
@@ -46,6 +69,10 @@ const reducerObject = (state, payload)=>({
     error:true,
     success:false,
     confirm:false,
+    paymentError: false,
+    paymentSuccess: false,
+    configError:false,
+    configSuccess:false,
 
   },
   [actionTypes.success]:{
@@ -53,6 +80,10 @@ const reducerObject = (state, payload)=>({
     error: false,
     success: true,
     confirm:false,
+    paymentError: false,
+    paymentSuccess: false,
+    configError:false,
+    configSuccess:false,
 
   },
   [actionTypes.confirm]:{
@@ -60,7 +91,51 @@ const reducerObject = (state, payload)=>({
     error:false,
     success:false,
     confirm: true,
+    paymentError: false,
+    paymentSuccess: false,
+    configError:false,
+    configSuccess:false,
 
+  },
+  [actionTypes.paymentError]:{
+    ...state,
+    error:false,
+    success:false,
+    confirm: true,
+    paymentError: true,
+    paymentSuccess: false,
+    configError:false,
+    configSuccess:false,
+  },
+  [actionTypes.paymentSuccess]:{
+    ...state,
+    error:false,
+    success:false,
+    confirm: true,
+    paymentError: false,
+    paymentSuccess: true,
+    configError:false,
+    configSuccess:false,
+  },
+  [actionTypes.configError]:{
+    ...state,
+    error:false,
+    success:false,
+    confirm: true,
+    paymentError: false,
+    paymentSuccess: false,
+    configError:true,
+    configSuccess:false,
+  },
+  [actionTypes.configSuccess]:{
+    ...state,
+    error:false,
+    success:false,
+    confirm: true,
+    paymentError: false,
+    paymentSuccess: false,
+    configError:false,
+    configSuccess:true,
   },
   [actionTypes.regret]:{
     ...initialState
