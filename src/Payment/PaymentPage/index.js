@@ -76,6 +76,16 @@ export function PaymentPage(){
                           </div>
                         </div>
                       </div>
+                      <div className="col-md-4 col-12 m-auto px-2 my-2 d-flex justify-content-center">
+                        <div className="row col-12">
+                          <div className="col-12">
+                            <b>MONTO:</b>
+                          </div>
+                          <div className="col-12">
+                            <input value={dataPayment.amount} className="col-12" type="number" min={2023} placeholder="año" onChange={handleChange} name="year"/>
+                          </div>
+                        </div>
+                      </div>
                     </div>                    
                   </div>
                   <div className="col-xl-3 col-12 d-flex justify-content-center">

@@ -11,7 +11,7 @@ export function enterPayment(body) {
     estudiante_id: body.estudiante_id,
     mes: body.month,
     ano: body.year,
-    valor: 60000
+    valor: body.amount
   })
 }
 
