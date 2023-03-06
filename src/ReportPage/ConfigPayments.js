@@ -44,7 +44,7 @@ export function ConfigPaymets(){
       <form onSubmit={onSubmit} className="m-auto ">
         <div className="row px-5">
           <div className="col-md-8 col-12">
-            <div className="row px-5">
+            <div className="row px-4">
               <div className="col-md-12 col-12 my-2">
                 <div className="row">
                   <b className="col-6 m-auto">Mensualidad: </b>
