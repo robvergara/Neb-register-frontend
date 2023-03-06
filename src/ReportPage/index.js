@@ -68,18 +68,21 @@ export function ReportPage(){
                           <button className="col-md btn btn-primary"><i className="fa-solid fa-flag"></i> Generar Reporte</button>
                           {/* <button className="col-6 col-md-4 btn btn-primary mb-3 mx-1"onClick={onCancel}>regresar</button> */}
                         </div>
+                        <div className="col-12">
+                          {!!state.success && (
+                            <h4 className="alert alert-success">
+                              Reporte generado correctamente! por favor revisa tu correo electronico
+                            </h4>
+                          ) }
+                          {!!state.error && (
+                            <h4 className="alert alert-danger">
+                              Hubo un problema al generar el reporte. por favor revisa los datos ingresados
+                            </h4>
+                          ) }
+                        </div>
                       </div>
                     </form>
-                    {!!state.success && (
-                      <h4 className="alert alert-success">
-                        Reporte generado correctamente! por favor revisa tu correo electronico
-                      </h4>
-                    ) }
-                    {!!state.error && (
-                      <h4 className="alert alert-danger">
-                        Hubo un problema al generar el reporte. por favor revisa los datos ingresados
-                      </h4>
-                    ) }
+                    
                   </div>
                   <div className="card-footer d-flex">
                     <p className="col-6 text-muted flex-fill m-auto"><b>Nota:</b> selecciona el mes y año para generar el reporte (este sera enviado a tu correo electronico en formato PDF)</p>
