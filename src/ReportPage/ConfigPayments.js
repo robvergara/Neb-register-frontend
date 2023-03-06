@@ -5,7 +5,7 @@ import { useAuth } from "../contexts/auth";
 
 export function ConfigPaymets(){
   const [dataConfig, setDataConfig] = React.useState({});
-  const {onError, onSuccess, state} = React.useContext(StateContext);
+  const {state, onSuccessConfig, onErrorConfig} = React.useContext(StateContext);
   const auth = useAuth()
 
   React.useEffect(()=>{
@@ -32,10 +32,10 @@ export function ConfigPaymets(){
     e.preventDefault();
     try {      
       await modifyConfigPayments(dataConfig);
-      onSuccess();
+      onSuccessConfig();
     } catch (error) {
       console.log(error);
-      onError()
+      onErrorConfig()
     }
   }
 
@@ -69,12 +69,12 @@ export function ConfigPaymets(){
           </div>          
         </div>
 
-        {!!state.success && (
+        {!!state.configSuccess && (
           <h4 className="alert alert-success">
             configuracion de pagos modificada correctamente
           </h4>
         ) }
-        {!!state.error && (
+        {!!state.configError && (
           <h4 className="alert alert-danger">
             Hubo un problema al generar la configuracion
           </h4>
