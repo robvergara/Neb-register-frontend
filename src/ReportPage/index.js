@@ -35,7 +35,7 @@ export function ReportPage(){
     }
   }
 
-  if(auth.user?.token){
+  if(auth.user.token){
     return(
       <>
         <div className="container-sm mb-4">
@@ -94,7 +94,7 @@ export function ReportPage(){
                   <h3 className="card-header">
                     <b>CONGIGURACIONES</b>
                   </h3>
-                    {(!!auth.user?.token && auth.user?.status === 1) && (
+                    {(!!auth.user.token && auth.user.status === 1) && (
                       <>
                         <div className="card-body m-auto d-flex justify-content-center">
                           <ConfigPaymets/>
@@ -112,10 +112,5 @@ export function ReportPage(){
       </>
     )
   }
-
-  else {
-    <>
-      <h1 className="alert alert-success">Acceso no autorizado</h1>
-    </>
-  }
+  
 }

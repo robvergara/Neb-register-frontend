@@ -18,8 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:digitalocean": "npm install --production=false && npm run build && npm ci"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -38,11 +37,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  
-  "engines": {
-    "node": "16.x"
   }
-  
   
 }

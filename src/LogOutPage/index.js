@@ -17,7 +17,7 @@ export function LogOutPage(){
     navigate(-1)
   }
 
-  if(auth.user?.token){
+  if(auth.user.token){
     return(
       <>
         <form className="container text-center mb-4" onSubmit={logout}>

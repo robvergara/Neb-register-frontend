@@ -19,7 +19,7 @@ export function PaymentPage(){
   }
   // console.log(auth)
   
-  if(auth.user?.status === 1) {
+  if(auth.user.status === 1) {
     return(
       <>
         <div className="container-sm mb-4">
@@ -113,11 +113,6 @@ export function PaymentPage(){
       </>
     )
     
-  }
-  else {
-    <>
-      <h1 className="alert alert-success">Acceso no autorizado</h1>
-    </>
   }
 }
 

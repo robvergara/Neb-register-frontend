@@ -14,7 +14,7 @@ export function CategoryList(){
   const auth = useAuth();
 
   React.useEffect(()=>{
-    const cedula = auth.user?.usuario;
+    const cedula = auth.user.usuario;
     const coach = entrenadores.find( entrenador => entrenador.cedula === cedula);
     async function obtenerEntrenador(){
       if(coach !== undefined){
@@ -42,7 +42,7 @@ export function CategoryList(){
       )}
       
       <div className="row p-3">
-        {auth.user?.status === 1 &&(
+        {auth.user.status === 1 &&(
           categories.map(category => (
             
               <CategoryItem 
@@ -52,7 +52,7 @@ export function CategoryList(){
             
         )))}
 
-        {auth.user?.status === 0 && (
+        {auth.user.status === 0 && (
           coachCategories.map(category => (
             
               <CategoryItem 

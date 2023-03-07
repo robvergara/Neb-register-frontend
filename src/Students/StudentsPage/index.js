@@ -10,7 +10,7 @@ export function StudentsPage(){
   const {openModal} = React.useContext(ModalContext);
   const auth = useAuth();
   // console.log(auth)
-  if (auth.user?.token){
+  if (auth.user.token){
     return(
       <div className="container-sm mb-4">
         <StudentSearch/>
@@ -33,10 +33,5 @@ export function StudentsPage(){
         </div>
       </div>
     )
-  }
-  else {
-    <>
-      <h1 className="alert alert-success">Acceso no autorizado</h1>
-    </>
   }
 }
