@@ -24,12 +24,12 @@ export function EditStudentsForm(){
     <>
       {(state.error) && (
         <h5 className="alert alert-danger">
-          EL ENTRENADOR YA EXISTE
+          EL ESTUDIANTE YA EXISTE
         </h5>
       )}
       {(state.success) && (
         <h5 className="alert alert-success">
-          El entrenador fue modificado correctamente!
+          El estudiante fue modificado correctamente!
         </h5>
       )}
   
@@ -65,11 +65,11 @@ export function EditStudentsForm(){
             </div>
           </div>
           <div className="col-xl-2 col-12 d-flex justify-content-center">
-            <div className="px-2 my-2 d-flex justify-content-center">
-              <button className="mx-1 btn btn-primary" type="submit"><i className="fa-solid fa-floppy-disk"></i> Modificar</button>
+            <div className="p-1 d-flex justify-content-center">
+              <button className="btn btn-primary" type="submit"><i className="fa-solid fa-floppy-disk"></i> Modificar</button>
             </div>
-            <div className="px-2 my-2 d-flex justify-content-center">
-              <button className="mx-1 btn btn-danger" onClick={onCancelModal}><i className="fa-solid fa-trash"></i> Cancelar</button>
+            <div className="p-1 d-flex justify-content-center">
+              <button className="btn btn-danger" onClick={onCancelModal}><i className="fa-solid fa-trash"></i> Cancelar</button>
             </div>
           </div>
 

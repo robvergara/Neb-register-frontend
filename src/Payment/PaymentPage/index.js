@@ -22,9 +22,6 @@ export function PaymentPage(){
   if(auth.user?.status === 1) {
     return(
       <>
-        
-  
-  
         <div className="container-sm mb-4">
           <div className="card shadow">
             <h3 className="card-header">
@@ -35,7 +32,7 @@ export function PaymentPage(){
                 <div className="row">
                   <div className="col-xl-9 col-12">
                     <div className="row">
-                      <div className="col-md-4 col-12 m-auto px-2 my-2 d-flex justify-content-center">
+                      <div className="col-md-6 col-12 m-auto px-2 my-2 d-flex justify-content-center">
                         <div className="row col-12">
                           <div className="col-12">
                             <b>CEDULA:</b>
@@ -51,7 +48,7 @@ export function PaymentPage(){
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-4 col-12 m-auto px-2 my-2 d-flex justify-content-center">
+                      <div className="col-md-6 col-12 m-auto px-2 my-2 d-flex justify-content-center">
                         <div className="row col-12">
                           <div className="col-12">
                             <b>MES:</b>
@@ -66,7 +63,7 @@ export function PaymentPage(){
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-4 col-12 m-auto px-2 my-2 d-flex justify-content-center">
+                      <div className="col-md-6 col-12 m-auto px-2 my-2 d-flex justify-content-center">
                         <div className="row col-12">
                           <div className="col-12">
                             <b>AÑO:</b>
@@ -76,7 +73,7 @@ export function PaymentPage(){
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-4 col-12 m-auto px-2 my-2 d-flex justify-content-center">
+                      <div className="col-md-6 col-12 m-auto px-2 my-2 d-flex justify-content-center">
                         <div className="row col-12">
                           <div className="col-12">
                             <b>MONTO:</b>

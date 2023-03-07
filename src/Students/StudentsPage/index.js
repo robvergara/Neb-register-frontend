@@ -18,7 +18,7 @@ export function StudentsPage(){
           {(!!auth.user && !!auth.user.token) && (
             <>
               <h3 className="card-header">
-                {openModal!== true? <b>AGREGAR ESTUDIANTE</b> : <b>MODIFICAR CATEGORIA</b>}
+                {openModal!== true? <b>AGREGAR ESTUDIANTE</b> : <b>MODIFICAR ESTUDIANTE</b>}
               </h3>
               <div className="card-body">
                 {/* <StudentForm/> */}
