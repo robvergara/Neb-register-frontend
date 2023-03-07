@@ -8,12 +8,8 @@ import { ConfigPaymets } from "./ConfigPayments";
 
 export function ReportPage(){
   const [dataForReport , setDataForReport] = React.useState({});
-<<<<<<< HEAD
   const {onError, onSuccess, state} = React.useContext(StateContext);
   const auth = useAuth();
-=======
-  const {onError, onSuccess ,onCancel , state} = React.useContext(StateContext);
->>>>>>> master
   // console.log(dataForReport)
   const handleChange=(e)=>{
     const {name, value} = e.target;
