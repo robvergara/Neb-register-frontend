@@ -1,7 +1,7 @@
 import axios from "axios";
 import { authHeader } from "./login.services";
 
-export const api = axios.create({baseURL: "http://api.neb.com.co:30001/api"});
+export const api = axios.create({baseURL: "https://api.neb.com.co:30001/api"});
 
 export async function get(url, params) {
   try {
