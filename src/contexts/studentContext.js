@@ -20,12 +20,24 @@ export function StudentProvider({children}){
   const [searchValue, setSearchValue] = React.useState('');
 
   React.useEffect(()=>{
-    async function  studentList (){
-      const list = await getStudents()
-      // console.log(list)
-      setEstudiantes(list)
-    }
-    studentList()
+    const controller = new AbortController();
+    const {signal} = controller; 
+
+    try {
+      async function  studentList (){
+        const list = await getStudents({signal})
+        // console.log(list)
+        setEstudiantes(list)
+      }
+      studentList()
+    } catch (error) {
+      if (error.name !== 'AbortError'){
+        console.error(error.message)
+      }
+    };
+
+    return () => controller.abort();
+
   },[searchValue])
 
   let searchedStudents=[];

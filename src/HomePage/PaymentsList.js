@@ -10,8 +10,8 @@ export function PaymentsList(){
   const auth = useAuth();
   const {state} = React.useContext(StateContext);
   // const studentDataPayment = {estudiante_id: estudianteQuePago._id, cedula: estudianteQuePago.cedula}
-  console.log(payments)
-  console.log(estudianteQuePago)
+  // console.log(payments)
+  // console.log(estudianteQuePago)
   // console.log(payments?.message)
 
   if (state.error){

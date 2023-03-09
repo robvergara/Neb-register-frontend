@@ -9,6 +9,7 @@ export function LoginPage(){
   const {state} = React.useContext(StateContext)
   const [user, setUser] = React.useState({usuario:'', password:''});
   const auth = useAuth();
+  // console.log(auth.user)
 
   const handleChange = (e) =>{
     const {name, value} = e.target;

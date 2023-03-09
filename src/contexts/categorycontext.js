@@ -15,14 +15,26 @@ export function CategoryProvider({children}){
   const auth = useAuth()
 
   React.useEffect(()=>{
-    async function  trainerList (){
-      const list = await getCategories()
-      // console.log(list)
-      setCategories(list)
-    }
-    if(!!auth.user){
-      trainerList();
-    }
+    const controller = new AbortController();
+    const {signal} = controller; 
+
+    try {
+      async function  trainerList (){
+        const list = await getCategories({signal})
+        // console.log(list)
+        setCategories(list)
+      }
+      if(!!auth.user){
+        trainerList();
+      }
+    } catch (error) {
+      if (error.name !== 'AbortError'){
+        console.error(error.message)
+      }
+    };
+
+    return () => controller.abort();
+
   },[auth]);
 
   const categoryHandleChange = (e) =>{

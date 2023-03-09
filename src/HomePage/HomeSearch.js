@@ -6,7 +6,7 @@ export function HomeSearch(){
   const {searchValue, HomeSearchHandleChange, onSearch} = React.useContext(PaymentContext);
   const {onRegret} = React.useContext(StateContext);
 
-  console.log(searchValue);
+  // console.log(searchValue);
   return(
     <div className="d-flex align-items-center justify-content-center align-middle">
       <div className="card mb-5 shadow" id="estudiante">

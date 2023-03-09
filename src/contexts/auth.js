@@ -11,10 +11,11 @@ export function AuthProvider({children}){
   const {onError, onRegret} = React.useContext(StateContext);
   const navigate = useNavigate();
   const [user, setUser] = React.useState(null);
+  // console.log(user);
 
   React.useEffect(()=>{
     const controller = new AbortController();
-    const {signal} = controller; 
+    // const {signal} = controller; 
 
     try {
       const localStogareUser = getCurrentUser();
@@ -46,7 +47,7 @@ export function AuthProvider({children}){
 
     } catch (error) {
       onError();
-      // console.log(error);
+      console.log(error);
     }
   }
 

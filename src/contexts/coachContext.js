@@ -17,14 +17,26 @@ export function CoachProvider ({children}){
   const auth = useAuth()
 
   React.useEffect(()=>{
-    async function  trainerList (){
-      const list = await getEntrenadores()
-      // console.log(list)
-      setEntrenadores(list)
-    }
-    if(auth.user!== null){
-      trainerList()
-    }
+    const controller = new AbortController();
+    const {signal} = controller; 
+
+    try {
+      async function  trainerList (){
+        const list = await getEntrenadores({signal})
+        // console.log(list)
+        setEntrenadores(list)
+      }
+      if(auth.user!== null){
+        trainerList()
+      }
+    } catch (error) {
+      if (error.name !== 'AbortError'){
+        console.error(error.message)
+      }
+    };
+
+    return () => controller.abort();
+
   },[auth])
 
   const handleChange = (e) =>{

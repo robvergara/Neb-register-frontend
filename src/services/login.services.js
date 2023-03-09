@@ -3,7 +3,7 @@ import { api } from "../services/Network";
 export async function post(url, body) {
   try {
     const res = await api.post(url, body);
-    console.log(res.data)
+    console.log(res.data, res.status)
     if (res.data.token) {
       localStorage.setItem("user", JSON.stringify(res.data));
     }
