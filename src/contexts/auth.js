@@ -13,11 +13,22 @@ export function AuthProvider({children}){
   const [user, setUser] = React.useState(null);
 
   React.useEffect(()=>{
-     const localStogareUser = getCurrentUser();
-     
-     if (!!localStogareUser){
-      setUser(localStogareUser);
-     }
+    const controller = new AbortController();
+    const {signal} = controller; 
+
+    try {
+      const localStogareUser = getCurrentUser();
+
+      if (!!localStogareUser){
+       setUser(localStogareUser);
+      }
+    } catch (error) {
+      if (error.name !== 'AbortError'){
+        console.error(error.message)
+      }
+    };
+
+    return () => controller.abort();
   },[]);
 
   const login = async(usuario,password)=>{
@@ -35,7 +46,7 @@ export function AuthProvider({children}){
 
     } catch (error) {
       onError();
-      console.log(error);
+      // console.log(error);
     }
   }
 

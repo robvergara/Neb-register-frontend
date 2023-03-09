@@ -21,7 +21,7 @@ export function LoginPage(){
   const login= async(e)=>{
     e.preventDefault();
     auth.login(user.usuario, user.password);
-    console.log(user);
+    // console.log(user);
   }
 
   if(auth.user){

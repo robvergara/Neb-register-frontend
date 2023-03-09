@@ -18,7 +18,7 @@ export function PaymentsList(){
     return (
       <>
         {/* <h1 className="alert alert-danger">{payments.message}</h1> */}
-        <h1 className="alert alert-danger">No se registran pagos</h1>
+        <h1 className="alert alert-danger">{payments.message}</h1>
       </>
     )
   }

@@ -14,10 +14,16 @@ export async function post(url, body) {
 }
 
 export function getLogin(usuario, password) {
-  return post("/login",{
-    usuario: usuario,
-    contrasena: password
-  })
+  try {
+    const res = post("/login",{
+      usuario: usuario,
+      contrasena: password
+    })
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+
 }
 
 export const getCurrentUser = () => {

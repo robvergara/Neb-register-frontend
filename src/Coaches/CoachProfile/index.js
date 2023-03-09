@@ -11,7 +11,7 @@ export function CoachProfile(){
 
   React.useEffect(()=>{
     const controller = new AbortController();
-    const {signal} = controller 
+    const {signal} = controller; 
 
     try {
       async function obtenerEntrenador(){
