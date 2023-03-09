@@ -10,11 +10,24 @@ export function CoachProfile(){
   const [coach, setCoach] = React.useState({});
 
   React.useEffect(()=>{
-    async function obtenerEntrenador(){
-      const entrenador = await getEntrenador(id);
-      setCoach(entrenador[0]);
-    }
-    obtenerEntrenador();
+    const controller = new AbortController();
+    const {signal} = controller 
+
+    try {
+      async function obtenerEntrenador(){
+        const entrenador = await getEntrenador(id, {signal});
+        setCoach(entrenador[0]);
+      }
+
+      obtenerEntrenador();
+    } catch (error) {
+      if (error.name !== 'AbortError'){
+        console.error(error.message)
+      }
+    };
+
+    return () => controller.abort();
+
   },[])
 
   // console.log(coach);

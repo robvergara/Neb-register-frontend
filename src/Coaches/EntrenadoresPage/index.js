@@ -8,10 +8,13 @@ import { EditCoachForm } from "../EditCoachForm";
 export function Entrenadores(){
   const {openModal} = React.useContext(ModalContext);
   const auth = useAuth();
+  // console.log(auth.user)
 
-  if (auth.user.token){
+  if (!!auth.user){
     return(
       <>      
+        {auth.user.token && (
+
         <div className="container-sm mb-4">
           <div className="card mb-3">
             {(!!auth.user.token && auth.user.status === 1) && (
@@ -29,6 +32,7 @@ export function Entrenadores(){
             <CoachList/>
           </div>
         </div>
+        )}
       </>
     )
   }

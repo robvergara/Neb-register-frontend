@@ -9,14 +9,26 @@ export function ConfigPaymets(){
   const auth = useAuth()
 
   React.useEffect(()=>{
-    async function dataConfigPayment (){
-      const config = await getConfigPayments();
-      // console.log(config);
-      setDataConfig(config[0]);
-    };
-    if(!!auth.user){
-      dataConfigPayment();
+    const controller = new AbortController();
+    const {signal} = controller 
+
+    try {
+      async function dataConfigPayment (){
+        const config = await getConfigPayments({signal});
+        // console.log(config);
+        setDataConfig(config[0]);
+      };
+      if(!!auth.user){
+        dataConfigPayment();
+      } 
+    } catch (error) {
+      if (error.name !== 'AbortError'){
+        console.error(error.message)
+      }
     }
+
+    return () => controller.abort();
+
   },[auth])
   // console.log(dataConfig)
 

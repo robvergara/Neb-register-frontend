@@ -22,7 +22,7 @@ export function CoachProvider ({children}){
       // console.log(list)
       setEntrenadores(list)
     }
-    if(!!auth.user){
+    if(auth.user!== null){
       trainerList()
     }
   },[auth])
