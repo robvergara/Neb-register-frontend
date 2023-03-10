@@ -62,7 +62,6 @@ export function PaymentProvider({children}){
       )){
       onError();
       console.log('el pago de este mes ya ha sido realizado');
-      onError();
       return 
     }
     try {      

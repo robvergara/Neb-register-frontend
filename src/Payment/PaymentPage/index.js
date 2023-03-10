@@ -19,9 +19,10 @@ export function PaymentPage(){
   }
   // console.log(auth)
   
-  if(auth.user.status === 1) {
+  if(auth.user) {
     return(
       <>
+      {auth.user.status === 1 && (
         <div className="container-sm mb-4">
           <div className="card shadow">
             <h3 className="card-header">
@@ -79,7 +80,7 @@ export function PaymentPage(){
                             <b>MONTO:</b>
                           </div>
                           <div className="col-12">
-                            <input value={dataPayment.amount} className="col-12" type="number" min={2023} placeholder="año" onChange={handleChange} name="year"/>
+                            <input value={dataPayment.amount} className="col-12" type="number" onChange={handleChange} name="amount"/>
                           </div>
                         </div>
                       </div>
@@ -110,6 +111,7 @@ export function PaymentPage(){
             </div>
           </div>
         </div>
+      )}
       </>
     )
     
