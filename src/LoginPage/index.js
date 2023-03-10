@@ -9,7 +9,7 @@ export function LoginPage(){
   const {state} = React.useContext(StateContext)
   const [user, setUser] = React.useState({usuario:'', password:''});
   const auth = useAuth();
-  // console.log(auth.user)
+  console.log(auth.user)
 
   const handleChange = (e) =>{
     const {name, value} = e.target;
@@ -21,8 +21,8 @@ export function LoginPage(){
 
   const login= async(e)=>{
     e.preventDefault();
-    auth.login(user.usuario, user.password);
-    // console.log(user);
+    auth.login(user);
+    console.log(user);
   }
 
   if(auth.user){

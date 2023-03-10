@@ -1,9 +1,12 @@
 import { api } from "../services/Network";
 
-export async function post(url, body) {
+export async function getLogin(body) {
   try {
-    const res = await api.post(url, body);
-    console.log(res.data, res.status)
+    const res = await api.post("/login",{
+      usuario: body.usuario,
+      contrasena: body.password
+    });
+    // console.log(res)
     if (res.data.token) {
       localStorage.setItem("user", JSON.stringify(res.data));
     }
@@ -13,18 +16,13 @@ export async function post(url, body) {
   }
 }
 
-export function getLogin(usuario, password) {
-  try {
-    const res = post("/login",{
-      usuario: usuario,
-      contrasena: password
-    })
-    return res.data;
-  } catch (error) {
-    console.error(error);
-  }
-
-}
+// export function getLogin(usuario) {
+//   post("/login",{
+//     usuario: usuario.usuario,
+//     contrasena: usuario.password
+//   });
+//   console.log()
+// }
 
 export const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem("user"));

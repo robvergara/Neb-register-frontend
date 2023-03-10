@@ -17,15 +17,19 @@ export function Menu () {
             {/* <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink> */}
             {!!auth.user && (
               <>
-                <NavLink className="nav-link active" to={'/categorias'}>Categorias</NavLink>
-                <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink>
-                {auth.user.status === 1 && (
-                  <NavLink className="nav-link active" to={'/entrenadores'}> Entrenadores </NavLink>
-                )}
+              {auth.user.token && (
+                <>
+                  <NavLink className="nav-link active" to={'/categorias'}>Categorias</NavLink>
+                  <NavLink className="nav-link active" to={'/estudiantes'}>Estudiantes</NavLink>
+                  {auth.user.status === 1 && (
+                    <NavLink className="nav-link active" to={'/entrenadores'}> Entrenadores </NavLink>
+                  )}
 
-                {auth.user.status === 1 && (
-                  <NavLink className="nav-link active" to={'/reportes'} >Reportes</NavLink>
-                )}
+                  {auth.user.status === 1 && (
+                    <NavLink className="nav-link active" to={'/reportes'} >Reportes</NavLink>
+                  )}
+                </>
+              )}
 
               </>
             )}

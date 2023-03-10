@@ -14,39 +14,33 @@ export function AuthProvider({children}){
   // console.log(user);
 
   React.useEffect(()=>{
-    const controller = new AbortController();
-    // const {signal} = controller; 
-
-    try {
       const localStogareUser = getCurrentUser();
 
       if (!!localStogareUser){
        setUser(localStogareUser);
       }
-    } catch (error) {
-      if (error.name !== 'AbortError'){
-        console.error(error.message)
-      }
-    };
 
-    return () => controller.abort();
   },[]);
 
-  const login = async(usuario,password)=>{
+  const login = async(usuario)=>{
     // console.log(usuario);
     
     try {
-      const user = await getLogin(usuario, password);
-      const userName = user.nombre;
-      const status = user.status;
+      const user = await getLogin(usuario);
+      if(user !== "Usuario no encontrado"){
+        const userName = user.nombre;
+        const status = user.status;
+  
+        setUser({userName, status});
+        onRegret();
+        navigate('/');
+        window.location.reload()
+      }
 
-      setUser({userName, status});
-      onRegret();
-      navigate('/');
-      window.location.reload()
+      else onError()
 
     } catch (error) {
-      onError();
+      // onError();
       console.log(error);
     }
   }
