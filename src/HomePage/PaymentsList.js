@@ -31,12 +31,16 @@ export function PaymentsList(){
             <caption>
                 <div className="d-flex justify-content-between">
                   Pagos realizados por {estudianteQuePago.nombre} {estudianteQuePago.apellido}
-                  {(!!auth.user.token && auth.user.status === 1) &&
-                  <div className="col-sm-3 btn-group">
-                    <NavLink className="btn btn-success" to={"/pagos"} onClick={()=>setdataPayment(estudianteQuePago)}> 
-                    <i className="fa-solid fa-dollar-sign"></i> <b>PAGAR</b> 
-                    </NavLink>  
-                  </div>}
+                  {auth.user && (
+                    <>
+                      {(!!auth.user.token && auth.user.status === 1) &&
+                      <div className="col-sm-3 btn-group">
+                        <NavLink className="btn btn-success" to={"/pagos"} onClick={()=>setdataPayment(estudianteQuePago)}> 
+                        <i className="fa-solid fa-dollar-sign"></i> <b>PAGAR</b> 
+                        </NavLink>  
+                      </div>}
+                    </>
+                  )}
                 </div>
             </caption>
     

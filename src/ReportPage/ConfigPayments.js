@@ -58,12 +58,12 @@ export function ConfigPaymets(){
           <div className="col-md-8 col-12">
             <div className="row px-4">
               <div className="col-md-12 col-12 my-2">
-                <div className="row">
+                {/* <div className="row">
                   <b className="col-6 m-auto">Mensualidad: </b>
                   <div className="text-end col-6">
                     <input value={dataConfig.mensualidad} type="number" placeholder="mensualidad" onChange={handleChange} name="monthly" className="col-12"/>
                   </div>
-                </div>
+                </div> */}
                 
               </div>
               <div className="col-md-12 col-12 my-2">
