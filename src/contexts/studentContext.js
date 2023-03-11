@@ -13,7 +13,7 @@ const initialStudentState = {
 export const StudentContext = React.createContext()
 
 export function StudentProvider({children}){
-  const {onSuccess, onError, onRegret } = React.useContext(StateContext);
+  const {onSuccess, onError, onRegret, state } = React.useContext(StateContext);
   const [estudiantes, setEstudiantes] = React.useState([]);
   const [modifiedStudent, setModifiedStudent] = React.useState(initialStudentState)
   const [studentData, setstudentData] = React.useState(initialStudentState);
@@ -38,7 +38,7 @@ export function StudentProvider({children}){
 
     return () => controller.abort();
 
-  },[searchValue])
+  },[searchValue, state])
 
   let searchedStudents=[];
 
