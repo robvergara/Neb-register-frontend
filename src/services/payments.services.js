@@ -5,7 +5,7 @@ export function getArrayPayments(id) {
 }
 
 export function enterPayment(body) {
-  console.log(body)
+  // console.log(body)
   return post("/pagos",{
     cedula: body.cedula,
     estudiante_id: body.estudiante_id,

@@ -82,9 +82,9 @@ function App() {
                       <Route 
                         path='/pagos' 
                         element={
-                          //<AuthRoute>
+                          <AuthRoute>
                             <PaymentPage/>
-                          //</AuthRoute>
+                          </AuthRoute>
                         } 
                       />
 

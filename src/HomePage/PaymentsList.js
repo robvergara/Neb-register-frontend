@@ -13,7 +13,9 @@ export function PaymentsList(){
   // console.log(payments)
   // console.log(estudianteQuePago)
   // console.log(payments?.message)
-
+  const estudiante = {};
+  estudiante.cedula = estudianteQuePago.cedula;
+  estudiante.estudiante_id = estudianteQuePago._id;
   if (state.error){
     return (
       <>
@@ -35,7 +37,7 @@ export function PaymentsList(){
                     <>
                       {(!!auth.user.token && auth.user.status === 1) &&
                       <div className="col-sm-3 btn-group">
-                        <NavLink className="btn btn-success" to={"/pagos"} onClick={()=>setdataPayment(estudianteQuePago)}> 
+                        <NavLink className="btn btn-success" to={"/pagos"} onClick={()=>setdataPayment(estudiante)}> 
                         <i className="fa-solid fa-dollar-sign"></i> <b>PAGAR</b> 
                         </NavLink>  
                       </div>}
