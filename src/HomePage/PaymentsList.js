@@ -35,7 +35,7 @@ export function PaymentsList(){
                   Pagos realizados por {estudianteQuePago.nombre} {estudianteQuePago.apellido}
                   {auth.user && (
                     <>
-                      {(!!auth.user.token && auth.user.status === 1) &&
+                      {(!!auth.user.token && auth.user) &&
                       <div className="col-sm-3 btn-group">
                         <NavLink className="btn btn-success" to={"/pagos"} onClick={()=>setdataPayment(estudiante)}> 
                         <i className="fa-solid fa-dollar-sign"></i> <b>PAGAR</b> 

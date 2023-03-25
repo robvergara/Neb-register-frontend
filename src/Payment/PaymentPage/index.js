@@ -22,7 +22,7 @@ export function PaymentPage(){
   if(auth.user) {
     return(
       <>
-      {auth.user.status === 1 && (
+      {auth.user && (
         <div className="container-sm mb-4">
           <div className="card shadow">
             <h3 className="card-header">
